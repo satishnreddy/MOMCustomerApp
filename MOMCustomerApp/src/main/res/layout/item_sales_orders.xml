@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_orders_row"
+    android:layout_width="match_parent"
+    app:cardElevation="@dimen/card_elevation_mbasket"
+    app:cardCornerRadius="6dp"
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect_filled_corner_6dp_border_aaa_1dp"
+        android:paddingBottom="@dimen/half_padding"
+        android:paddingLeft="@dimen/half_padding"
+        android:paddingRight="@dimen/half_padding"
+        android:paddingTop="@dimen/half_padding">
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Aman Shekar"
+            android:id="@+id/item_orders_tv_customer_name"
+            style="@style/font_medium_16_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="" />
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/item_orders_tv_customer_name"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="9987699669"
+            tools:visibility="gone"
+            android:visibility="gone"
+            android:id="@+id/item_orders_tv_customer_phone"
+            style="@style/font_regular_12_hex258430"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/item_orders_tv_customer_name"
+            android:text="" />
+
+        <TextView
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="123123123123123123123ASDFASDFASDFASDFASDASDFdAdfasdf"
+            android:maxWidth="240dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginRight="4dp"
+            android:layout_marginEnd="4dp"
+            android:id="@+id/item_orders_tv_date"
+            style="@style/font_regular_12_hex717171"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+
+<!--        <ImageView
+            tools:text="type"
+            android:id="@+id/item_orders_iv_payment_type"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_credit_card_24dp" />-->
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/item_orders_tv_customer_name"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/item_orders_tv_label_invoice_id"
+            style="@style/font_regular_12_hex717171"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/item_orders_tv_customer_phone"
+            android:text="@string/order_noc" />
+
+        <TextView
+            app:layout_constraintTop_toTopOf="@id/item_orders_tv_label_invoice_id"
+            app:layout_constraintBottom_toBottomOf="@id/item_orders_tv_label_invoice_id"
+            app:layout_constraintStart_toEndOf="@id/item_orders_tv_label_invoice_id"
+            app:layout_constraintEnd_toStartOf="@id/item_orders_tv_date"
+            tools:text="MBs-125"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:id="@+id/item_orders_tv_invoice_id"
+            style="@style/font_regular_12_hex717171"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_orders_tv_customer_phone"
+            android:text="" />
+
+        <TextView
+            app:layout_constraintEnd_toStartOf="@id/item_orders_tv_amount"
+            app:layout_constraintTop_toTopOf="@id/item_orders_tv_amount"
+            app:layout_constraintBottom_toBottomOf="@id/item_orders_tv_amount"
+            android:id="@+id/item_orders_tv_rupee"
+            style="@style/font_medium_20_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/item_orders_tv_label_invoice_id"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/basic_margin"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="@dimen/basic_margin"
+            android:layout_marginStart="0dp"
+            android:gravity="center_vertical"
+            android:text="@string/rupee_symbol" />
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="660.00"
+            android:id="@+id/item_orders_tv_amount"
+            style="@style/font_medium_20_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_orders_tv_label_invoice_id"
+            android:layout_gravity="center"
+            android:layout_toEndOf="@id/item_orders_tv_rupee"
+            android:layout_toRightOf="@id/item_orders_tv_rupee"
+            android:gravity="center"
+            android:text="" />
+
+        <ImageView
+            android:layout_marginTop="8dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/item_orders_iv_status"
+            tools:src="@drawable/ic_order_pending"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_orders_tv_label_invoice_id"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Pending"
+            android:id="@+id/item_orders_tv_status"
+            style="@style/font_medium_14_black"
+            android:layout_marginStart="@dimen/margin_small"
+            app:layout_constraintStart_toEndOf="@id/item_orders_iv_status"
+            app:layout_constraintTop_toTopOf="@id/item_orders_iv_status"
+            app:layout_constraintBottom_toBottomOf="@id/item_orders_iv_status"
+            android:layout_marginLeft="@dimen/margin_small" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

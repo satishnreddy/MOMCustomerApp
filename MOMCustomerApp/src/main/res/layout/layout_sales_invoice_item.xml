@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/full_padding"
+        android:paddingTop="@dimen/half_padding"
+        android:paddingRight="@dimen/full_padding"
+        android:paddingBottom="@dimen/padding_small">
+
+        <TextView
+            android:id="@+id/layout_invoice_item_tv_name"
+            style="@style/font_medium_14_black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@id/layout_invoice_item_tv_selling_price"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/padding_medium"
+            android:paddingRight="@dimen/padding_medium"
+            tools:text="tools:sample" />
+
+        <TextView
+            android:id="@+id/layout_invoice_item_tv_selling_price"
+            style="@style/font_medium_14_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/layout_invoice_item_tv_rupee1"
+            style="@style/font_medium_14_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/layout_invoice_item_tv_selling_price"
+            android:layout_alignTop="@+id/layout_invoice_item_tv_selling_price"
+            android:layout_gravity="end"
+            android:layout_marginStart="@dimen/basic_margin"
+            android:layout_marginLeft="@dimen/basic_margin"
+            android:layout_marginEnd="@dimen/basic_margin"
+            android:layout_marginRight="@dimen/basic_margin"
+            android:layout_toStartOf="@+id/layout_invoice_item_tv_selling_price"
+            android:layout_toLeftOf="@+id/layout_invoice_item_tv_selling_price"
+            android:gravity="center_vertical|end"
+            android:text="@string/Rs" />
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/layout_invoice_item_tv_barcode"
+            style="@style/font_regular_14_graphite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_invoice_item_tv_name"
+            android:layout_alignBottom="@+id/layout_invoice_item_tv_rupee1"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_toStartOf="@+id/layout_invoice_item_tv_rupee1"
+            android:layout_toLeftOf="@+id/layout_invoice_item_tv_rupee1"
+            android:gravity="bottom"
+            android:text="12312312321" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/margin_small"
+            android:id="@+id/layout_invoice_item_layout_qty_tax"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_invoice_item_tv_barcode"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/layout_invoice_item_tv_qty"
+                style="@style/font_regular_12_hex717171"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                tools:text="@string/quantityc" />
+
+            <TextView
+                tools:visibility="gone"
+                tools:text="123"
+                android:visibility="gone"
+                android:id="@+id/layout_invoice_item_tv_size"
+                style="@style/font_regular_14_graphite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/half_margin"
+                android:layout_marginLeft="@dimen/half_margin"
+                android:layout_marginEnd="@dimen/half_margin"
+                android:layout_marginRight="@dimen/half_margin"
+                android:gravity="bottom"
+                android:text="@string/size" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="end"
+                android:id="@+id/layout_invoice_item_add_remove_product"
+                tools:visibility="visible"
+                android:visibility="visible"
+                android:layout_marginStart="@dimen/margin_very_small"
+                android:layout_marginLeft="@dimen/margin_very_small"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/layout_invoice_item_decrement_quant"
+                    tools:visibility="visible"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:text="-"
+                    android:visibility="gone"
+                    style="@style/font_regular_18_black"
+                    android:gravity="center"
+                    android:background="@drawable/rect_filled_corner_6dp_border_aaa_1dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/padding_small"
+                    android:id="@+id/layout_invoice_item_tv_qty_value"
+                    style="@style/font_regular_18_black"
+                    android:paddingEnd="@dimen/padding_small"
+
+                    tools:text="1"/>
+
+                <TextView
+                    android:id="@+id/layout_invoice_item_increment_quant"
+                    tools:visibility="visible"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:visibility="gone"
+                    style="@style/font_regular_18_black"
+                    android:gravity="center"
+                    android:text="+"
+                    android:background="@drawable/rect_filled_corner_6dp_border_aaa_1dp"/>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    tools:visibility="visible"
+                    android:visibility="gone"
+                    android:id="@+id/layout_invoice_item_remove_product"
+                    android:layout_width="wrap_content"
+                    android:gravity="end|center_vertical"
+                    android:background="@drawable/rect_filled_corner_6dp_border_aaa_1dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/basic_margin"
+                    android:paddingBottom="@dimen/basic_margin"
+                    android:paddingStart="@dimen/half_padding"
+                    android:paddingEnd="@dimen/half_padding"
+                    android:paddingLeft="@dimen/half_padding"
+                    android:paddingRight="@dimen/half_padding"
+                    android:layout_marginBottom="3dp"
+                    style="@style/font_medium_14_black"
+                    android:text="@string/general_use_remove"/>
+
+
+            </LinearLayout>
+
+            <!-- Tax Price Layout-->
+            <LinearLayout
+                tools:visibility="gone"
+                android:id="@+id/layout_invoice_item_layout_tax_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/layout_invoice_item_tv_tax_type"
+                    style="@style/font_regular_14_hex258430"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/half_margin"
+                    android:layout_marginLeft="@dimen/half_margin"
+                    android:layout_marginEnd="@dimen/half_margin"
+                    android:layout_marginRight="@dimen/half_margin"
+                    android:layout_weight="1"
+                    android:gravity="bottom|end"
+                    android:paddingStart="0dp"
+                    android:paddingLeft="0dp"
+                    android:paddingEnd="@dimen/full_padding"
+                    android:paddingRight="@dimen/full_padding"
+                    android:text="@string/tax" />
+
+                <TextView
+                    android:id="@+id/layout_invoice_item_tv_tax_rs"
+                    style="@style/font_regular_14_hex258430"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="@dimen/basic_margin"
+                    android:layout_marginLeft="@dimen/basic_margin"
+                    android:layout_marginEnd="@dimen/basic_margin"
+                    android:layout_marginRight="@dimen/basic_margin"
+                    android:gravity="center_vertical|end"
+                    android:text="@string/Rs" />
+
+                <TextView
+                    tools:text="123"
+                    android:id="@+id/layout_invoice_item_tv_tax_price"
+                    style="@style/font_regular_14_hex258430"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            tools:visibility="gone"
+            android:id="@+id/layout_invoice_item_layout_qty_discount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_invoice_item_layout_qty_tax"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                tools:visibility="visible"
+                android:id="@+id/layout_invoice_item_layout_discount_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/layout_invoice_item_tv_discount"
+                    style="@style/font_regular_14_hex258430"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/half_margin"
+                    android:layout_marginLeft="@dimen/half_margin"
+                    android:layout_marginEnd="@dimen/half_margin"
+                    android:layout_marginRight="@dimen/half_margin"
+                    android:layout_weight="1"
+                    android:gravity="bottom|end"
+                    android:paddingStart="0dp"
+                    android:paddingLeft="0dp"
+                    android:paddingEnd="@dimen/full_padding"
+                    android:paddingRight="@dimen/full_padding"
+                    android:text="@string/discount" />
+
+                <TextView
+                    android:id="@+id/layout_invoice_item_tv_discount_rs"
+                    style="@style/font_regular_14_hex258430"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="@dimen/basic_margin"
+                    android:layout_marginLeft="@dimen/basic_margin"
+                    android:layout_marginEnd="@dimen/basic_margin"
+                    android:layout_marginRight="@dimen/basic_margin"
+                    android:gravity="center_vertical|end"
+                    android:text="@string/Rs" />
+
+                <TextView
+                    android:id="@+id/layout_invoice_item_tv_discount_price"
+                    style="@style/font_regular_14_hex258430"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_invoice_item_layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_invoice_item_layout_qty_tax"
+            android:layout_marginTop="@dimen/half_margin"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+
+
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/shape_line_separator" />
+</LinearLayout>

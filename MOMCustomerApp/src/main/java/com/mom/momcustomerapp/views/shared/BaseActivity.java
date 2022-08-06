@@ -94,19 +94,30 @@ public class BaseActivity extends AppCompatActivity implements ErrorDialogFragme
         }
     }
 
-    public void showErrorDialog(String title, String message, ErrorDialogFragment.ErrorDialogListener errorDialogListener) {
-        try {
-            if (showdialog) {
-                if (errorDialogListener != null) {
+
+
+
+    public void showErrorDialog(String title, String message, ErrorDialogFragment.ErrorDialogListener errorDialogListener)
+    {
+        try
+        {
+            if (showdialog)
+            {
+                if (errorDialogListener != null)
+                {
                     mErrorDialogListener = errorDialogListener;
                     mErrorDialogFragment = ErrorDialogFragment.newInstance(title, message, mErrorDialogListener);
-                } else {
+                }
+                else {
                     mErrorDialogFragment = ErrorDialogFragment.newInstance(title, message);
                 }
-                if (!isFinishing()) {
+
+                if (!isFinishing())
+                {
                     mErrorDialogFragment.show(getSupportFragmentManager(), "ErrorDialogFragment");
                 }
-            } else {
+            }
+            else {
                 Log.d("Nish", "showErrorDialog : showdialog is false");
             }
         } catch (Exception e)
@@ -128,6 +139,12 @@ public class BaseActivity extends AppCompatActivity implements ErrorDialogFragme
     {
         showErrorDialog(title, message, null);
     }
+
+    public void showErrorDialog(String message,  ErrorDialogFragment.ErrorDialogListener errorDialogListener)
+    {
+        showErrorDialog(getString(R.string.error_title), message, null);
+    }
+
 
     @Override
     public void onDialogPositiveClick() {

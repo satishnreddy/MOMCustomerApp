@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/half_margin"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/font_regular_14_graphite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="AMOUNT" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingTop="4dp">
+
+            <TextView
+                style="@style/font_regular_20_graphite"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/basic_margin"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="@dimen/basic_margin"
+                android:layout_marginStart="0dp"
+                android:gravity="center_vertical"
+                android:text="@string/Rs" />
+
+            <TextView
+                android:id="@+id/item_row_invoice_payment_type_tv_amount"
+                style="@style/font_regular_20_graphite"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="2344" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/item_row_invoice_payment_type_tv_label_payment_type"
+            style="@style/font_regular_14_graphite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="PAYMENT" />
+
+        <TextView
+            android:id="@+id/item_row_invoice_payment_type_tv_payment_type"
+            style="@style/font_regular_16_graphite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingTop="4dp"
+            android:text="" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -219,13 +219,13 @@ public interface CustomerClient
     Call<PastOrderModelPagination> getOrderList(@Field("store_id") String store_id, @Field("customer_id") String customer_id,
                                                 @Field("page") String page, @Field("vendor_id") String vendor_id);
 
-
+    */
     @POST("profile/gettransactionstatus")
     @FormUrlEncoded
     Call<String> checkOrderPaymentStatus(@Field("txn_id") String Txn_id,
                                          @Field("username") String username,
                                          @Field("vendor_id") String vendor_id);
-
+    /*
     @POST("order/sendPaymentLink")
     @FormUrlEncoded
     Call<String> sendPaymentLink(@Field("user_name") String user_name,

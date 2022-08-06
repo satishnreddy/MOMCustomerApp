@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/ms_round_rect_white_fill_round">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/LNR_header"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:background="@color/view_bg_mbasket"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/header_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@color/white"
+                    android:gravity="left"
+                    android:text="@string/title_checkout"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+                <View
+                    android:id="@+id/seperator_line"
+                    android:layout_below="@+id/header"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/darker_gray"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:visibility="visible"
+                    android:id="@+id/cat_left"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_vector_left_24dp_state"/>
+
+                <HorizontalScrollView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        tools:visibility="visible"
+                        android:id="@+id/fragment_products_in_stock_to_be_selected_cat_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                    </LinearLayout>
+
+
+                </HorizontalScrollView>
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:id="@+id/cat_right"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:src="@drawable/ic_vector_right_24dp_state"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fadeScrollbars="false"
+            android:orientation="vertical"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/checkout_radioGroup_timeslots"
+                    android:layout_marginTop="@dimen/half_margin"
+                    android:layout_marginLeft="@dimen/half_margin" >
+
+                    <RadioButton
+                        android:id="@+id/checkout_radio_cash"
+                        style="@style/font_medium_14_black"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=" Cash on delivery"
+                        android:checked="false"/>
+
+                </RadioGroup>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/full_margin"
+                    android:background="@drawable/shape_line_separator"
+                    android:visibility="visible" />
+
+
+                <View
+                    android:id="@+id/bottom_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey300"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <LinearLayout
+                android:id="@+id/activity_order_details_ll_action_btns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginLeft="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginRight="@dimen/margin_medium"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                tools:visibility="visible">
+
+
+                <TextView
+                    android:id="@+id/dialog_timeslots_action1"
+                    style="@style/font_medium_14_white"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_filled_70bb41_corner_5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_3fourth"
+                    android:text="Select Slot" />
+
+                <TextView
+                    android:id="@+id/dialog_timeslots_action2"
+                    style="@style/font_medium_14_white"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_filled_70bb41_corner_5dp"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_3fourth"
+                    android:text="Cancel" />
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

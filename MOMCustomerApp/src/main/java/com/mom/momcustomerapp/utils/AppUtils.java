@@ -3,7 +3,7 @@ package com.mom.momcustomerapp.utils;
 import android.content.Intent;
 
 
-
+import com.mom.momcustomerapp.controllers.orders.models.SalesDetailsResp;
 import com.mom.momcustomerapp.controllers.sales.models.OrderDetailModel;
 import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.views.login.SplachScreenActivity;
@@ -129,27 +129,27 @@ public class AppUtils {
         return strToReturn.toString();
     }
 
-    public static boolean isPaymentTypeMswipe(OrderDetailModel mInvoiceModel){
-        return mInvoiceModel.getPaymentType() != null &&
-                mInvoiceModel.getPaymentType().equalsIgnoreCase(PAYMENT_TYPE_MSWIPE);
+    public static boolean isPaymentTypeMswipe(SalesDetailsResp mInvoiceModel){
+        return mInvoiceModel.salesCustOrder.payment_type != null &&
+                mInvoiceModel.salesCustOrder.payment_type.equalsIgnoreCase(PAYMENT_TYPE_MSWIPE);
     }
 
-    public static boolean isPaymentTypeUPI(OrderDetailModel mInvoiceModel){
-        return mInvoiceModel.getPaymentType() != null &&
-                mInvoiceModel.getPaymentType().equalsIgnoreCase(PAYMENT_TYPE_UPI);
+    public static boolean isPaymentTypeUPI(SalesDetailsResp mInvoiceModel){
+        return mInvoiceModel.salesCustOrder.payment_type != null &&
+                mInvoiceModel.salesCustOrder.payment_type.equalsIgnoreCase(PAYMENT_TYPE_UPI);
     }
 
-    public static boolean isUPIPaymentDone(OrderDetailModel mInvoiceModel){
+    public static boolean isUPIPaymentDone(SalesDetailsResp mInvoiceModel){
 
         if( mInvoiceModel.getPayment().size() == 0) {
             return false;
         }
 
-        if( mInvoiceModel.getPayment().get(0).getPaymentStatus() ==  null) {
+        if( mInvoiceModel.getPayment().get(0).payment_status ==  null) {
             return false;
         }
 
-        boolean isPaid = mInvoiceModel.getPayment().get(0).getPaymentStatus().equalsIgnoreCase("1");
+        boolean isPaid = mInvoiceModel.getPayment().get(0).payment_status.equalsIgnoreCase("1");
 
         return isPaid;
     }

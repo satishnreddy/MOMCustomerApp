@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+    <!--        app:elevation="0dp">-->
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:text="@string/order_name_header"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+
+    <View
+        android:id="@+id/seperator_line"
+        android:layout_below="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/fragment_billing_tabs"
+        style="@style/TabLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seperator_line"
+        android:background="@color/white"
+        app:layout_collapseMode="pin"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextColor="@color/grey">
+
+        <!--app:tabTextAppearance="@style/font_regular_24_hex258430"
+            app:tabSelectedTextColor="#fff"-->
+
+        <!--<android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="asdfasdf"/>
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="123123231"/>
+
+
+            <android.support.design.widget.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="123123231"/>-->
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <FrameLayout
+        android:layout_below="@+id/fragment_billing_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/fragment_billing_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/fragment_billing_fab_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:background="#88000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="gone" />
+    </FrameLayout>
+</RelativeLayout>

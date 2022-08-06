@@ -76,7 +76,9 @@ import com.mom.momcustomerapp.data.shared.ErrorModel;
 import com.mom.momcustomerapp.networkservices.ErrorUtils;
 import com.mom.momcustomerapp.networkservices.ServiceGenerator;
 import com.mom.momcustomerapp.views.login.SplachScreenActivity;
+import com.mom.momcustomerapp.views.orders.BillingFragment;
 import com.mom.momcustomerapp.views.products.ProductsInStockFragment;
+import com.mom.momcustomerapp.views.sales.SalesCartDetailsActivity;
 import com.mom.momcustomerapp.views.settings.SettingsFragmentNew;
 import com.mom.momcustomerapp.views.shared.BaseActivity;
 import com.mom.momcustomerapp.R;
@@ -135,8 +137,8 @@ public class Home_Tab_Activity extends BaseActivity implements
 
 
     HomeFragment home = new HomeFragment();
-    //CustomersFragment  customer = new CustomersFragment();
-    //BillingFragment orders = new BillingFragment();
+    SalesCartDetailsActivity cart = new SalesCartDetailsActivity();
+    BillingFragment orders = new BillingFragment();
     SettingsFragmentNew settings  = new SettingsFragmentNew();
     ProductsInStockFragment product = new ProductsInStockFragment();
 
@@ -212,16 +214,15 @@ public class Home_Tab_Activity extends BaseActivity implements
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, home).commit();
                 return true;
 
-            /*case R.id.orders:
+            case R.id.orders:
                 mFab.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, orders).commit();
                 return true;
-                */
-            /*case R.id.customer:
+
+            case R.id.customer:
                 mFab.setVisibility(View.GONE);
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, customer).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, cart).commit();
                 return true;
-                */
 
 
             case R.id.products:
