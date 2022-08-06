@@ -42,6 +42,7 @@ import com.mom.momcustomerapp.views.shared.BaseFragment;
 import com.mswipetech.sdk.network.util.Logs;
 
 import java.io.IOException;
+import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,6 +94,7 @@ public class PendingOrdersFragment extends BaseFragment
     private Home_Tab_Activity activity;
 
     public PendingOrdersFragment()
+
     {
         // Required empty public constructor
     }
@@ -102,6 +104,7 @@ public class PendingOrdersFragment extends BaseFragment
     {
         super.onAttach(context);
         activity = (Home_Tab_Activity) context;
+
     }
 
 
@@ -513,159 +516,7 @@ public class PendingOrdersFragment extends BaseFragment
     }
 
 
-    private void getOrdersBills_old(final int currentPage, int totalItemCount, String searchQuery)
-    {
-        /*
-        if (!billsInProgress)
-        {
-            billsInProgress = true;
-            if (totalItemCount <= mTotalRecordsBills || mTotalRecordsBills == 0)
-            {
-                if (currentPage <= 1 && mBillingRecyclerViewAdapter != null)
-                {
-                    mBillingRecyclerViewAdapter.startFreshLoading();
-                }
 
-
-                OrdersClient ordersClient = ServiceGenerator.createService(OrdersClient.class, MventryApp.getInstance().getToken());
-                Call<BillingListModelNewOuter> call = ordersClient.getOrdersBillsV2(
-                        MventryApp.getInstance().getCurrentStoreId(),searchQuery,currentPage + "");
-                call.enqueue(new Callback<BillingListModelNewOuter>()
-                {
-                    @Override
-                    public void onResponse(Call<BillingListModelNewOuter> call, Response<BillingListModelNewOuter> response) {
-                        billsInProgress = false;
-                        if (response.isSuccessful())
-                        {
-                            mPreviousPageNo++;
-                            mBillingListModel = response.body();
-                            if (mBillingListModel != null) {
-                                mPageNo = mBillingListModel.getCurrentPage();
-                                mTotalRecordsBills = mBillingListModel.getTotalRecords();
-
-                                if (currentPage <= 1) {
-                                    mBillingModelArrayList = new ArrayList<>(mBillingListModel.getData());
-                                } else if (currentPage < mPageNo) {
-                                    mBillingModelArrayList.addAll(mBillingListModel.getData());
-                                } else if (currentPage == mPageNo) {
-                                    if (mBillingModelArrayList.size() < mTotalRecordsBills) {
-                                        if (mPreviousPageNo <= mPageNo) {
-                                            mBillingModelArrayList.addAll(mBillingListModel.getData());
-                                        } else {
-                                            mPreviousPageNo = mPageNo;
-                                        }
-                                    }
-                                }
-
-                                if (mBillingRecyclerViewAdapter != null) {
-                                    mBillingRecyclerViewAdapter.setCurrentPage(mPageNo);
-                                } else {
-                                    initiateBillingRecyclerViewAdapter(mPageNo);
-                                }
-                                setDataToAdapter(mBillingModelArrayList);
-                            } else {
-                                showErrorDialog("Error", "Something went wrong: List is null");
-                            }
-                        } else {
-                            showErrorDialog(ErrorUtils.getErrorString(response));
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<BillingListModelNewOuter> call, Throwable t) {
-                        billsInProgress = false;
-                        showErrorDialog(ErrorUtils.getFailureError(t));
-                        if (!(t instanceof IOException)) {
-                        }
-                    }
-                });
-
-
-            } else {
-                billsInProgress = false;
-                if (mBillingRecyclerViewAdapter != null) {
-                    mBillingRecyclerViewAdapter.removeItem(null);
-                }
-            }
-        }
-
-         */
-    }
-
-
-
-   /* private void searchOrderBills(final int currentPage, String query) {
-        if (!billsInProgress) {
-            billsInProgress = true;
-            if (currentPage <= 1 && mBillingRecyclerViewAdapter != null) {
-                mBillingRecyclerViewAdapter.startFreshLoading();
-            }
-            OrdersClient ordersClient = ServiceGenerator.createService(OrdersClient.class, MventryApp.getInstance().getToken());
-
-            Call<BillingListModelNewOuter> call = ordersClient.searchOrderBills(currentPage + "", query);
-            call.enqueue(new Callback<BillingListModelNewOuter>() {
-                @Override
-                public void onResponse(Call<BillingListModelNewOuter> call, Response<BillingListModelNewOuter> response) {
-                    billsInProgress = false;
-                    if (response.isSuccessful()) {
-                        BillingListModelNewOuter searchBillingListModel = response.body();
-
-                        if (searchBillingListModel != null) {
-                            if (currentPage <= 1) {
-                                mBillingSearchModelArrayList = new ArrayList<>(searchBillingListModel.getData());
-                            } else if (currentPage < mPageNo) {
-                                mBillingSearchModelArrayList.addAll(searchBillingListModel.getData());
-                            } else if (currentPage == mPageNo) {
-                                if (mBillingSearchModelArrayList.size() < searchBillingListModel.getTotalRecords()) {
-                                    mBillingSearchModelArrayList.addAll(searchBillingListModel.getData());
-                                }
-                            }
-
-                            if (mBillingSearchModelArrayList != null) {
-                                if (mBillingRecyclerViewAdapter != null) {
-                                    mBillingRecyclerViewAdapter.setCurrentPage(searchBillingListModel.getCurrentPage());
-                                } else {
-                                    initiateBillingRecyclerViewAdapter(searchBillingListModel.getCurrentPage());
-                                }
-                                setDataToAdapter(mBillingSearchModelArrayList);
-                            } else {
-                                showErrorDialog("Error", "Something went wrong: List is null");
-                            }
-                        } else {
-                            showErrorDialog("Error", "Something went wrong: List is null");
-                        }
-                    } else {
-                        try {
-                            if (response.code() == 401) {
-                                showErrorDialog("Error", response.message());
-                            } else {
-                                Response<String> response1 = Response.success(response.errorBody().string().replace("\n", ""));
-                                parseError(response1, true);
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            if (response.body() != null) {
-                                showErrorDialog("Error", "Something went wrong: " + response.body());
-                            } else {
-                                showErrorDialog("Error", "Something went wrong: " + response.message());
-                            }
-                        }
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<BillingListModelNewOuter> call, Throwable t) {
-                    billsInProgress = false;
-                    if (t instanceof SocketTimeoutException || t instanceof IOException) {
-                        showErrorDialog("Network Error", "No Network. Please check connection");
-                    } else {
-                        showErrorDialog("Error", "Something went wrong : " + t.getMessage());
-                        Log.e("ERROR", "onFailure: Something went wrong", t);
-                    }
-                }
-            });
-        }
-    }*/
 
 
 

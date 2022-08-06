@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mom.momcustomerapp.R;
+import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrder;
 import com.mom.momcustomerapp.controllers.sales.models.BillingListModelNew;
 import com.mom.momcustomerapp.customviews.AbstractRecyclerViewLoadingAdapter;
 import com.mom.momcustomerapp.data.application.Consts;
@@ -24,14 +25,14 @@ import java.util.List;
  * Created by nishant on 17/08/16.
  */
 
-public class ReturnsRecyclerViewAdapter extends AbstractRecyclerViewLoadingAdapter<BillingListModelNew> {
+public class ReturnsRecyclerViewAdapter extends AbstractRecyclerViewLoadingAdapter<SalesCustOrder> {
 
     private RecyclerViewItemClickListener mRecyclerViewItemClickListener;
-    private List<BillingListModelNew> mDataset;
+    private List<SalesCustOrder> mDataset;
     private String mUserType;
     private int mInvoiceType = Consts.INVOICE_TYPE_BILL;
 
-    public ReturnsRecyclerViewAdapter(RecyclerView recyclerView, List<BillingListModelNew> items, RecyclerViewItemClickListener itemClickListener,
+    public ReturnsRecyclerViewAdapter(RecyclerView recyclerView, List<SalesCustOrder> items, RecyclerViewItemClickListener itemClickListener,
                                       OnLoadMoreListener onLoadMoreListener) {
         super(recyclerView, items, onLoadMoreListener);
         this.mDataset = items;
@@ -39,7 +40,7 @@ public class ReturnsRecyclerViewAdapter extends AbstractRecyclerViewLoadingAdapt
         this.mUserType = MOMApplication.getSharedPref().getUserType();;
     }
 
-    public ReturnsRecyclerViewAdapter(RecyclerView recyclerView, List<BillingListModelNew> items, int invoiceType, RecyclerViewItemClickListener itemClickListener, OnLoadMoreListener onLoadMoreListener) {
+    public ReturnsRecyclerViewAdapter(RecyclerView recyclerView, List<SalesCustOrder> items, int invoiceType, RecyclerViewItemClickListener itemClickListener, OnLoadMoreListener onLoadMoreListener) {
         super(recyclerView, items, onLoadMoreListener);
         this.mDataset = items;
         this.mRecyclerViewItemClickListener = itemClickListener;
@@ -57,7 +58,7 @@ public class ReturnsRecyclerViewAdapter extends AbstractRecyclerViewLoadingAdapt
     public void onBindItemViewHolder(RecyclerView.ViewHolder viewHolder, int position) {
         if (mDataset != null) {
             OrdersViewHolder ordersViewHolder = (OrdersViewHolder) viewHolder;
-            BillingListModelNew ordersModel = mDataset.get(position);
+            SalesCustOrder ordersModel = mDataset.get(position);
             ordersViewHolder.onBind(ordersModel, position);
         }
     }
@@ -83,15 +84,18 @@ public class ReturnsRecyclerViewAdapter extends AbstractRecyclerViewLoadingAdapt
             convertView.setOnClickListener(this);
         }
 
-        public void onBind(BillingListModelNew ordersModel, int position){
-            if (!TextUtils.isEmpty(ordersModel.getSaleId())) {
+        public void onBind(SalesCustOrder ordersModel, int position)
+        {
+            if (!TextUtils.isEmpty(ordersModel.sale_id)) {
                 this.position = position;
-                tvInvoiceId.setText(ordersModel.getInvoiceNumber());
-                tvCustomerName.setText(ordersModel.getCustomerName());
-                tvCustomerPhone.setText(ordersModel.getCustomerPhone());
-                tvStatus.setText(ordersModel.getDeliveryStatus());
+                tvInvoiceId.setText(ordersModel.invoice_number);
+                tvCustomerName.setText(ordersModel.customerName);
+                tvCustomerPhone.setText(ordersModel.customerPhone);
+                tvStatus.setText(ordersModel.delivery_status);
                 ivStatus.setImageResource(R.drawable.ic_order_returned);
-                tvDate.setText(DateTimeUtils.convertDtTimeInAppFormat(ordersModel.getSaleTime()));
+
+                String saleTime = ordersModel.sale_time;
+                tvDate.setText(TextUtils.isEmpty(saleTime) ? "-": DateTimeUtils.convertDtTimeInAppFormat(saleTime));
 
                 /*switch (ordersModel.getPaymentType()) {
                     case "Cash":
@@ -129,7 +133,7 @@ public class ReturnsRecyclerViewAdapter extends AbstractRecyclerViewLoadingAdapt
                 } else {
                     price = ordersModel.getTotalPrice() + "";
                 }*/
-                price = ordersModel.getTotalPrice() + "";
+                price = ordersModel.total_price + "";
                 try {
                     float priceamount = Float.parseFloat(price.replaceAll(",", ""));
                     price = Consts.getCommaFormatedStringWithDecimal(priceamount);

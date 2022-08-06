@@ -26,14 +26,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mom.momcustomerapp.R;
+import com.mom.momcustomerapp.controllers.orders.SalesCustomerOrdersController;
 import com.mom.momcustomerapp.controllers.orders.adapters.BillingMbasketRVAdapter;
 import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrder;
 import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrdersResp;
 import com.mom.momcustomerapp.controllers.sales.models.ORDER_STATUS;
 import com.mom.momcustomerapp.customviews.EmptyRecyclerView;
 import com.mom.momcustomerapp.data.application.Consts;
+import com.mom.momcustomerapp.data.shared.network.MOMNetworkResDataStore;
 import com.mom.momcustomerapp.interfaces.OnLoadMoreListener;
 import com.mom.momcustomerapp.interfaces.RecyclerViewItemClickListener;
+import com.mom.momcustomerapp.networkservices.ErrorUtils;
+import com.mom.momcustomerapp.observers.network.MOMNetworkResponseListener;
 import com.mom.momcustomerapp.views.home.HomeFragment;
 import com.mom.momcustomerapp.views.home.Home_Tab_Activity;
 import com.mom.momcustomerapp.views.shared.BaseFragment;
@@ -69,19 +73,25 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
     @BindView(R.id.layout_search_btn_go)
     ImageButton mBtnSearchGo;
 
+
     private BillingMbasketRVAdapter mBillingRecyclerViewAdapter;
     private SalesCustOrdersResp mBillingListModel;
     private ArrayList<SalesCustOrder> mBillingModelArrayList = new ArrayList<>();
-    private ArrayList<SalesCustOrder> mBillingSearchModelArrayList = new ArrayList<>();
+
+
     private int mPageNo = 0, mPreviousPageNo = 0;
     private int mTotalRecordsBills = 0;
     private boolean billsInProgress = false;
     private String searchQuery = "";
     private boolean ignoreLoadMore = true;
-    Home_Tab_Activity activity;
     @BindView(R.id.header)
     LinearLayout header;
-    public CompletedFragment() {
+
+    private Home_Tab_Activity activity;
+
+
+    public CompletedFragment()
+    {
         // Required empty public constructor
     }
 
@@ -91,28 +101,33 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
      *
      * @return A new instance of fragment CompletedFragment.
      */
-    public static CompletedFragment newInstance() {
+    public static CompletedFragment newInstance()
+    {
         CompletedFragment fragment = new CompletedFragment();
         return fragment;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-       // ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    public void onCreate(Bundle savedInstanceState)
+    {
+        // ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
 
-//        this.getSupportActionBar().hide();
+        //this.getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
     }
 
 
     @Override
-    public void onAttach(Context context) {
+    public void onAttach(Context context)
+    {
         super.onAttach(context);
-//       activity = (Home_Tab_Activity) context;
+        activity = (Home_Tab_Activity) context;
+
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_sales_completed_bills, container, false);
         ButterKnife.bind(this, rootView);
@@ -142,7 +157,7 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
-        /*loadBills();*/
+       // loadBills();
 
     }
 
@@ -241,7 +256,7 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
         mPreviousPageNo = 0;
         mBillingListModel = null;
         mBillingModelArrayList.clear();
-        mBillingSearchModelArrayList.clear();
+        //mBillingSearchModelArrayList.clear();
 
         mBillingRecyclerViewAdapter = new BillingMbasketRVAdapter(mRecyclerView, mBillingModelArrayList, this, this);
         mBillingRecyclerViewAdapter.setCurrentPage(mPageNo);
@@ -250,15 +265,11 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
     }
 
     @Override
-    public void OnRecyclerViewItemClick(int position) {
+    public void OnRecyclerViewItemClick(int position)
+    {
         Intent intent = new Intent(getActivity(), OrderDetailsActivity.class);
-        if (isSearchQuery) {
-            intent.putExtra(Consts.EXTRA_ORDER_ID, mBillingSearchModelArrayList.get(position).sale_id);
-        } else {
-            intent.putExtra(Consts.EXTRA_ORDER_ID, mBillingModelArrayList.get(position).sale_id);
-        }
 
-
+        intent.putExtra(Consts.EXTRA_ORDER_ID, mBillingModelArrayList.get(position).sale_id);
         intent.putExtra(Consts.EXTRA_INVOICE_RETURN, Consts.INVOICE_TYPE_BILL);
         intent.putExtra(Consts.EXTRA_CURRENT_STATUS_CODE, ORDER_STATUS.ORDER_STATUS_DELIVERED);
         intent.putExtra(Consts.EXTRA_CURRENT_STATUS_CODE_INT_STRING, mBillingModelArrayList.get(position).order_status);
@@ -270,14 +281,17 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
     public void onLoadMore(int currentPage, int totalItemCount)
     {
 
-        /*if (ignoreLoadMore){
+        if (ignoreLoadMore)
+        {
             ignoreLoadMore = false;
             return;
-        }*/
+        }
+
         if (isSearchQuery) {
-            searchOrderPartial(currentPage, searchQuery);
-        } else {
-            getOrdersPartial(currentPage, totalItemCount);
+            getOrdersCompleted(currentPage,totalItemCount, searchQuery);
+        }
+        else {
+            getOrdersCompleted(currentPage, totalItemCount,"");
         }
     }
 
@@ -285,135 +299,124 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
         mRecyclerView.setEmptyView(mEmptyView);
         mBillingRecyclerViewAdapter.removeItem(null);
 
-        if (isSearchQuery) {
-            mBillingSearchModelArrayList = new ArrayList<>(ordersModelList);
-        } else {
-            mBillingModelArrayList = new ArrayList<>(ordersModelList);
-        }
+
+        mBillingModelArrayList = new ArrayList<>(ordersModelList);
+
         mBillingRecyclerViewAdapter.resetItems(new ArrayList<>(ordersModelList));
     }
 
-    private void getOrdersPartial(final int currentPage, int totalItemCount)
+    private void getOrdersCompleted(final int currentPage, int totalItemCount, String searchQuery)
     {
-        /*
-        if (!billsInProgress) {
+
+        if (!billsInProgress)
+        {
             billsInProgress = true;
-            if (totalItemCount <= mTotalRecordsBills || mTotalRecordsBills == 0) {
-                if (currentPage <= 1 && mBillingRecyclerViewAdapter != null) {
+            if (totalItemCount <= mTotalRecordsBills || mTotalRecordsBills == 0)
+            {
+                if (currentPage <= 1 && mBillingRecyclerViewAdapter != null)
+                {
                     mBillingRecyclerViewAdapter.startFreshLoading();
                 }
-                OrdersClient ordersClient = ServiceGenerator.createService(OrdersClient.class, MventryApp.getInstance().getToken());
-                LogUtils.logd("query search","query "+searchQuery+"/.");
-                Call<BillingListModelNewOuter> call = ordersClient.getOrdersCompleted(MventryApp.getInstance().getCurrentStoreId(),currentPage + "",searchQuery);
-                call.enqueue(new Callback<BillingListModelNewOuter>() {
-                    @Override
-                    public void onResponse(Call<BillingListModelNewOuter> call, Response<BillingListModelNewOuter> response) {
-                        billsInProgress = false;
-                        if (response.isSuccessful()) {
-                            mPreviousPageNo++;
-                            mBillingListModel = response.body();
-                            if (mBillingListModel == null){
-                                showErrorDialog(getString(R.string.sww));
-                                return;
-                            }
-                            mPageNo = mBillingListModel.getCurrentPage();
-                            mTotalRecordsBills = mBillingListModel.getTotalRecords();
 
-                            if (currentPage <= 1) {
-                                mBillingModelArrayList = new ArrayList<>(mBillingListModel.getData());
-                            } else if (currentPage < mPageNo) {
-                                mBillingModelArrayList.addAll(mBillingListModel.getData());
-                            } else if (currentPage == mPageNo) {
-                                if (mBillingModelArrayList.size() < mTotalRecordsBills) {
-                                    if (mPreviousPageNo <= mPageNo) {
-                                        mBillingModelArrayList.addAll(mBillingListModel.getData());
-                                    } else {
-                                        mPreviousPageNo = mPageNo;
-                                    }
-                                }
-                            }
 
-                            if (mBillingListModel != null) {
-                                mBillingRecyclerViewAdapter.setCurrentPage(mPageNo);
-                                setDataToAdapter(mBillingModelArrayList);
-                            } else {
-                                showErrorDialog("Error", "Something went wrong: List is null");
-                            }
-                        }
-                        else
-                            showErrorDialog(ErrorUtils.getErrorString(response));
-                    }
+                try {
+                    new SalesCustomerOrdersController( activity, new CompletedFragment.CustomerNetworkObserver())
+                            .getSalesCustCompletedOrders(currentPage, searchQuery);
+                }
+                catch (Exception ex ) {
 
-                    @Override
-                    public void onFailure(Call<BillingListModelNewOuter> call, Throwable t) {
-                        billsInProgress = false;
-                        showErrorDialog(ErrorUtils.getFailureError(t));
-                        if (!(t instanceof IOException)) {
-                        }
-                    }
-                });
+                    showErrorDialog(ErrorUtils.getFailureError(ex));
+                }
+
+
             } else {
                 billsInProgress = false;
-                mBillingRecyclerViewAdapter.removeItem(null);
+                if (mBillingRecyclerViewAdapter != null) {
+                    mBillingRecyclerViewAdapter.removeItem(null);
+                }
             }
         }
 
-         */
     }
 
-    private void searchOrderPartial(final int currentPage, String query)
+
+    class CustomerNetworkObserver implements MOMNetworkResponseListener
     {
-        /*
-        if (!billsInProgress) {
-            billsInProgress = true;
-            if (currentPage <= 1 && mBillingRecyclerViewAdapter != null) {
-                mBillingRecyclerViewAdapter.startFreshLoading();
-            }
-            OrdersClient ordersClient = ServiceGenerator.createService(OrdersClient.class, MventryApp.getInstance().getToken());
-            LogUtils.logd("query search","query "+query+"/.");
-            Call<BillingListModelNewOuter> call = ordersClient.getOrdersCompleted(MventryApp.getInstance().getCurrentStoreId(),currentPage + "", query);
-            call.enqueue(new Callback<BillingListModelNewOuter>() {
-                @Override
-                public void onResponse(Call<BillingListModelNewOuter> call, Response<BillingListModelNewOuter> response) {
-                    billsInProgress = false;
-                    if (response.isSuccessful()) {
-                        BillingListModelNewOuter searchBillingListModel = response.body();
-                        if (searchBillingListModel == null){
-                            showErrorDialog(getString(R.string.sww));
-                            return;
-                        }
-                        if (currentPage <= 1) {
-                            mBillingSearchModelArrayList = new ArrayList<>(searchBillingListModel.getData());
-                        } else if (currentPage < mPageNo) {
-                            mBillingSearchModelArrayList.addAll(searchBillingListModel.getData());
-                        } else if (currentPage == mPageNo) {
-                            if (mBillingSearchModelArrayList.size() < searchBillingListModel.getTotalRecords()) {
-                                mBillingSearchModelArrayList.addAll(searchBillingListModel.getData());
+
+        @Override
+        public void onReponseData(MOMNetworkResDataStore mMOMNetworkResDataStore)
+        {
+            SalesCustOrdersResp responseData = (SalesCustOrdersResp) mMOMNetworkResDataStore;
+            if(responseData.status ==1)
+            {
+                billsInProgress = false;
+                mPreviousPageNo++;
+                mBillingListModel = responseData;
+
+                if (mBillingListModel != null)
+                {
+                    mPageNo = mBillingListModel.current_page ;
+                    mTotalRecordsBills = mBillingListModel.total_records;
+
+                    //the api call will actaully currentPage-1, so adding + 1 below to get
+                    //the actuall current page passed
+                    int currentPage = mPageNo +1;
+
+                    if (currentPage <= 1)
+                    {
+                        mBillingModelArrayList = new ArrayList<>(mBillingListModel.getData());
+                    }
+                    else if (currentPage < mPageNo)
+                    {
+                        mBillingModelArrayList.addAll(mBillingListModel.getData());
+                    }
+                    else if (currentPage == mPageNo)
+                    {
+                        if (mBillingModelArrayList.size() < mTotalRecordsBills)
+                        {
+                            if (mPreviousPageNo <= mPageNo)
+                            {
+                                mBillingModelArrayList.addAll(mBillingListModel.getData());
+                            }
+                            else {
+                                mPreviousPageNo = mPageNo;
                             }
                         }
-
-                        if (mBillingSearchModelArrayList != null) {
-                            mBillingRecyclerViewAdapter.setCurrentPage(searchBillingListModel.getCurrentPage());
-                            setDataToAdapter(mBillingSearchModelArrayList);
-                        } else {
-                            showErrorDialog("Error", "Something went wrong: List is null");
-                        }
-                    } else {
-                        showErrorDialog(ErrorUtils.getErrorString(response));
                     }
+
+                    if (mBillingRecyclerViewAdapter != null)
+                    {
+                        mBillingRecyclerViewAdapter.setCurrentPage(mPageNo);
+                    }
+                    else {
+                        initiateBillingRecyclerViewAdapter(mPageNo);
+                    }
+                    setDataToAdapter(mBillingModelArrayList);
+
+                }
+                else {
+                    showErrorDialog("Error", "Something went wrong: List is null");
                 }
 
-                @Override
-                public void onFailure(Call<BillingListModelNewOuter> call, Throwable t) {
-                    billsInProgress = false;
-                    showErrorDialog(ErrorUtils.getFailureError(t));
-                    if (!(t instanceof IOException)) {
-                    }
-                }
-            });
+
+            }
+            else {
+                String errorMsg = "Error : " + responseData.statusmsg + " " + responseData.statuscode;
+                billsInProgress = false;
+                showErrorDialog(errorMsg);
+            }
+
+
         }
+    }
 
-         */
+
+    private void initiateBillingRecyclerViewAdapter(int currentPage)
+    {
+        mBillingRecyclerViewAdapter = new BillingMbasketRVAdapter(mRecyclerView, mBillingModelArrayList, this, this);
+        mBillingRecyclerViewAdapter.setCurrentPage(currentPage);
+        mRecyclerView.setAdapter(mBillingRecyclerViewAdapter);
+        /*mRecyclerView.addItemDecoration(new LineDividerItemDecoration(getActivity()));*/
     }
 
     private void searchBarEditorAction(String searchString)

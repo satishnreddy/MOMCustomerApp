@@ -113,34 +113,8 @@ public class OrderDetailsActivity extends BaseActivity implements OnFragmentInte
 	TextView mTvDiscountAmount;
 	@BindView(R.id.activity_order_details_layout_discount)
 	LinearLayout mLayoutDiscount;
-	/*@BindView(R.id.activity_order_details_tv_vat_amount)
-	TextView mTvVatAmount;
-	@BindView(R.id.activity_order_details_layout_vat)
-	LinearLayout mLayoutVat;
-	@BindView(R.id.activity_order_details_tv_cgst_amount)
-	TextView mTvCgstAmount;
-	@BindView(R.id.activity_order_details_layout_cgst)
-	LinearLayout mLayoutCgst;
-	@BindView(R.id.activity_order_details_tv_sgst_amount)
-	TextView mTvSgstAmount;
-	@BindView(R.id.activity_order_details_layout_sgst)
-	LinearLayout mLayoutSgst;
-	@BindView(R.id.activity_order_details_layout_global_gst)
-	LinearLayout mLayoutTotalGST;
-	@BindView(R.id.activity_order_details_tv_igst_amount)
-	TextView mTvIgstAmount;
-	@BindView(R.id.activity_order_details_tv_gst_amount)
-	TextView mTvGSTAmount;
-	@BindView(R.id.activity_order_details_layout_igst)
-	LinearLayout mLayoutIgst;
-	@BindView(R.id.activity_order_details_tv_cst_value)
-	TextView mTvCstValue;
-	@BindView(R.id.activity_order_details_layout_cst)
-	LinearLayout mLayoutCst;
-	@BindView(R.id.activity_order_details_tv_shipping_amount)
-	TextView mTvShippingAmount;
-	@BindView(R.id.activity_order_details_layout_shipping)
-	LinearLayout mLayoutShipping;*/
+
+
 	@BindView(R.id.activity_order_details_tv_grand_total)
 	TextView mTvGrandTotal;
 	/*@BindView(R.id.activity_order_details_tv_remark)
@@ -337,33 +311,6 @@ public class OrderDetailsActivity extends BaseActivity implements OnFragmentInte
 		}
 	}
 
-	/*@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		if (invoiceType == Consts.INVOICE_TYPE_BILL) {
-			getMenuInflater().inflate(R.menu.menu_invoice_details, menu);
-
-			MenuItem menuReturn = menu.findItem(R.id.menu_return_product);
-			menuReturn.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					returnClicked();
-					return false;
-				}
-			});
-
-			MenuItem menuCustomFields = menu.findItem(R.id.menu_cart_invoice_custom_fields);
-			menuCustomFields.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-				@Override
-				public boolean onMenuItemClick(MenuItem item) {
-					editCustomFieldsClicked();
-					return false;
-				}
-			});
-		}
-		return true;
-	}*/
-
-
 
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -418,7 +365,7 @@ public class OrderDetailsActivity extends BaseActivity implements OnFragmentInte
 			mTvShopAddress.setText(mInvoiceModel.getStore().getStore_address() + " ," + mInvoiceModel.getStore().getStore_city());*/
 
 			mTvCustomerName.setText(mInvoiceModel.salesCustOrder.customerName);
-			titleheader.setText(mInvoiceModel.salesCustOrder.customerName);
+			titleheader.setText("Order - " + mInvoiceModel.salesCustOrder.sale_id);
 			final String phone_number = mInvoiceModel.salesCustOrder.customerPhone;
 			mTvCustomerPhone.setText(phone_number);
 
@@ -434,18 +381,7 @@ public class OrderDetailsActivity extends BaseActivity implements OnFragmentInte
 				});
 			}
 
-			/*if (TextUtils.isEmpty(mInvoiceModel.getCustomer().getEmail())) {
-				mTvCustomerEmail.setVisibility(View.GONE);
-			} else {
-				mTvCustomerEmail.setText(mInvoiceModel.getCustomer().getEmail());
-			}*/
 
-			/*if (TextUtils.isEmpty(mInvoiceModel.getCustomer().getCustomerGstin())) {
-				mLayoutCustomerGstin.setVisibility(View.GONE);
-			} else {
-				mLayoutCustomerGstin.setVisibility(View.VISIBLE);
-				mTvCustomerGstin.setText(mInvoiceModel.getCustomer().getCustomerGstin());
-			}*/
 
 			mTvDate.setText(convertDtTimeInAppFormat(mInvoiceModel.salesCustOrder.sale_time));
 			mTvInvoiceId.setText(mInvoiceModel.salesCustOrder.invoice_number);

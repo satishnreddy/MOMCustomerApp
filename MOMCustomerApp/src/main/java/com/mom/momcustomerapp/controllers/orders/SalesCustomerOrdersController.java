@@ -2,6 +2,7 @@ package com.mom.momcustomerapp.controllers.orders;
 
 import android.content.Context;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.JsonReader;
 import android.util.JsonToken;
 import com.mom.momcustomerapp.R;
@@ -62,11 +63,63 @@ public class SalesCustomerOrdersController extends NetworkManager
                 "&user_name=" + username + "&page=" + currentPage + "&search=" + searchQuery;
         mRequestUrl = MOMApplication.getInstance().getServerUrl() + "cust/getSalesCustPendingOrders";
 
-
         start();
 
 
     }
+
+    public void getSalesCustReturnedOrders(final int currentPage, String searchQuery) throws Exception
+    {
+        isPost = true;
+        mContentType = ContentType.FORM_URLENCODED;
+        mHeaderMessageParams.put("Authorization", "Bearer " +  MOMApplication.getInstance().getToken());
+
+        /*JSONObject requestData = new JSONObject();
+        requestData.put("username", userName);
+        requestData.put("password", pwd);
+        requestData.put("app_version", app_version);
+        requestData.put("login_source", "mobile");
+        */
+        String store_id = MOMApplication.getInstance().getStoreId();
+        String vendor_id = MOMApplication.getInstance().getVender();
+        String person_id = MOMApplication.getInstance().getPersonId();
+        String username = MOMApplication.getInstance().getMswipeUsername();
+
+
+
+        mPostData = "vendor_id=" + vendor_id + "&person_id=" + person_id + "&store_id=" + store_id +
+                "&user_name=" + username + "&page=" + currentPage + "&search=" + searchQuery;
+        mRequestUrl = MOMApplication.getInstance().getServerUrl() + "cust/getSalesCustRetunredOrders";
+        start();
+
+    }
+
+    public void getSalesCustCompletedOrders(final int currentPage, String searchQuery) throws Exception
+    {
+        isPost = true;
+        mContentType = ContentType.FORM_URLENCODED;
+        mHeaderMessageParams.put("Authorization", "Bearer " +  MOMApplication.getInstance().getToken());
+
+        /*JSONObject requestData = new JSONObject();
+        requestData.put("username", userName);
+        requestData.put("password", pwd);
+        requestData.put("app_version", app_version);
+        requestData.put("login_source", "mobile");
+        */
+        String store_id = MOMApplication.getInstance().getStoreId();
+        String vendor_id = MOMApplication.getInstance().getVender();
+        String person_id = MOMApplication.getInstance().getPersonId();
+        String username = MOMApplication.getInstance().getMswipeUsername();
+
+
+
+        mPostData = "vendor_id=" + vendor_id + "&person_id=" + person_id + "&store_id=" + store_id +
+                "&user_name=" + username + "&page=" + currentPage + "&search=" + searchQuery;
+        mRequestUrl = MOMApplication.getInstance().getServerUrl() + "cust/getSalesCustRetunredOrders";
+        start();
+
+    }
+
 
     @Override
     public void parse(String httpResponse, String errMsg, int statusCode)
@@ -117,7 +170,7 @@ public class SalesCustomerOrdersController extends NetworkManager
 
         }
 
-        Handler handler = new Handler(mContext.getMainLooper());
+        Handler handler = new Handler(Looper.getMainLooper());
         handler.post(new Runnable() {
             @Override
             public void run() {

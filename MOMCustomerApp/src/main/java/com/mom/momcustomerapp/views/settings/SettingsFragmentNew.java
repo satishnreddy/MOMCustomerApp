@@ -91,7 +91,7 @@ public class SettingsFragmentNew extends BaseFragment implements OnBackPressed {
         storesettings.setOnClickListener(new SafeClickListener(new SafeClickListener.Callback() {
             @Override
             public void onClick(View v) {
-                getFragmentManager().beginTransaction().replace(R.id.flFragment, new StoreSettingFragment()).commit();
+                //getFragmentManager().beginTransaction().replace(R.id.flFragment, new StoreSettingFragment()).commit();
 
             }
         }));

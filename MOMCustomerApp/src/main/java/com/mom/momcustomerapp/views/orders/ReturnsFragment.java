@@ -25,7 +25,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.mom.momcustomerapp.R;
+import com.mom.momcustomerapp.controllers.orders.SalesCustomerOrdersController;
+import com.mom.momcustomerapp.controllers.orders.adapters.BillingMbasketRVAdapter;
 import com.mom.momcustomerapp.controllers.orders.adapters.ReturnsRecyclerViewAdapter;
+import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrder;
+import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrdersResp;
 import com.mom.momcustomerapp.controllers.sales.api.OrdersClient;
 import com.mom.momcustomerapp.controllers.sales.models.BillingListModelNew;
 import com.mom.momcustomerapp.controllers.sales.models.BillingListModelNewOuter;
@@ -33,14 +37,18 @@ import com.mom.momcustomerapp.controllers.sales.models.ORDER_STATUS;
 import com.mom.momcustomerapp.customviews.EmptyRecyclerView;
 import com.mom.momcustomerapp.data.application.Consts;
 import com.mom.momcustomerapp.data.application.MOMApplication;
+import com.mom.momcustomerapp.data.shared.network.MOMNetworkResDataStore;
 import com.mom.momcustomerapp.interfaces.OnLoadMoreListener;
 import com.mom.momcustomerapp.interfaces.RecyclerViewItemClickListener;
 import com.mom.momcustomerapp.networkservices.ErrorUtils;
 import com.mom.momcustomerapp.networkservices.ServiceGenerator;
+import com.mom.momcustomerapp.observers.network.MOMNetworkResponseListener;
 import com.mom.momcustomerapp.views.home.HomeFragment;
+import com.mom.momcustomerapp.views.home.Home_Tab_Activity;
 import com.mom.momcustomerapp.views.shared.BaseFragment;
 import com.mswipetech.sdk.network.util.Logs;
 
+import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,9 +80,9 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
     ImageButton mBtnSearchGo;
 
     private ReturnsRecyclerViewAdapter mReturnsRecyclerViewAdapter;
-    private BillingListModelNewOuter mBillingListModel;
-    private ArrayList<BillingListModelNew> mBillingModelArrayList = new ArrayList<>();
-    private ArrayList<BillingListModelNew> mBillingSearchModelArrayList = new ArrayList<>();
+    private SalesCustOrdersResp mBillingListModel;
+    private ArrayList<SalesCustOrder> mBillingModelArrayList = new ArrayList<>();
+
     private int mPageNo = 0, mPreviousPageNo = 0;
     private int mTotalRecordsReturns = 0;
     private boolean returnsInProgress = false;
@@ -85,7 +93,11 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
     @BindView(R.id.header)
     LinearLayout header;
 
-    public ReturnsFragment() {
+    private Home_Tab_Activity activity;
+
+
+    public ReturnsFragment()
+    {
         // Required empty public constructor
     }
 
@@ -95,7 +107,8 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
      *
      * @return A new instance of fragment PendingOrdersFragment.
      */
-    public static ReturnsFragment newInstance() {
+    public static ReturnsFragment newInstance()
+    {
         ReturnsFragment fragment = new ReturnsFragment();
         return fragment;
     }
@@ -113,12 +126,7 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
         ButterKnife.bind(this, rootView);
 
 
-//        Bundle bundle = this.getArguments();
-//        if(bundle != null){
-//            if(bundle.get("key")=="declined"){
-//                header.setVisibility(View.VISIBLE);
-//            }
-//        }
+
 
         ImageView backarrow = rootView.findViewById(R.id.back_arrow);
         backarrow.setOnClickListener(new View.OnClickListener() {
@@ -150,6 +158,14 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
         super.onViewCreated(view, savedInstanceState);
         //loadReturns();
 
+
+    }
+
+    @Override
+    public void onAttach(Context context)
+    {
+        super.onAttach(context);
+        activity = (Home_Tab_Activity) context;
 
     }
 
@@ -248,7 +264,7 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
         mPreviousPageNo = 0;
         mBillingListModel = null;
         mBillingModelArrayList.clear();
-        mBillingSearchModelArrayList.clear();
+        //mBillingSearchModelArrayList.clear();
 
         mReturnsRecyclerViewAdapter = new ReturnsRecyclerViewAdapter(mRecyclerView, mBillingModelArrayList, this, this);
         mReturnsRecyclerViewAdapter.setCurrentPage(mPageNo);
@@ -257,17 +273,16 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
     }
 
     @Override
-    public void OnRecyclerViewItemClick(int position) {
+    public void OnRecyclerViewItemClick(int position)
+    {
         Intent intent = new Intent(getActivity(), OrderDetailsActivity.class);
-        if (isSearchQuery) {
-            intent.putExtra(Consts.EXTRA_ORDER_ID, mBillingSearchModelArrayList.get(position).getSaleId());
-        } else {
-            intent.putExtra(Consts.EXTRA_ORDER_ID, mBillingModelArrayList.get(position).getSaleId());
-        }
-        intent.putExtra(Consts.EXTRA_INVOICE_RETURN, Consts.INVOICE_TYPE_RETURN);
-        intent.putExtra(Consts.EXTRA_CURRENT_STATUS_CODE, ORDER_STATUS.ORDER_STATUS_RETURNED);
-        intent.putExtra(Consts.EXTRA_CURRENT_STATUS_CODE_INT_STRING,
-                mBillingModelArrayList.get(position).getOrder_statusInIntString());
+        intent.putExtra(Consts.EXTRA_ORDER_ID, mBillingModelArrayList.get(position).sale_id);
+        intent.putExtra(Consts.EXTRA_ORDER_AMOUNT, mBillingModelArrayList.get(position).total_price);
+        intent.putExtra(Consts.EXTRA_ORDER_INVOCIE, mBillingModelArrayList.get(position).invoice_number);
+        /*}*/
+        intent.putExtra(Consts.EXTRA_INVOICE_RETURN, Consts.INVOICE_TYPE_BILL);
+        intent.putExtra(Consts.EXTRA_CURRENT_STATUS_CODE, mBillingModelArrayList.get(position).delivery_status);
+        intent.putExtra(Consts.EXTRA_CURRENT_STATUS_CODE_INT_STRING, mBillingModelArrayList.get(position).order_status);
         startActivityForResult(intent, Consts.REQUEST_CODE_VIEW_INVOICE);
     }
 
@@ -282,33 +297,140 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
         }
 
         if (isSearchQuery) {
-            //getOrdersReturns(currentPage, totalItemCount, searchQuery);
-        } else {
-            //getOrdersReturns(currentPage, totalItemCount,"");
-        }
-
-        /*if (isSearchQuery) {
-            searchOrderReturns(currentPage, searchQuery);
+            getOrdersReturns(currentPage, totalItemCount, searchQuery);
         } else {
             getOrdersReturns(currentPage, totalItemCount,"");
-        }*/
+        }
+
+
     }
 
-    private void setDataToAdapter(List<BillingListModelNew> ordersModelList) {
+    private void setDataToAdapter(List<SalesCustOrder> ordersModelList) {
         mRecyclerView.setEmptyView(mEmptyView);
         mReturnsRecyclerViewAdapter.removeItem(null);
 
-        if (isSearchQuery) {
-            mBillingSearchModelArrayList = new ArrayList<>(ordersModelList);
-        } else {
-            mBillingModelArrayList = new ArrayList<>(ordersModelList);
-        }
+
+        mBillingModelArrayList = new ArrayList<>(ordersModelList);
+
         mReturnsRecyclerViewAdapter.resetItems(new ArrayList<>(ordersModelList));
+    }
+
+    private void initiateBillingRecyclerViewAdapter(int currentPage)
+    {
+        mReturnsRecyclerViewAdapter = new ReturnsRecyclerViewAdapter(mRecyclerView, mBillingModelArrayList, this, this);
+        mReturnsRecyclerViewAdapter.setCurrentPage(currentPage);
+        mRecyclerView.setAdapter(mReturnsRecyclerViewAdapter);
+        /*mRecyclerView.addItemDecoration(new LineDividerItemDecoration(getActivity()));*/
     }
 
     private void getOrdersReturns(final int currentPage, int totalItemCount, String searchQuery)
     {
-        if (!returnsInProgress) {
+
+        if (!returnsInProgress)
+        {
+            returnsInProgress = true;
+            if (totalItemCount <= mTotalRecordsReturns || mTotalRecordsReturns == 0)
+            {
+                if (currentPage <= 1 && mReturnsRecyclerViewAdapter != null)
+                {
+                    mReturnsRecyclerViewAdapter.startFreshLoading();
+                }
+
+
+                try {
+                    new SalesCustomerOrdersController( activity, new ReturnsFragment.CustomerNetworkObserver())
+                            .getSalesCustReturnedOrders(currentPage, searchQuery);
+                }
+                catch (Exception ex ) {
+
+                    showErrorDialog(ErrorUtils.getFailureError(ex));
+                }
+
+
+            } else {
+                returnsInProgress = false;
+                if (mReturnsRecyclerViewAdapter != null) {
+                    mReturnsRecyclerViewAdapter.removeItem(null);
+                }
+            }
+        }
+
+    }
+
+    class CustomerNetworkObserver implements MOMNetworkResponseListener
+    {
+
+        @Override
+        public void onReponseData(MOMNetworkResDataStore mMOMNetworkResDataStore)
+        {
+            SalesCustOrdersResp responseData = (SalesCustOrdersResp) mMOMNetworkResDataStore;
+            if(responseData.status ==1)
+            {
+                returnsInProgress = false;
+                mPreviousPageNo++;
+                mBillingListModel = responseData;
+
+                if (mBillingListModel != null)
+                {
+                    mPageNo = mBillingListModel.current_page ;
+                    mTotalRecordsReturns = mBillingListModel.total_records;
+
+                    //the api call will actaully currentPage-1, so adding + 1 below to get
+                    //the actuall current page passed
+                    int currentPage = mPageNo +1;
+
+                    if (currentPage <= 1)
+                    {
+                        mBillingModelArrayList = new ArrayList<>(mBillingListModel.getData());
+                    }
+                    else if (currentPage < mPageNo)
+                    {
+                        mBillingModelArrayList.addAll(mBillingListModel.getData());
+                    }
+                    else if (currentPage == mPageNo)
+                    {
+                        if (mBillingModelArrayList.size() < mTotalRecordsReturns)
+                        {
+                            if (mPreviousPageNo <= mPageNo)
+                            {
+                                mBillingModelArrayList.addAll(mBillingListModel.getData());
+                            }
+                            else {
+                                mPreviousPageNo = mPageNo;
+                            }
+                        }
+                    }
+
+                    if (mReturnsRecyclerViewAdapter != null)
+                    {
+                        mReturnsRecyclerViewAdapter.setCurrentPage(mPageNo);
+                    }
+                    else {
+                        initiateBillingRecyclerViewAdapter(mPageNo);
+                    }
+                    setDataToAdapter(mBillingModelArrayList);
+
+                }
+                else {
+                    showErrorDialog("Error", "Something went wrong: List is null");
+                }
+
+
+            }
+            else {
+                String errorMsg = "Error : " + responseData.statusmsg + " " + responseData.statuscode;
+                returnsInProgress = false;
+                showErrorDialog(errorMsg);
+            }
+
+
+        }
+    }
+
+    private void getOrdersReturns_old(final int currentPage, int totalItemCount, String searchQuery)
+    {   /*
+        if (!returnsInProgress)
+        {
             returnsInProgress = true;
             if (totalItemCount <= mTotalRecordsReturns || mTotalRecordsReturns == 0) {
                 if (currentPage <= 1 && mReturnsRecyclerViewAdapter != null) {
@@ -368,6 +490,7 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
                 mReturnsRecyclerViewAdapter.removeItem(null);
             }
         }
+        */
     }
 
     /*private void searchOrderReturns(final int currentPage, String query) {

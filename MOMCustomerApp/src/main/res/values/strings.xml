@@ -785,7 +785,7 @@
     <string name="title_customer_past_orders">Past Orders</string>
     <string name="order_detail_label_payment_status">Payment status</string>
     <string name="app_namev2">>MOM Store</string>
-    <string name="app_name_meraonlinestore">MOM Store</string>
+    <string name="app_name_meraonlinestore">MOM Store App</string>
     <string name="product_name_empty">Product name cannot be empty</string>
     <string name="product_amount_empty">Amount cannot be empty</string>
     <string name="invalid_server_response">Invalid response from server.</string>
