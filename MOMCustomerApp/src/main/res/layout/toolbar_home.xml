@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ToolbarStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_scrollFlags="scroll"
+    android:background="@color/color_toolbar_mbasket"
+    android:elevation="0dp">
+
+    <!--  Notification icon and batch-->
+    <!--<FrameLayout
+        tools:visibility="gone"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/basic_margin"
+        android:layout_marginRight="@dimen/basic_margin"
+        android:background="@color/transparent"
+        android:visibility="gone">
+
+        &lt;!&ndash;<ImageButton
+            tools:visibility="visible"
+            android:id="@+id/toolbar_imgbtn_notifications"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@color/transparent"
+            android:contentDescription="@string/content_description"
+            android:onClick="onNotifClicked"
+            android:scaleType="center"
+            android:src="@drawable/ic_notifications_white_24dp" />&ndash;&gt;
+
+        &lt;!&ndash;<TextView
+            tools:visibility="visible"
+            android:id="@+id/toolbar_tv_notifcount"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="end|top"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_circular_rectangle_grey300"
+            android:gravity="center"
+            android:minWidth="20dp"
+            android:onClick="onNotifClicked"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text=""
+            android:textColor="@color/orange800"
+            android:textSize="10sp"
+            android:visibility="gone" />&ndash;&gt;
+    </FrameLayout>-->
+
+    <!-- Cart Button and Batch-->
+    <!--<FrameLayout
+        tools:visibility="gone"
+        android:id="@+id/toolbar_cart"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/basic_margin"
+        android:layout_marginRight="@dimen/basic_margin">
+
+        <ImageButton
+            tools:visibility="visible"
+            android:id="@+id/toolbar_imgbtn_cart"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@color/transparent"
+            android:contentDescription="@string/content_description"
+            android:onClick="onCartClick"
+            android:visibility="gone"
+            android:scaleType="center"
+            android:src="@drawable/ic_cart_white_24dp" />
+
+        <TextView
+            tools:visibility="visible"
+            android:id="@+id/toolbar_tv_cartcount"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="end|top"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/bg_circular_rectangle_grey300"
+            android:gravity="center"
+            android:minWidth="20dp"
+            android:onClick="onCartClick"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text=""
+            android:textColor="@color/orange800"
+            android:textSize="10sp"
+            android:visibility="gone" />
+    </FrameLayout>
+-->
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:id="@+id/ll_mbasket_logo"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginRight="11dp"-->
+<!--        android:layout_marginEnd="11dp">-->
+
+<!--        <ImageView-->
+<!--            tools:visibility="gone"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:paddingTop="@dimen/padding_3fourth"-->
+<!--            android:visibility="gone"-->
+<!--            android:id="@+id/iv_mbasket_logo"-->
+<!--            android:paddingBottom="@dimen/padding_3fourth"-->
+<!--            android:src="@drawable/ic_app_logo_v2"-->
+<!--            />-->
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:id="@+id/toolbar_home_tv_stores_name"-->
+<!--            android:gravity="center"-->
+<!--            android:textSize="18sp"-->
+<!--            android:maxLines="1"-->
+<!--            android:ellipsize="end"-->
+<!--            android:textColor="@color/white"-->
+<!--            style="@style/AppNameFont"-->
+<!--            android:text="@string/app_name_meraonlinestore"/>-->
+
+<!--    </LinearLayout>-->
+
+<!--</androidx.appcompat.widget.Toolbar>-->
+
+    <!--<LinearLayout
+        android:layout_width="55dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:id="@+id/ll_stores_icon"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_store_icon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Store"
+            android:layout_gravity="center"
+            style="@style/font_medium_12_white"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>-->
+</LinearLayout>

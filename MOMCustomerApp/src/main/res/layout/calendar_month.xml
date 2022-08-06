@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mom.momcustomerapp.customviews.MonthView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/calendar_monthview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/half_margin"
+    android:layout_marginTop="@dimen/half_margin"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/calendar_title"
+            style="@style/CalendarTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/calendar_month_title_bottommargin"
+            android:layout_marginTop="@dimen/calendar_month_topmargin"
+            android:background="@color/white_27"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/basic_padding" />
+
+        <com.mom.momcustomerapp.customviews.CalendarGridView
+            android:id="@+id/calendar_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.mom.momcustomerapp.customviews.CalendarRowView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/calendar_day_headers_paddingbottom">
+
+                <TextView
+                    style="@style/CalendarCell.DayHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/CalendarCell.DayHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/CalendarCell.DayHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/CalendarCell.DayHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/CalendarCell.DayHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/CalendarCell.DayHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    style="@style/CalendarCell.DayHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </com.mom.momcustomerapp.customviews.CalendarRowView>
+
+            <include layout="@layout/calendar_week" />
+
+            <include layout="@layout/calendar_week" />
+
+            <include layout="@layout/calendar_week" />
+
+            <include layout="@layout/calendar_week" />
+
+            <include layout="@layout/calendar_week" />
+
+            <include layout="@layout/calendar_week" />
+        </com.mom.momcustomerapp.customviews.CalendarGridView>
+    </LinearLayout>
+</com.mom.momcustomerapp.customviews.MonthView>

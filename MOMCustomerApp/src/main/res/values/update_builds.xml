@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<string name="update_dev">https://s3.ap-south-1.amazonaws.com/mventry-android/dev/version.json</string>-->
+    <!--<string name="update_demo">https://s3.ap-south-1.amazonaws.com/mventry-android/demo/version.json</string>-->
+    <!--<string name="update_prod">https://s3.ap-south-1.amazonaws.com/mventry-android/prod/version.json</string>-->
+
+    <string name="update_dev" translatable="false">http://chip.mswipetech.com/mobapps/Android/meraonlinestore/uat/version.json</string>
+    <string name="update_demo" translatable="false">https://s3.ap-south-1.amazonaws.com/mventry-plus/Demo/versiondname.json</string>
+    <string name="update_prod" translatable="false">https://s3.ap-south-1.amazonaws.com/mventry-plus/Prod/versiondname.json</string>
+
+
+
+    <!--
+    New urls for app updates
+    http://chip.mswipetech.com/mobapps/Android/meraonlinestore/uat/version.json
+
+    -->
+
+
+
+</resources>

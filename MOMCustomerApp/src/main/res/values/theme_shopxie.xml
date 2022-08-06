@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ShopXie"/>
+
+    <style name="_ShopXie" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- colorPrimary is used for the default action bar background -->
+        <item name="colorPrimary">@color/color_413D3D</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated
+             which is used to tint widgets -->
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+
+        <item name="colorButtonNormal">@color/button_color_state</item>
+        <item name="android:textAppearanceButton">@style/ButtonTextStyle</item>
+
+        <item name="android:buttonStyle">@style/ButtonAccentStyle</item>
+
+        <item name="android:windowBackground">@color/background</item>
+
+        <item name="vpiCirclePageIndicatorStyle">@style/vpiCirclePageIndicatorStyle</item>
+
+        <item name="android:scrollbarThumbVertical">@drawable/custom_scrollbar_thumb</item>
+
+        <item name="android:titleTextColor" tools:targetApi="m">@color/textColorPrimary</item>
+        <item name="actionBarStyle">@style/ToolbarStyle</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="homeAsUpIndicator">@drawable/ic_back_white_24dp</item>
+        <item name="navigationIcon">@drawable/ic_back_white_24dp</item>
+
+        <item name="android:textViewStyle">@style/ShopXie.Widget.TextView</item>
+        <item name="android:actionOverflowButtonStyle">@style/ShopXie.Widget.menuOverflow</item>
+
+    </style>
+
+    <style name="BarcodeTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
+    <style name="AppThemeWhiteMenuText" parent="@style/_ShopXie" >
+        <item name="android:actionMenuTextColor">@color/white</item>
+    </style>
+</resources>

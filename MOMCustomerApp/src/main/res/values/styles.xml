@@ -1,0 +1,194 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+    </style>
+
+
+<!--    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">-->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
+<!--        <item name="android:windowFullscreen">true</item>-->
+<!--    </style>-->
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/colorAccent</item>
+    </style>
+
+    <style name="ButtonAccentStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/btn_colored_accent_state</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+    </style>
+
+    <style name="ButtonGreyStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background">@drawable/btn_colored_graphite_state</item>
+        <item name="android:textAppearance">@style/ButtonTextStyle</item>
+    </style>
+
+    <style name="ButtonBorderlessAccentStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:layout_marginLeft">@dimen/half_margin</item>
+        <item name="android:layout_marginRight">@dimen/basic_margin</item>
+        <item name="android:textAppearance">@style/ButtonBorderlessAccentTextStyle</item>
+    </style>
+
+    <style name="ButtonBorderlessGreyStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:layout_marginLeft">@dimen/half_margin</item>
+        <item name="android:layout_marginRight">@dimen/basic_margin</item>
+        <item name="android:textAppearance">@style/ButtonBorderlessGreyTextStyle</item>
+    </style>
+
+    <style name="ButtonOutlineAccentStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_outline_accent</item>
+        <item name="android:textAppearance">@style/ButtonBorderlessAccentTextStyle</item>
+    </style>
+
+    <style name="ButtonTextStyle" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textAppearance">@style/font_medium_14_white</item>
+        <item name="android:textColor">@color/button_text_state</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ButtonBorderlessGreyTextStyle" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textAppearance">@style/font_medium_14_graphite</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ButtonBorderlessAccentTextStyle" parent="TextAppearance.AppCompat.Widget.Button.Borderless.Colored">
+        <item name="android:textAppearance">@style/font_medium_14_money</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TitleDialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="BorderlessDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="BorderlessFullDialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <style name="BorderlessDialogWithoutDim">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="vpiCirclePageIndicatorStyle">
+        <item name="fillColor">@color/white</item>
+        <item name="pageColor">@color/transparent</item>
+        <item name="strokeColor">@color/white</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="radius">4dp</item>
+        <item name="centered">true</item>
+    </style>
+
+
+    <style name="bg_elevation">
+        <item name="android:background">@drawable/bg_rectangle</item>
+        <item name="android:stateListAnimator" tools:targetApi="lollipop">
+            @animator/anim_elevation_selection
+        </item>
+    </style>
+
+    // Calender Styles
+
+    <style name="CalendarDialog">
+        <item name="android:windowMinWidthMinor">@dimen/dialog_min_size</item>
+        <item name="android:windowMinWidthMajor">@dimen/dialog_min_size</item>
+    </style>
+
+
+    <style name="CalendarTitle">
+        <item name="android:textSize">@dimen/calendar_text_medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CalendarCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+    </style>
+
+    <style name="CalendarCell.DayHeader">
+        <item name="android:textSize">@dimen/calendar_text_small</item>
+    </style>
+
+    <style name="CalendarCell.CalendarDate">
+        <item name="android:textSize">@dimen/calendar_text_medium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TreeNodeStyle">
+        <item name="android:paddingLeft">20dp</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/grey600</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+<!--
+    <style name="cardViewElevation5dpCorner5dp">
+        <item name="android:elevation">5dp</item>
+        <item name="android:radius">5dp</item>
+    </style>-->
+
+    <style name="ProductListTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:actionMenuTextColor">@color/white</item>
+    </style>
+
+    <style name="MbasketLabelTheme" parent="font_regular_14_hex258430">
+        <item name="android:textColor">@color/color_717171</item>
+    </style>
+
+
+
+    <style name="MbasketValueTheme" parent="font_medium_14_hex258430">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

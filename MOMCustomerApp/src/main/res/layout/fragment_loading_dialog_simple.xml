@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="40dp"
+    android:paddingStart="30dp"
+    android:paddingEnd="30dp"
+    android:paddingBottom="10dp"
+    android:background="@drawable/bg_rounded_black_translucent">
+
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/loading_drawable" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:id="@+id/tv_loader_text"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_normal"
+        style="@style/font_regular_16_slate"
+        tools:text="@string/signup_loading_message"
+        android:text="@string/processing"/>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dp"
+    android:background="@drawable/gradient_green_mbasket"
+    android:layout_height="150dp"
+    android:padding="@dimen/padding_medium"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/half_padding">
+
+    <TextView
+        style="@style/TextAppearance.FontPath.Italic"
+        android:paddingTop="20dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:text="Welcome!" />
+
+    <TextView
+        style="@style/font_medium_24_white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:text="Mega Supermart" />
+
+</LinearLayout>

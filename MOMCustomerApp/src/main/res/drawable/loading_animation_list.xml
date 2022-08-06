@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/loading_animation_list"
+    android:oneshot="false">
+    <item
+        android:drawable="@drawable/frame_00"
+        android:duration="100" />
+</animation-list>
+
+    <!--android:drawable="@drawable/loading_frame_0"-->

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/empty"
+        android:icon="@drawable/ic_menu_24dp"
+        android:title="More"
+        app:showAsAction="always">
+
+        <menu>
+
+            <item
+                android:id="@+id/menu_subcategory_delete_category"
+                android:title="@string/delete_category"
+                 />
+
+            <item
+                android:id="@+id/menu_subcategory_archived_subcategories"
+                android:title="@string/archived_subcategories"
+                 />
+
+        </menu>
+
+    </item>
+
+</menu>

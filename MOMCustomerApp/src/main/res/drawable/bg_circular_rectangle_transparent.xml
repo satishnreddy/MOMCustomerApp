@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape  android:shape="rectangle">
+            <solid android:color="@color/grey600" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <item android:id="@+id/bg_circular_rectangle_transparent"
+        android:left="0dp"
+        android:top="0dp"
+        android:right="1px"
+        android:bottom="2px">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/transparent" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+</layer-list>

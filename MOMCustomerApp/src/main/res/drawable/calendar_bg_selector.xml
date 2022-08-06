@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright 2012 Square, Inc. -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:drawable="@drawable/bg_calendar_selected_first" app:tsquare_state_range_first="true" />
+    <item android:drawable="@drawable/bg_calendar_selected_middle" app:tsquare_state_range_middle="true" />
+    <item android:drawable="@drawable/bg_calendar_selected_last" app:tsquare_state_range_last="true" />
+
+    <item android:drawable="@drawable/bg_calendar_selected" android:state_selected="true" />
+
+    <item android:drawable="@drawable/bg_calendar_selected" android:state_pressed="true" />
+
+    <item app:tsquare_state_current_month="false">
+        <color android:color="@color/calendar_inactive_month_bg" />
+    </item>
+
+    <item app:tsquare_state_highlighted="true">
+        <color android:color="@color/calendar_highlighted_day_bg" />
+    </item>
+
+    <item android:drawable="@drawable/bg_calendar_today" app:tsquare_state_today="true" />
+
+    <item android:drawable="@drawable/bg_calendar_day" />
+</selector>

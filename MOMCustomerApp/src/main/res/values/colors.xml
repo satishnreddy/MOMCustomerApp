@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blue">#4F93CF</color>
+
+
+    <color name="colorPrimary">@color/money</color>
+    <color name="colorPrimaryDark">#404341</color>
+    <color name="colorPrimaryLight">#90cf73</color>
+    <color name="colorAccent">@color/money</color>
+    <color name="colorAccent_50">@color/money_50</color>
+    <color name="colorAccentFallback">#42A902</color>
+    <color name="background">@color/white</color>
+    <color name="textColorPrimary">@color/carbon</color>
+    <color name="colorControlNormal">@color/colorAccent_50</color>
+    <color name="colorControlActivated">@color/colorAccent</color>
+    <color name="grey">#606062</color>
+
+    //Grey Palette
+    <color name="grey50">#FAFAFA</color>
+    <color name="grey95">#F2F2F2</color>
+    <color name="grey100">#F5F5F5</color>
+    <color name="grey200">#EEEEEE</color>
+    <color name="grey300">#E0E0E0</color>
+    <color name="grey350">#C8C8C8</color>
+    <color name="grey400">#BDBDBD</color>
+    <color name="grey500">#9E9E9E</color>
+    <color name="grey600">#757575</color>
+    <color name="grey700">#616161</color>
+    <color name="grey800">#424242</color>
+    <color name="grey900">#212121</color>
+
+
+    //new design
+    <color name="oldslate">#3e435c</color>
+    <color name="pale_grey">#eef3f6</color>
+    <color name="white_27">#44d7d7d7</color>
+
+
+    //Basic colors
+    <color name="black">#000000</color>
+    <color name="black_38">#61000000</color>
+    <color name="black_80">#CC000000</color>
+    <color name="black_70">#B3000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_700">#B3FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+
+    <color name="snackbar_background_color">#323232</color>
+
+    <color name="orange800">#EF6C00</color>
+
+    //Calendar colors
+    <color name="calendar_active_month_bg">@color/transparent</color>
+    <color name="calendar_bg">@color/transparent</color>
+    <color name="calendar_divider">@color/transparent</color>
+    <color name="calendar_inactive_month_bg">@color/grey200</color>
+    <color name="calendar_selected_day_bg">#ff379bff</color>
+    <color name="calendar_highlighted_day_bg">@color/colorAccent</color>
+    <color name="calendar_selected_range_bg">#ff96caff</color>
+    <color name="calendar_text_inactive">@color/grey200</color>
+    <color name="calendar_text_active">@color/white</color>
+    <color name="calendar_text_selected">@color/white</color>
+    <color name="calendar_text_unselectable">@color/grey200</color>
+    <color name="calendar_text_highlighted">@color/white</color>
+
+
+    <!-- MaterialDrawer DEFAULT colors -->
+    <color name="material_drawer_background">@color/white</color>
+    <!-- Material DEFAULT text / items colors -->
+    <color name="material_drawer_primary_text">@color/slate</color>
+    <color name="material_drawer_primary_icon">#8A000000</color>
+    <color name="material_drawer_secondary_text">#343433</color>
+    <color name="material_drawer_hint_text">#343433</color>
+    <color name="material_drawer_divider">@color/transparent</color>
+    <!-- Material DEFAULT drawer colors -->
+    <color name="material_drawer_selected">#E4E4E3</color>
+    <color name="material_drawer_selected_text">@color/slate</color>
+    <color name="material_drawer_header_selection_text">@color/colorAccent</color>
+
+
+<!--    <color name="money">#5F9E45</color>-->
+    <color name="money">#413d3d</color>
+
+    <color name="carbon">#414141</color>
+    <color name="graphite">#6A6969</color>
+    <color name="slate">#959595</color>
+    <color name="diamond">#E8E8E8</color>
+    <color name="money_50">#805F9E45</color>
+    <color name="image_background">#99E666</color>
+    <color name="forest_green_258430">#258430</color>
+    <color name="green_alpha_0p5">#8876BE40</color>
+    <color name="white_alpha_0p78">#C8FFFFFF</color>
+    <color name="color_258430_alph38">#47258430</color>
+    <color name="green_2A8402">#2A8402</color>
+    <color name="hint_5d5d5d">#5D5D5D</color>
+
+    <!--
+    <color name="color_258430">#258430</color>
+    -->
+    <color name="color_258430">@color/white</color>
+
+
+
+    <color name="color_70BB41">#70BB41</color>
+    <color name="view_bg_light_green">#F3FFF2</color>
+    <color name="view_bg_white">@color/white</color>
+    <color name="view_bg_mbasket">@color/view_bg_white</color>
+    <color name="color_E4F8E2">#E4F8E2</color>
+    <color name="color_2F8807">#2F8807</color>
+
+    <color name="color_gradient_mid">@color/color_413D3D</color>
+    <color name="color_409516">#409516</color>
+    <color name="color_70BB41_disabled">#4770BB41</color>
+    <color name="color_F3FFF2">#F3FFF2</color>
+    <color name="color_413D3D">#413d3d</color>
+
+    <color name="color_toolbar">#353333</color>
+
+    <color name="sugar_cane">#F3FFF2</color>
+    <color name="color_898989">#898989</color>
+    <color name="color_01B108">@color/color_413D3D</color>
+    <color name="color_mbasket_green">@color/color_01B108</color>
+    <color name="color_717171">#717171</color>
+    <color name="color_AAAAAA">#AAAAAA</color>
+    <color name="color_191919">#191919</color>
+    <color name="color_F26A17">#F26A17</color>
+
+    <color name="color_toolbar_mbasket">@color/color_413D3D</color>
+    <color name="color_5d5d5d_0p5">#885D5D5D</color>
+    <color name="color_5d5d5d">#5D5D5D</color>
+
+</resources>

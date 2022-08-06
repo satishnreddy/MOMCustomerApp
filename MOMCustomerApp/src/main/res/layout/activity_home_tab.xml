@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.home.Home_Tab_Activity">
+
+
+    <FrameLayout android:id="@+id/flFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="0dp"
+        tools:ignore="MissingConstraints">
+
+        <include
+            android:id="@+id/home_toolbar"
+            layout="@layout/toolbar_home"
+            app:layout_collapseMode="pin"
+            app:layout_scrollFlags="scroll|snap" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:id="@+id/main_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fragment_home_fab"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginBottom="80dp"
+            android:layout_marginEnd="@dimen/fab_margin_right"
+            android:layout_marginRight="@dimen/fab_margin_right"
+            android:scaleType="center"
+            android:src="@drawable/ic_plus_24dp_white"
+            app:fabSize="normal"
+            app:backgroundTint="@color/color_01B108"
+            app:layout_anchorGravity="bottom|end"
+            app:rippleColor="@color/white_700" />
+
+
+<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--            android:id="@+id/fragment_home_fab"-->
+<!--            style="@style/Widget.Design.FloatingActionButton"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom|end"-->
+<!--            android:layout_marginBottom="80dp"-->
+<!--            android:scaleType="center"-->
+<!--            android:src="@drawable/ic_plus_24dp_white"-->
+<!--            app:backgroundTint="@color/color_01B108"-->
+<!--            app:fabSize="normal"-->
+<!--            app:layout_anchorGravity="bottom|end"-->
+<!--            app:rippleColor="@color/white_700"-->
+<!--            tools:ignore="MissingConstraints" />-->
+    </FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fragment_home_fab_scanner"
+        style="@style/Widget.Design.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:rotation="720"
+        android:src="@drawable/ic_barcode_white_24dp"
+        android:visibility="gone"
+        app:fabSize="mini"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fragment_home_fab_add_to_cart"
+        style="@style/Widget.Design.FloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/fab_margin_bottom"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:rotation="7200"
+        android:src="@drawable/ic_no_barcode_white_24dp"
+        android:visibility="gone"
+        app:fabSize="mini"
+        tools:ignore="MissingConstraints" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_tab"
+        android:background="@color/textColorPrimary"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

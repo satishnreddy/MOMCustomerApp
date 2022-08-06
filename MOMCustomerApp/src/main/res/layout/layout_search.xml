@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/half_margin"
+        android:layout_marginEnd="@dimen/full_margin"
+        android:layout_marginLeft="@dimen/full_margin"
+        android:layout_marginRight="@dimen/full_margin"
+        android:layout_marginStart="@dimen/full_margin"
+        android:layout_marginTop="@dimen/half_margin"
+        android:background="@drawable/shape_circular_rectangle_search_cornered_dark_border"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/layout_search_edittext"
+            style="@style/font_regular_16_money"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="Search"
+            android:imeActionId="@+id/search"
+            android:imeActionLabel="@string/action_search"
+            android:imeOptions="actionSearch"
+            android:inputType="textCapWords"
+            android:lines="1"
+            android:paddingLeft="@dimen/half_padding"
+            android:paddingRight="@dimen/half_padding"
+            android:textColor="@color/color_5d5d5d"
+            android:textColorHint="@color/color_5d5d5d_0p5"
+            />
+
+        <ImageButton
+            android:id="@+id/layout_search_btn_go"
+            android:layout_width="32dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/basic_margin"
+            android:layout_marginRight="@dimen/basic_margin"
+            android:background="@color/transparent"
+            android:scaleType="center"
+            android:src="@drawable/ic_union_1"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

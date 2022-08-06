@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ShopXieTextAppearance">
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="AlertDialogWithCustomButtons" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:buttonBarPositiveButtonStyle">@style/ButtonBorderlessAccentStyle</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/ButtonBorderlessGreyStyle</item>
+    </style>
+</resources>

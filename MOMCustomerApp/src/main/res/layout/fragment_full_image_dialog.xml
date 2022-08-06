@@ -1,0 +1,42 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#aa000000">
+
+    <ImageView
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        android:layout_margin="@dimen/margin_normal"
+        android:id="@+id/fragment_dialog_iv_back_btn"
+        android:src="@drawable/ic_arrow_back_white_24dp"/>
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/padding_small"
+        tools:scaleType="fitXY"
+        android:layout_marginStart="@dimen/margin_very_large"
+        android:layout_marginEnd="@dimen/margin_very_large"
+        android:id="@+id/fragment_dialog_iv_permit_image"
+        android:background="@drawable/rect_corner_3dp_border_898989_1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guidelineH0p24"
+        tools:src="@tools:sample/backgrounds/scenic"
+        app:layout_constraintDimensionRatio="H,1.6:1"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/guidelineH0p24"
+        app:layout_constraintGuide_percent="0.24" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

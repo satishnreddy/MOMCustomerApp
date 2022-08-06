@@ -1,0 +1,403 @@
+{
+  "id": 0,
+  "description": "Manage your Product Stocks, Billing, Customer Database, Employees & Suppliers within 1 App! Get Real-time meaningful business insights of your store!",
+  "benefits": [
+    "Hardware-less POS – Access & operate your POS on any Android mobile device without the need of computer, barcode scanner, barcode printer, bill printer, card swiping machine, calculator etc. Save on the cost & time of buying, maintenance & repairs of such devices.",
+    "Installation & set-up – A quick & easy installation by setting up your single or multiple stores in less than 5mins. Add your entire existing product inventory to your POS software App with lightning speed.",
+    "Ease of use – It is simple to understand and an easy to use mobile-based application. It doesn’t require any special skill sets to operate and manage the application.",
+    "Control & manage your store remotely – Access the POS anytime & from anywhere and know about your store’s business. Make your business decisions and instruct your staff based on accurate information about your business even when you are away from your store.",
+    "Billing – Quick billing to your customer with itemized bill on his mobile as SMS & e-mail. Save the environment by not using paper.",
+    "Payment – Accept payments from customer in cash, credit card, debit card, net-banking, m-visa, UPI and wallets.",
+    "Refunds & returns – Easily manage refunds by issuing credit vouchers to your customers instead of losing them. Accurately measure the returns & add the product back in stock easily.",
+    "Complete inventory management system – Get real-time and accurate details of your product stock, track your highest selling products, manage products that are low on stock.",
+    "Product barcoding & label creation – Seamlessly generate unique barcode numbers for each item and generate & print the product labels through a pre-integrated thermal printer.",
+    "Reports & analytics – Get real-time meaningful insights & reports of your store’s business viz. sales & revenue report, performance reports of your products, brands, employees & suppliers, re-order level reports, customer segmentation & reports, stock-taking report etc for any date or date range.",
+    "Customer database – Automatically builds your customer database with their name, mobile number, e-mail address, purchase history, segmentation.",
+    "Marketing & promotion – Promote your store and your products to your customers by sending messages, product images, discounts & offers on Whatsapp.",
+    "Automate stock re-ordering - Create your own Purchase Order and order highest selling products or products with lower stock easily.",
+    "Stock-receiving – Quickly add fresh stock in the POS through a simple & easy stock-receiving process.",
+    "Stock transfer – Transfer the stock from one store to another store or warehouse and receive at the destination with 100% accuracy and measurement.",
+    "Stock-audit – Find out how many & which products have been lost from the store through a quick & easy stock-taking activity at complete store level or at product sub-category level at any time convenient to you.",
+    "Multiple store management – Manage all your stores using a single application and single login credentials.",
+    "Access control – Provide permission based access of your POS to any of your staff depending upon their responsibilities.",
+    "Simplify the accounting process – No need to struggle with bill books. All bills at one place on your mobile device. Export the relevant bills for any date or date range and share it with your chartered accountant. Shortened accounting time with accurate finances of your business.",
+    "Employee management – Provide & manage access of POS to your staff. Understand periodic performances. Accurately incentivize them based on their performance and contribution of business to store."
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "name": "Sign-in",
+      "description": "",
+      "subtopics": [
+        {
+          "name": "Login",
+          "description": "To log in to the App, please follow the below mentioned steps.\n\nOn login page enter your registered mobile number. Now enter your password. Now tap on the login button.\nYou will get logged in to the App with the LHS menu opened and the dashboard being your default home screen."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Settings",
+      "description": "",
+      "subtopics": [
+        {
+          "name": "Edit personal profile:",
+          "description": "To edit your personal profile, please follow the below mentioned steps.\n\nGo to the LHS Menu. Then tap on the settings option. Now tap profile. Then the profile details will be shown. Now tap on the edit icon on the RHS top of screen. Then edit the relevant field/s. Now tap on tick icon on the RHS top of screen.\n\nThe profile details with all changes will get updated."
+        },
+        {
+          "name": "Contact Mventry",
+          "description": "To contact the Mventry support team, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap the settings option. Now tap contact us option. Then tap the call option to speak or tap the e-mail option to send an e-mail to the Mventry support team.\n\nDepending upon the option chosen & query shared, the Mventry support team will revert with a solution."
+        },
+        {
+          "name": "Logout",
+          "description": "To log out of the App, please follow the below mentioned steps.\n\nGo to the LHS menu. Now tap on the settings option. Then tap on the logout option.\n\nYou will be logged out of the application."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Store Profile",
+      "description": "Store profile consists all the information of the store such as name, contact information, address & geo location, tax document numbers, bank details etc.",
+      "subtopics": [
+        {
+          "name": "Create store profile:",
+          "description": "To create your store profile, please follow the below mentioned steps.\n\nGo to the Login tab. Now enter your registered mobile number. Then enter password. Now tap the login button. Now select the option “Are you a store owner”? A store profile blank form will be shown. Now tap on the camera icon to add a picture of your store. Then choose the camera option to click a picture or gallery to add an available picture. Now crop the picture & tap on the tick icon on the RHS top of screen. Now enter the store name. Then enter the owner’s name. Now enter the store phone number. Then enter an e-mail id. Now tap on the map. Confirm location permission. Now zoom-in on the map and tap on the correct location on the map. The red bubble marker will move to the tapped location on map. Now tap on set this location button. Then the address fields will be automatically filled up. Now edit address fields (optional). Now select store category. Then select the parent category. Then tap on the tick icon on RHS top of screen.\n\nThe profile of store and store’s owner will get saved.\n\nThese details such as store name, address, phone number will appear on the invoices that will get generated under billing section."
+        },
+        {
+          "name": "Edit store profile:",
+          "description": "To edit details of your store profile, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap on the store’s picture on the LHS top. Store profile details will be shown. Now tap on the edit icon on the RHS top of the screen. Then edit the relevant field/s. Now tap on the tick icon on the RHS top of screen.\n\nThe store profile details with all the changes will get updated."
+        },
+        {
+          "name": "Store business details:",
+          "description": "To add business details of your store, please follow the below mentioned steps.\n\nGo to the LHS menu. Now tap on the store’s picture on the LHS top. Store profile details will be shown. Now select the business tab. Then tap on change settings button at the bottom of the screen. Document tab will be shown. Now enter details in the fields. Then tap on bank details tab. Now tap on add new bank details. Then enter details in the fields. Now tap the submit button.\n\nAll the business details will get saved."
+        },
+        {
+          "name": "Edit store business details:",
+          "description": "To edit business details of your store, please follow the below mentioned steps.\n\nGo to the LHS menu. Now tap on the store’s picture on the LHS top. Store profile details will be shown. Now select the business tab. Then tap on the change settings button at the bottom of the screen. Document tab will be shown. Now edit details in the fields. Then tap on the bank details tab. Now tap on add new bank details. Then edit details in the fields. Now tap the submit button.\n\nAll the business details will get updated."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Dashboard",
+      "description": "The dashboard is the default home screen of the App. The dashboard shows broad level statistics of your store’s business performances. The default views of the statistics are business performance for the current month till date (this month). The same can be viewed for any specific date or a time period by tapping on the drop down button. It provides performance indicators against various aspects of business such as sales, inventory, customers, employees, cash in-flow, products and suppliers.",
+      "subtopics": [
+        {
+          "name": "Sales:",
+          "description": "This screen shows orders (numbers of bills generated), products (number of products sold and revenue (amount of sales) for this month."
+        },
+        {
+          "name": "Inventory:",
+          "description": "This screen shows the details of product inventory of the store. It has multiple tabs and under each tab it shows numbers split at the product sub-category level.\n\nTotal amount: This tab shows amount of product inventory currently available in the store.\nIn stock: This tab shows number of products currently available in the store.\nOut of stock: This tab shows number of products that have gone out of stock from the store."
+        },
+        {
+          "name": "Customers:",
+          "description": "This screen shows the numbers pertaining to customers of the store. It has multiple tabs and under each tab it shows numbers split against new customer and loyal customer of the store.\n\nCustomers: This tab shows number of customers who bought products from the store.\nProducts: This tab shows number of products bought by customers from the store.\nAverage bill: This tab shows the average amount of bill per customer of the store."
+        },
+        {
+          "name": "Employees:",
+          "description": "This screen shows the numbers pertaining to employees of the store. It has multiple tabs and under each tab it shows numbers split against each employee of the store.\n\nRevenue: This tab shows amount of sales generated by the employee of the store.\nProducts: This tab shows number of products sold by the employee of the store.\nAverage sales: This tab shows the average selling price of product per employee of the store."
+        },
+        {
+          "name": "Cash in-flow:",
+          "description": "This screen shows the numbers pertaining to money that has been paid by customers against product purchases. It has multiple tabs and under each tab it shows a break up of the numbers against each type of payment done by the customers towards product purchases.\n\nBills: This tab shows number of bills generated by the store.\nBills %: This tab shows % share of each type of payment.\nAmount: This tab shows amount against each type of payment."
+        },
+        {
+          "name": "Products:",
+          "description": "This screen shows the numbers pertaining to the sold products of the store. It has multiple tabs and under each tab it shows numbers split against each product sub-category.\n\nRevenue: This tab shows amount of sales generated of each product sub-category.\nProducts: This tab shows number of products sold of each product sub-category.\nAverage price: This tab shows the average selling price of product of each product sub-category."
+        },
+        {
+          "name": "Suppliers:",
+          "description": "This screen shows the numbers pertaining to the sold products of the store. It has multiple tabs and under each tab it shows numbers split against each supplier.\n\nRevenue: This tab shows amount of sales generated of each supplier’s products.\nProducts: This tab shows number of products sold of each supplier.\nAverage price: This tab shows the average selling price of product of supplier."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Billing",
+      "description": "The billing section has all the invoices listed in recent to older order. \nIt has three different tabs viz. bills, returns and partial.\n\nBills tab lists all the historically generated complete invoices against customer purchases.\nReturns tab lists all the historical invoices pertaining to returned products by customers. \nPartial tab lists all the invoices for which customers have paid partial/advance amount against the product purchase and are yet not settled.\n\nThe billing section also provides setting options to configure various elements to display on customer invoices such as invoice number format, terms & conditions, tax numbers, tax settings etc. \n\nIt also enables the storeowner to export & send all historical invoices in a .csv file to his e-mail id for the purpose of accounting, reconciliations, analysis etc.",
+      "subtopics": [
+        {
+          "name": "Invoice number configuration:",
+          "description": "To configure a specific invoice number to appear on the customer invoice, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Now tap the  menu on the RHS top. Then choose invoice setting. Then choose invoice number configuration option. Now enter your desired invoice number format e.g. “ShopName0000”. Then tap the save button.\n\nThis will set the invoice number format for your store on the invoice. The first bill that you generate to customer will bear the invoice number as “ShopName0001” and subsequent bills will bear the invoice number in sequential manner."
+        },
+        {
+          "name": "Invoice terms and conditions setting:",
+          "description": "To configure specific terms and conditions to appear on the customer invoice, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Now tap the menu on the RHS top. Then choose invoice settings. Then choose invoice terms and conditions. Now enter desired terms and conditions of your store. Then tap the save button.\n\nThis will set the invoice terms & conditions of your store on the invoice. These terms & conditions will appear on all the bills that you generate to customer."
+        },
+        {
+          "name": "Tax numbers setting:",
+          "description": "To configure specific tax numbers such as GSTIN/VAT/CST/PAN/TAN to appear on the customer invoice, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Now tap on menu on the RHS top. Then choose invoice settings. Then choose tax numbers option. Now enter appropriate tax numbers in the fields. Then tap the save button.\n\nThis will set the invoice with GSTIN/VAT/CST/PAN/TAN of your store on the invoice. These terms & conditions will appear on all the bills that you generate to the customer."
+        },
+        {
+          "name": "GST configuration:",
+          "description": "To configure GST when the product selling prices are inclusive of GST amount, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Now tap the menu on the RHS top. Then choose invoice settings option. Then choose GST configuration. Now switch on the tax status: inclusive button. Then tap the add tax button at the bottom of the screen. Now add tax %. Then add minimum value. Now add maximum value. Then choose one or multiple store or parent or product category or product sub-category. Then tap the save button.\n\nThe inclusive GST % will be applied to the selected store or parent of product category or product sub-category.\n\nAll the products pertaining to them will have their selling prices inclusive of GST %."
+        },
+        {
+          "name": "Billing to customer:",
+          "description": "To generate bill/invoice towards product purchase by customer, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap on billing option. Now tap on the floating add button (FAB). The scanner will open up. Now scan QR code/barcode from the product label. Then product details will be shown. Now tap on add more (optional). Then tap the continue button. Now shopping cart will be shown with scanned products. Now tap the continue button. Then swipe the discount button to provide a discount in the billing. Now choose discount 0-100 and tap the continue button. Now enter customer mobile number + name + e-mail id (optional). Then tap the submit button. Now choose employee (optional). Then tap the continue button. Now you will see all the available payment methods. Tap on the option to choose appropriate method of payment. Now add remark (optional). Then tap the continue button. Then the invoice will be generated. Now tap print bill or send bill button.\n\nIf the print command is chosen, the generated invoice will get printed from the App connected thermal printer.\n\nIf the send command is chosen, the generated Invoice will get sent to the customer via e-mail and SMS.\n\nThe invoice will be listed under bills tab on the billing screen."
+        },
+        {
+          "name": "Print bill:",
+          "description": "To print any invoice that has been generated earlier on the app, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Now choose the invoice that you want to print. Invoice details will be shown. Now tap on print bill button. Then choose the appropriate Bluetooth or USB connected thermal printer. Now tap on print button.\n\nThe invoice will get printed from the connected thermal printer."
+        },
+        {
+          "name": "Partial invoice:",
+          "description": "To generate bill/invoice towards product purchase by customer when they want to make a part payment & pay the remaining amount at a later date, please follow the below mentioned steps.\n\nGo to LHS menu. Tap the billing option. Now tap the floating add button (FAB). The scanner will open up. Now scan the QR code/barcode from the product label. Then product details will be shown. Now tap on add more (optional). Then tap the continue button. Now the shopping cart will be shown with scanned products. Now tap the continue button. Then swipe the discount button to provide discount in the billing. Now choose discount 0-100 and tap on continue button. Now enter customer mobile number + name + e-mail id (optional). Then tap the submit button. Now choose employee (optional). Then tap the continue button. You will see all the available payment methods. Now tap the partial payment option. Then enter the amount. Now add remark (optional). Then tap the continue button. Then the invoice will be generated. Now tap the print bill or send bill button.\n\nIf the print command is chosen, the generated invoice will get printed from the App connected thermal printer.\n\nIf the send command is chosen, the generated invoice will get sent to the customer via e-mail and SMS.\n\nThe partial amount invoice will be listed under partial tab of the billing screen."
+        },
+        {
+          "name": "Settle partial invoice:",
+          "description": "To generate final bill/invoice towards product purchase by customers when they want to make a payment for remaining amount, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Then go to partial tab. Now choose the appropriate invoice. Invoice details will be shown. Now tap the menu on the RHS top. Then choose the settle payment option. Now choose appropriate payment method. Then remaining amount. Then choose appropriate method of payment. Now add remark (optional). Then tap the continue button. Then the invoice will be generated. Now tap print bill or send bill button.\n\nIf the print command is chosen, the generated invoice will get printed from the App connected thermal printer.\n\nIf the send command is chosen, the generated invoice will get sent to the customer via e-mail and SMS.\n\nThe final invoice will be listed under the bills tab of the billing screen."
+        },
+        {
+          "name": "Mix payment:",
+          "description": "To generate bill/invoice towards product purchase by customers when they want to make a part payment by one method & remaining amount by any other method, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Now tap the floating add button (FAB). The scanner will open up. Now scan QR code/barcode from the product label. Then product details will be shown. Now tap on add more (optional). Then tap the continue button. Now shopping cart will be shown with scanned products. Now tap the continue button. Then swipe the discount button to provide discount in billing. Now choose discount 0-100 and tap the continue button. Now enter customer mobile number + name + e-mail id (optional). Then tap the submit button. Now choose employee (optional). Then tap the continue button. You will see all the available payment methods. Now tap on the mix payment option. Now tap on add payment method. Then select the type of appropriate payment method. Now enter amount. Then tap the save button. Now tap on add payment method. Then select type of appropriate payment method. Then remaining amount will be shown. Now tap the save button. Now add remark (optional). Then tap the continue button. Then the invoice will be generated. Now tap on print bill or send bill button.\n\nIf the print command is chosen, the generated invoice will get printed from the App connected thermal printer.\n\nIf the send command is chosen, the generated invoice will get sent to the customer via e-mail and SMS.\n\nThe invoice will be listed under the bills tab of the billing screen."
+        },
+        {
+          "name": "Product return invoice:",
+          "description": "To generate bill/invoice towards product purchase by customers when they want to return the product & ask for refund, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Then go to partial tab. Now choose the appropriate invoice. Invoice details will be shown. Now tap the menu on the RHS top. Then choose return product option. Now the invoice details will be shown. Tap on the X button of the product which is being returned. Then tap on the update invoice button. Now choose return type either as cash or voucher option by which you want to refund the amount. Now add note (optional). Then tap on save button. Now the return invoice will be generated. The final invoice will also be updated. Now tap print bill or send bill.\n\nIf the print command is chosen, the generated Invoice will get printed from the App connected thermal printer.\n\nIf the send command is chosen, the generated invoice will get sent to the customer via e-mail and SMS.\n\nThe updated invoice will be listed under the bills tab of the billing screen with the same invoice number.\n\nThe returned invoice will be listed under returns tab of the billing screen with the same “invoice number_return”. The amount of this invoice will be equivalent to the returned product’s selling price.\n\nThe return product will be moved in-stock under the stock section of the App."
+        },
+        {
+          "name": "Billing with use of voucher:",
+          "description": "To use an open (Status = “open”) credit voucher of a customer, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Now tap the floating add button (FAB). The scanner will open up. Now scan QR code/barcode from the product label. Then product details will be shown. Now tap on add more (optional). Then tap the continue button. Now the shopping cart will be shown with scanned products. Now tap the continue button. Then swipe the discount button to provide discount in the billing. Now choose discount 0-100 and tap the continue button. Now enter customer mobile number + name + e-mail id (optional). Then tap the submit button. Now choose employee (optional). Then tap the continue button. You will see all the available payment methods. Now tap the mix payment option. Now tap on add payment method. Then select voucher. It shows list of open credit vouchers of the customer. Now select credit voucher/s of appropriate amount/s. Now add remark (optional). Then tap the continue button. Then the invoice will be generated. Now tap on print bill or send bill button.\n\nIf print command is chosen, the generated Invoice will get printed from the App connected thermal printer.\n\nIf the send command is chosen, the generated invoice will get sent to the customer via e-mail and SMS.\n\nThe invoice will be listed under bills tab of billing screen."
+        },
+        {
+          "name": "Export invoices:",
+          "description": "To get the details of all the generated invoices in store owner’s e-mail inbox, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the billing option. Now tap the menu on the RHS top. Then choose export report option. Now choose the time period. \n\nA .csv file will be sent to the registered e-mail address of store owner with invoice details."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Stock:",
+      "description": "The stock section has all the products listed in recent to older order of addition to inventory. It shows details of each product, allows to add new products, edit product details etc. It has three different tabs viz. item master, in-stock and out-of-stock. It also enables a storeowner to export & send all details of the products from in-stock & out-of-stock section in a .csv file to his e-mail id for the purpose of accounting, reconciliations, analysis etc.\n\nItem master tab lists all the items your store has been buying & selling regularly. Each item will have unique barcode number and SKU id. The store can configure and monitor minimum order level of each item.\n\nIn-stock tab lists all the products that are currently in the inventory stock of the store.\n\nOut-of-stock lists all the products that have gone out of stock either they have been sold out or have been moved out of stock due to specific reasons. Store can monitor this to ensure that adequate quantity of such products is purchased.",
+      "subtopics": [
+        {
+          "name": "Add products (with system generated barcode number) In-stock:",
+          "description": "To add products in stock and print the label by auto generated barcode numbers, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the stock option. Now the in-stock tab will be shown. Now tap on the floating add button (FAB). You will see yes and no button options against the “Do you have product barcode available”? Now tap no. Now select store category. Then select parent category. Then select product category. Then select product sub-category. Then choose supplier. Then choose brand. Now add product name (optional). Then add SKU id (optional). Then add attribute 1 (optional). Then add attribute 2 (optional). Now tap on add description (optional). Then tap the submit button. Now add selling price. Then add purchase price (optional). Then select size/s. Now add Quantity for each Size. Then tap on Submit button. The barcodes will get generated for each product unit. Now tap on print barcode labels. Then connect thermal label printer (Bluetooth or USB). Then tap the print button.\n\nAll the product labels will be printed from the thermal label printer for the chosen sizes & quantity of product.\n\nAll the products with chosen sizes and quantities will be added to the In-stock section of the App.\n\nIn order to add a new product in the App, the store profile should have chosen appropriate store categories, parent categories, product categories and product sub-categories. The store needs to have appropriate supplier and brand added before hand."
+        },
+        {
+          "name": "Add products (with available barcode number) In-stock:",
+          "description": "To add products with available barcode number in stock and print the label, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap on stock option. Now the in-stock tab will be shown. Now tap the floating add button (FAB). You will see yes and no options against the “Do you have product barcode available”? Now tap the yes button. Then scan QR code/barcode from the product label. Then product details will be shown. Now select relevant product. Then choose supplier. Then choose brand. Now add product name (optional). Then add SKU id (optional). Then add attribute 1 (optional). Then add attribute 2 (optional). Now tap on add description (optional). Then tap the submit button. Now add selling price. Then add purchase price (optional). Then select size/s. Now add quantity for each size. Then tap the submit button. The barcodes will get generated for each product unit. Now tap the print barcode labels. Then connect thermal label printer (Bluetooth or USB). Then tap the print button.\n\nAll the product labels will be printed from the thermal label printer for the chosen sizes & quantity of product.\n\nAll the products with chosen sizes and quantities will be added to the In-stock section of the App.\n\nIn order to add a new product in the App, the store profile should have chosen appropriate store categories, parent categories, product categories and product sub-categories. The store needs to have appropriate supplier and brand added before hand."
+        },
+        {
+          "name": "Edit product details:",
+          "description": "To edit or update any specific field/s related to the product, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the stock option. Now In-stock tab will be shown. Then tap on In-stock or Out-of-stock tab. Then tap on the desired product from the list. The product details will be shown. Now tap the edit icon on RHS top of the screen. Then edit the relevant field/s. Then tap on the tick icon on the RHS top of screen.\n\nThe product details with all the changes will get updated."
+        },
+        {
+          "name": "Move a product Out-of-stock:",
+          "description": "To move any in-stock specific product to out-of-stock, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the stock option. Now in-stock tab will be shown. Then tap on product from the list. Then tap on the desired product from the list. The product details will be shown. Now tap on the menu on the RHS top. Then choose option move to out-of-stock. Then tap the OK button.\n\nThe product will be moved to out-of-stock and will be available under out-of-stock tab with quantity=0."
+        },
+        {
+          "name": "Move a product in-stock:",
+          "description": "To move any out-of-stock specific product to in-stock, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap the stock option. The in-stock tab will be shown. Now tap on out-of-stock tab. Then tap on product from the list. Then tap on the desired product from the list. The product details will be shown. Now tap the menu on the RHS top. Then choose option move to in-stock. Then tap on OK button.\n\nThe product will be moved to in-stock and will be available under in-stock tab with quantity=1."
+        },
+        {
+          "name": "Delete product:",
+          "description": "To delete any specific product from the App, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap on stock option. Now in-stock tab will be shown. Then tap on in-stock or out-of-stock tab. Then tap on the desired product from the list. The product details will be shown. Now tap the menu on RHS top. Then choose option delete. Then tap the OK button.\n\nThe product will get deleted from the App."
+        },
+        {
+          "name": "Print label of product:",
+          "description": "To label with barcode number of any specific product, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap on stock option. Now in-stock tab will be shown. Then tap on in-stock or out-of-stock tab. Then tap on the desired product from the list. The product details will be shown. Now tap the menu on RHS top. Then choose option print label. Now choose size and tap on Ok button. Then connect thermal label printer (Bluetooth or USB). Then tap the print button.\n\nThe product label with barcode number & necessary details will get printed from the thermal label printer."
+        },
+        {
+          "name": "Export report:",
+          "description": "To get the details of all the products from in-stock or out-of-stock section to store owner’s e-mail inbox, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap on stock option. Now in-stock tab will be shown. Then tap on in-stock or out-of-stock tab. Then tap on the desired product from the list. The product details will be shown. Now tap the menu on the RHS top. Then choose export report. Then choose the time period.\n\nA .csv file will be sent to the registered e-mail address of store owner with invoice details."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Stock transfer:",
+      "description": "The stock transfer section has three different tabs viz. transfer, receive and history.",
+      "subtopics": [
+        {
+          "name": "Transfer tab:",
+          "description": "It has stock transfer challans with in transit status of the products that have been transferred by your store to other store."
+        },
+        {
+          "name": "Receive tab:",
+          "description": "It has stock transfer challans with in transit status of the products that have been transferred by other store to your store."
+        },
+        {
+          "name": "History tab:",
+          "description": "It has all the stock transfer challans with status of either transferred or received of all the products that were either successfully transferred or received respectively by your store.\n\nEach tab has a list of stock transfer challans in recent to older order. Each challan carries list of products that have been transferred or received. Each challan shows its status as in transit or transferred or received."
+        },
+        {
+          "name": "In transit status:",
+          "description": "In transit status means the products that are transferred by originating store have not been received by the destination store yet."
+        },
+        {
+          "name": "Transferred status:",
+          "description": "Transferred status means the products that were transferred by originating store have been successfully received by the destination store."
+        },
+        {
+          "name": "Received status:",
+          "description": "Received status means the destination store has successfully received the products that were transferred by originating store."
+        },
+        {
+          "name": "Transfer stock from one store to other:",
+          "description": "To transfer a product from one store to other store, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap on stock transfer option. Now you will see the transfer tab with list of transfer challans. Now tap on the floating add button (FAB). Then select appropriate store name to which products are being transferred. Then scan QR code/barcode from the product label. The product details will be shown. Now tap on add more (optional). Then tap the submit button. The list of products will be shown. Now tap on the submit button.\n\nA transfer challan will be created with a dispatch number for reference.\n\nThe transfer challan will be listed out in the transfer section of originating store with dispatch status = “In transit”.\n\nThe transfer challan will be listed out in the receive section of destination store with dispatch status = “In transit”.\n\nThe product will neither be under in-stock nor out-of-stock section of the App and will be in transit mode on the App."
+        },
+        {
+          "name": "Reject product from stock transfer challan:",
+          "description": "To reject any specific product from stock transfer challan, please follow the below mentioned steps.\n\nGo to the LHS menu. Tap on stock transfer option. Now you will see transfer tab with list of transfer challans. Now tap on a specific transfer challan. The transfer challan details will be shown with list of products. Now tap on reject stock transfer button at the bottom of the screen. Then select relevant products that need to be rejected. Now tap on reject stock transfer button at the bottom of the screen.\n\nA transfer challan will get deleted from both the lists viz. transfer section of originating store as well as receive section of destination store.\n\nThe product will get moved to in-stock section of the originating store of the App."
+        },
+        {
+          "name": "Receive stock at destination store:",
+          "description": "To receive a product in the destination store, please follow the below mentioned steps.\n\nGo to LHS menu. Tap the stock transfer option. Tap the receive tab. You will see receive tab with list of transfer challans. Now tap on specific transfer challan. The transfer challan details will be shown with list of products. Now tap start barcode scanner button at the bottom of the screen. Then scan QR code/barcode from the product label. The product details will be shown. Now tap on add more (optional). Then tap the submit button. The list of the scanned products with highlight will be shown. Now tap the submit button.\n\nThe transfer challan will get moved to the history section of the destination store with dispatch status = “Received”.\n\nThe transfer challan will get moved to the history section of the originating store with dispatch status = “Transferred”.\n\nThe product will get moved to in-stock section of the destination store of the App."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Vouchers:",
+      "description": "The vouchers are credit notes that are required to be issued by the store to its customers. It is issued to customers normally against returns when a customer returns already purchased products to the store as per the store’s returns & refund policy. The credit voucher acts as digital currency, which can be redeemed against purchases of store’s products by the customer.\n\nThe store can view, create, edit credit voucher of a customer.\n\nThe voucher section has three different tabs viz. open, expired and history.",
+      "subtopics": [
+        {
+          "name": "Open tab:",
+          "description": "Open tab has all the credit vouchers with voucher status as open."
+        },
+        {
+          "name": "Expired tab:",
+          "description": "Expired tab has all the credit vouchers with voucher status as expired."
+        },
+        {
+          "name": "History tab:",
+          "description": "History tab has all the credit vouchers with voucher status as used."
+        },
+        {
+          "name": "Open status:",
+          "description": "Open status means the credit voucher is yet to be redeemed by the customer and the expiry date has not been reached. The voucher cannot be redeemed in part amount by the customer."
+        },
+        {
+          "name": "Expired status:",
+          "description": "Expired status means the expiry date of the credit voucher passed but the customer did not redeem the credit voucher. The voucher will not be redeemable by the customer."
+        },
+        {
+          "name": "Used status:",
+          "description": "Used status means the credit voucher has been redeemed by customer before the expiry date of the credit voucher. The voucher will not be redeemable by the customer again."
+        },
+        {
+          "name": "Issue vouchers to a customer:",
+          "description": "To issue a credit voucher to your customer, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap the vouchers option. List of vouchers will be shown. Now tap the floating add button (FAB). A voucher screen will appear. Now enter the customer mobile number. Then enter customer name. Then enter customer e-mail. Now enter the amount. Then choose expiry date of the voucher. Now tap the submit button.\n\nThe credit voucher will get sent to the customer via e-mail and SMS.\n\nThe credit voucher will get listed in voucher section with status = “Open”."
+        },
+        {
+          "name": "Voucher terms & conditions:",
+          "description": "To configure specific terms and conditions to appear on the credit voucher, please follow the below mentioned steps.\n\nGo to LHS menu. Then tap on vouchers option. List of vouchers will be shown. Now tap the menu on the RHS top. Then tap on option terms and conditions. Now enter desired terms and conditions of your store. Then tap the save button.\n\nThese terms & conditions will be set for all credit vouchers of your store. These terms & conditions will appear on all the credit vouchers that you generate to customer."
+        },
+        {
+          "name": "Edit voucher:",
+          "description": "To edit any details of a credit voucher, please follow the below mentioned steps.\n\nGo to LHS menu. Then tap on vouchers option. List of vouchers will be shown. Now tap on appropriate voucher. The voucher details screen will appear. Now tap on edit icon on the RHS top of screen. Then edit the relevant field/s. Now tap the tick icon on the RHS top of the screen.\n\nThe voucher details with all the changes will get updated.\n\nThe credit voucher with updated details will get sent to the customer via e-mail and SMS.\n\nThe credit voucher will get listed in the voucher section with status = “Open”."
+        },
+        {
+          "name": "Change expiry date of voucher:",
+          "description": "To change expiry date of a credit voucher, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap the vouchers option. A list of vouchers will be shown. Now tap on the appropriate voucher. The voucher details screen will appear. Now tap the edit icon on RHS top of screen. Then tap on expiry date field. The calendar will appear. Now choose an appropriate date. Then tap on the tick icon on the RHS top of screen. Now tap the submit button.\n\nThe voucher details with new expiry date will get updated.\n\nThe credit voucher with updated expiry date will get sent to the customer via e-mail and SMS.\n\nThe credit voucher will get listed in the voucher section with status = “Open”."
+        },
+        {
+          "name": "Redeem voucher:",
+          "description": "To use an open (Status = “Open”) credit voucher of a customer, please follow the below mentioned steps.\n\nGo to LHS menu. Tap on billing option. Now tap on the floating add button (FAB). The scanner will open up. Now scan QR code/barcode from the product label. Then product details will be shown. Now tap on add more (optional). Then tap the continue button. Now the shopping sart will be shown with scanned products. Now tap the continue button. Then swipe the discount button to provide a discount in the billing. Now choose discount 0-100 and tap the continue button. Now enter customer mobile number + name + email id (optional). Then tap the submit button. Now choose employee (optional). Then tap the continue button. You will see all the available payment methods. Now tap on mix payment option. Now tap on add payment method. Then select voucher. It shows a list of open credit vouchers of a customer. Now select credit voucher/s of appropriate amount/s. Now add remark (optional). Then tap the continue button. Then the invoice will be generated. Now tap on print bill or send bill button.\n\nIf print command is chosen, the generated Invoice will get printed from the App connected thermal printer.\n\nIf send command is chosen, the generated invoice will get sent to the customer via e-mail and SMS.\n\nThe invoice will be listed under the bills tab of billing screen.\n\nThe redeemed credit voucher will get listed in voucher section with status = “Used”.\n\nCredit voucher amount needs to be equal to or higher than the total bill amount.\n\nIf credit voucher amount is higher than total bill amount, the entire amount of credit voucher will be redeemed. There is no provision to redeem a credit voucher amount partially."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Employees:",
+      "description": "The employee section has list of all employees.\n\nThe store can view, add and edit employee profile. The store can provide specific access to any of its employees.",
+      "subtopics": [
+        {
+          "name": "Add an employee:",
+          "description": "To add a new employee of your store, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap on the employees option. The list of employees will be shown. Now tap the floating add button (FAB). A blank employee details form will be shown. Now tap the camera icon to add picture of your store. Then choose option camera to click a picture or gallery to add available picture. Now crop the picture & tap on the tick icon on the RHS top of screen. Now enter mobile number of employee. Then enter name of employee. Then enter e-mail id of employee (optional). Now enter address of employee (optional). Now tap the submit button.\n\nThe employee will get added in your store App."
+        },
+        {
+          "name": "Edit employee profile:",
+          "description": "To edit your employee profile, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap on the employees option. The list of employees will be shown. Now tap on the appropriate employee name. The employee profile details will be shown. Now tap the edit icon on the RHS top of screen. Then edit the relevant field/s. Now tap the submit button.\n\nThe employee profile details with all the changes will get updated."
+        },
+        {
+          "name": "Provide employee access:",
+          "description": "To provide access of your store’s application to an employee, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap on the employees option. The list of employees will be shown. Now tap on the appropriate employee name. The employee profile details will be shown. Now tap on the settings icon on RHS top of screen. Then tap on relevant access type (Basic/Advanced/Expert). Now tap the submit button.\n\nThe employee will get access to your store’s application. \n\nThe employee will be able to perform various activities and view various sections of your store App based on the type of access provided to the employee."
+        },
+        {
+          "name": "Basic access:",
+          "description": "This type of access provides permissions for employees to view all statistics except for statistics related to revenue & profits of your store’s business, view the sections viz. Billing, Stock, employee, customers, brands without their contact information. The employee will be able to perform billing to customer, manage returns, add stock, add customer, stock transfer & receive stock."
+        },
+        {
+          "name": "Advanced access:",
+          "description": "This type of access provides permissions for employees to view all statistics except for statistics related to revenue & profits of your store’s business, view the sections viz. Billing, Stock, employee, customers, brands without their contact information. The employee will be able to perform billing to customer, add stock, edit product, add customer, add/edit brand, add/edit voucher and stock transfer & receive stock."
+        },
+        {
+          "name": "Expert access:",
+          "description": "This type of access provides permissions to employees to view all statistics, view/add/edit all elements, configure & setting of all profiles & sections."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Customer:",
+      "description": "The customer section has list of all customers.\nThe store can view, add, and edit customer profile.",
+      "subtopics": [
+        {
+          "name": "Add a customer:",
+          "description": "To add a new customer to your store, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap on customers option. The list of customers will be shown. Now tap the floating add button (FAB). A blank customer details form will be shown. Now tap on camera icon to add picture of your customer. Then choose option camera to click a picture or gallery to add available picture. Now crop picture & tap on the tick icon on the RHS top of screen. Now enter mobile number of customer. Then enter name of the customer. Then enter e-mail id of the customer (optional). Now enter the address of the customer (optional). Now tap the submit button.\n\nThe customer will get added in your store App."
+        },
+        {
+          "name": "Edit customer profile:",
+          "description": "To edit your customer profile, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap the customers option. The list of customers will be shown. Now tap on appropriate customer name. The customer profile details will be shown. Now tap the edit icon on the RHS top of screen. Then edit the relevant field/s. Now tap the submit button.\n\nThe customer profile details with all the changes will get updated."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Supplier:",
+      "description": "The supplier section has list of all suppliers.\nThe store can view, add, and edit supplier profile.",
+      "subtopics": [
+        {
+          "name": "Add a supplier",
+          "description": "To add a new supplier in your store, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap the suppliers option. The list of suppliers will be shown. Now tap the floating add button (FAB). A blank supplier details form will be shown. Now tap the camera icon to add picture of your supplier. Then choose option camera to click a picture or gallery to add available picture. Now crop picture & tap on the tick icon on the RHS top of screen. Now enter the mobile number of the supplier. Then enter name of supplier. Then enter e-mail id of the supplier (optional). Now enter the address of the supplier (optional). Now tap the submit button\n\nThe supplier will get added in your store App."
+        },
+        {
+          "name": "Edit supplier profile:",
+          "description": "To edit your supplier profile, please follow the below mentioned steps.\n\nGo to LHS menu. Then tap the suppliers option. The list of suppliers will be shown. Now tap on appropriate supplier name. The supplier profile details will be shown. Now tap the edit icon on RHS top of screen. Then edit the relevant field/s. Now tap the submit button.\n\nThe supplier profile details with all the changes will get updated."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Brand:",
+      "description": "The brand section has list of all brands.\nThe store can view, add, and edit brand profile.",
+      "subtopics": [
+        {
+          "name": "Add a brand:",
+          "description": "To add a new brand in your store, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap on brands option. The list of brands will be shown. Now tap the floating add button (FAB). A blank brand details form will be shown. Now tap the camera icon to add a picture of your store. Then choose option camera to click a picture or gallery to add available picture. Now crop picture & tap on the tick icon on RHS top of screen. Now enter the name of the brand. Now tap the submit button.\n\nThe brand will get added in your store App."
+        },
+        {
+          "name": "Edit brand profile:",
+          "description": "To edit your brand profile, please follow the below mentioned steps.\n\nGo to the LHS menu. Then tap on the brands option. The list of brands will be shown. Now tap on the appropriate brand name. The brand profile details will be shown. Now tap on the edit icon on RHS top of screen. Then edit the relevant field/s. Now tap the submit button.\n\nThe brand profile details with all the changes will get updated."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Stock taking:",
+      "description": "Stock taking section shows the list of reports of all the stock taking activities performed historically.\n\nThe list of reports shows the name specific Store Category/Parent Category/Category/Sub-Category, Date & Time of Stock Taking activity completion, Count of products those were Scanned, Found and Not Found during Stock Taking activity.",
+      "subtopics": [
+        {
+          "name": "Stock taking activity:",
+          "description": "To audit the physical stock present in the store and compare it with the stock available in the App, please follow the below mentioned steps.\n\nGo to the LHS Menu. Then tap stock taking option. The stock taking with list of stock taking reports will be shown. Now tap the floating add button (FAB). Then tap on start by categories or start complete store (choose)"
+        },
+        {
+          "name": "Stock taking activity for any specific parent/category/sub-category:",
+          "description": "Tap start by categories to do stock taking for any specific store category/parent category/category/sub-category. Then select appropriate store category/parent category/category/sub-category from drop-down list. Now tap the start button. Then scan QR code/barcode from the product label. The product details will be shown. Now tap on the next button to scan more or finish button to end the activity."
+        },
+        {
+          "name": "Stock taking activity for all products in store:",
+          "description": "Tap start to do stock taking all products in Store. Now tap on start complete store. Then tap the start button. Now scan QR code/barcode from the product label. The product details will be shown. Now tap on Next button to scan more or finish to end the activity."
+        },
+        {
+          "name": "Stock taking report:",
+          "description": "It shows details of number of products scanned and product not scanned.\n\nProducts scanned is the count of products scanned during the activity. \n\nProducts found is the count of products scanned and found in the App during the activity.\n\nProducts not found is the count of products scanned but not found in the App during the activity. It might be because these products were not added to stock in the app.\n\nProducts found – In-stock is the count of products scanned and found in the App’s in-stock section.\n\nProducts found – Out-of-stock is the count of products scanned and found in the App’s out-of-stock section.\n\nProducts not scanned is the count of products that were not scanned during the activity. This might be because there this number of products those are yet to be scanned or they are missing physically in the store but are present in the App."
+        }
+      ]
+    }
+  ]
+}

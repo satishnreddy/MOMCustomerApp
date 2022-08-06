@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/padding_medium"
+        android:paddingBottom="@dimen/padding_normal"
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/rect_filled_413d3d_corner_6dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/inflate_order_title"
+            style="@style/font_medium_18_white"
+            tools:text="Order has been edited."
+            android:maxLines="1"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/inflate_order_sub_title"
+            style="@style/font_medium_14_white"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            tools:text="@string/want_to_unlock_list"
+            android:maxLines="12"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:id="@+id/inflate_order_btn_left_tv"
+                android:background="@drawable/rect_filled_191919_corner_6dp"
+                android:layout_height="wrap_content"
+                android:text="no"
+                style="@style/font_medium_14_white"
+                android:layout_weight="1"
+                android:layout_margin="@dimen/margin_small"
+                android:gravity="center"
+                android:paddingTop="@dimen/padding_normal"
+                android:paddingBottom="@dimen/padding_normal"
+                android:paddingStart="@dimen/padding_small"
+                android:paddingEnd="@dimen/padding_small"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:background="@drawable/rect_filled_01b108_corner_6dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/inflate_order_btn_right_tv"
+                android:layout_margin="@dimen/margin_small"
+                android:text="yes"
+                android:gravity="center"
+                style="@style/font_medium_14_white"
+                android:layout_weight="1"
+                android:paddingTop="@dimen/padding_normal"
+                android:paddingBottom="@dimen/padding_normal"
+                android:paddingStart="@dimen/padding_small"
+                android:paddingEnd="@dimen/padding_small"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout >

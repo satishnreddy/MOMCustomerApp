@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate
+    android:toDegrees="0"
+    android:fromDegrees="90"
+    android:drawable="@drawable/ic_search_key_white_24dp"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

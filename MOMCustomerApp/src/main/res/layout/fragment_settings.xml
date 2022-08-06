@@ -1,0 +1,526 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".settings.views.SettingsFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/fragment_settings_layout_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fragment_settings_tv_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/full_padding"
+                android:paddingStart="@dimen/full_padding"
+                android:text="Url : " />
+
+            <TextView
+                android:id="@+id/fragment_settings_tv_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/full_padding"
+                android:text="Version Name : " />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/fragment_settings_layout_version"
+            android:layout_alignParentTop="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_person_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Profile" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_password_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Change Password" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_tnc"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_info_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Terms And Conditions" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_email_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Contact Us" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_help_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Help" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_device_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_info_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Device Info" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_printer_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_settings_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Printer Settings" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_cart_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_settings_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Cart Settings" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_attr_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_settings_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Custom Attributes Settings" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_label_setting"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_settings_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Default Label Template" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/fragment_settings_layout_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/full_margin"
+                        android:layout_marginLeft="@dimen/full_margin"
+                        android:layout_marginRight="@dimen/full_margin"
+                        android:layout_marginStart="@dimen/full_margin"
+                        android:src="@drawable/ic_logout_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/font_regular_16_carbon"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:paddingEnd="0dp"
+                            android:paddingLeft="@dimen/basic_padding"
+                            android:paddingRight="0dp"
+                            android:paddingStart="@dimen/basic_padding"
+                            android:text="Logout" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@drawable/shape_line_separator" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+</FrameLayout>

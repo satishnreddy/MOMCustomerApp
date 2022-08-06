@@ -1,0 +1,1035 @@
+<resources>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+
+    <string name="content_description">Image</string>
+    <string name="Rs">\u20B9</string>
+    <string name="currency_text">Rs.</string>
+    <string name="rupee_symbol">₹</string>
+
+    <string name="navigation_dashboard">Dashboard</string>
+    <string name="navigation_products">Products</string>
+    <string name="navigation_orders">Orders</string>
+    <string name="navigation_customers">Customers</string>
+    <string name="navigation_brands">Brands</string>
+    <string name="navigation_category">Category</string>
+    <string name="navigation_subcategory">SubCategory</string>
+    <string name="navigation_suppliers">Suppliers</string>
+    <string name="navigation_employees">Employees</string>
+    <string name="navigation_vouchers">Vouchers</string>
+    <string name="navigation_settings">Settings</string>
+    <string name="navigation_customer_promotion">Customer Promotion</string>
+    <string name="navigation_stock_transfer">Stock Transfer</string>
+    <string name="navigation_stock_taking">Stock Taking</string>
+    <string name="navigation_profile">My Profile</string>
+    <string name="navigation_access">Access</string>
+    <string name="navigation_notifications">Notifications</string>
+    <string name="navigation_change_password">Change Password</string>
+    <string name="navigation_logout">Logout</string>
+    <string name="navigation_delivery">Set delivery</string>
+    <string name="navigation_store_details">Store details</string>
+
+
+    <!-- Calender Strings -->
+    <string name="day_name_format">EEE</string>
+    <string name="invalid_date">Date must be between %1$s and %2$s.</string>
+    <string name="month_name_format">MMMM yyyy</string>
+
+
+    <string-array name="countries">
+        <item>+91</item>
+        <item>+971</item>
+    </string-array>
+
+    <string-array name="payment_type">
+        <item>Cash</item>
+        <item>Credit / Debit Card</item>
+        <item>Wallet</item>
+        <item>Voucher</item>
+    </string-array>
+
+    <string-array name="duration">
+        <item>Today</item>
+        <item>Yesterday</item>
+        <item>Last 7 Days</item>
+        <item>Last 30 Days</item>
+        <item>This Month</item>
+        <item>Last Month</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="sales_return">
+        <item>Sales</item>
+        <item>Return</item>
+    </string-array>
+
+    <string-array name="colors">
+        <item>#009688</item>
+        <item>#00bfa5</item>
+        <item>#4caf50</item>
+        <item>#00c853</item>
+        <item>#8bc34a</item>
+        <item>#64dd17</item>
+        <item>#aeea00</item>
+        <item>#cddc39</item>
+        <item>#ffeb3b</item>
+        <item>#ffc107</item>
+        <item>#ff9800</item>
+        <item>#ff6d00</item>
+        <item>#f44336</item>
+        <item>#d50000</item>
+        <item>#e91e63</item>
+        <item>#c51162</item>
+        <item>#ce93d8</item>
+        <item>#9c27b0</item>
+        <item>#aa00ff</item>
+        <item>#6200ea</item>
+        <item>#3f51b5</item>
+        <item>#2962ff</item>
+        <item>#03a9f4</item>
+        <item>#90caf9</item>
+        <item>#00bcd4</item>
+        <item>#607d8b</item>
+        <item>#37474f</item>
+        <item>#bcaaa4</item>
+        <item>#9e9e9e</item>
+        <item>#795548</item>
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <!-- Strings related to login -->
+    <string name="prompt_email">Enter your email id</string>
+    <string name="prompt_phone">Enter your mobile no.</string>
+    <string name="prompt_password">Password</string>
+    <string name="prompt_username">Phone number</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
+    <string name="prompt_otp">Enter your verification code</string>
+    <string name="prompt_choose_password">Choose a Password</string>
+    <string name="action_login">Login</string>
+    <string name="action_signup">Sign up</string>
+    <string name="action_choose_password">Choose a Password</string>
+    <string name="action_register">Register</string>
+    <string name="action_verify">Verify</string>
+    <string name="action_set_password">Set Password</string>
+    <string name="action_forgot">Forgot</string>
+    <string name="action_next">Next</string>
+    <string name="action_search">Search</string>
+    <string name="action_done">Done</string>
+    <string name="error_invalid_phone_no">This phone number is invalid</string>
+    <string name="error_invalid_email">This email is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_password_short">Minimum length of the password should be 6 characters.</string>
+    <string name="error_password_long">Length of the password should be between 6 and 10 characters.</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_incorrect_otp">This otp is incorrect</string>
+    <string name="error_no_barcode">No Barcode Selected</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing phone number completions."</string>
+    <string name="permission_rationale_location">"Location permissions are needed for providing prefill location details."</string>
+    <string name="service_not_available">Service not available</string>
+    <string name="invalid_lat_long_used">Invalid LatLng used.</string>
+    <string name="address_found">Address Found</string>
+    <string name="no_address_found">No Address Found</string>
+
+    <string name="termsncondition1"><![CDATA[<font color="#b1cce780">By logging in to this app, you agree to our </font>]]></string>
+    <string name="termsncondition2"><![CDATA[<u><font color="#3e435c">Terms &amp; Conditions</font></u>]]></string>
+    <string name="privacypolicy"><![CDATA[<u><font color="#3e435c">Privacy Policy</font></u>]]></string>
+
+    <!--Modify Store-->
+    <string name="storename">Enter your store name</string>
+
+    <string name="storecat">Store Category</string>
+
+    <!--Brands-->
+    <string name="title_activity_add_brand">Add Brand</string>
+    <string name="title_activity_edit_brand">Edit Brand</string>
+    <string name="title_activity_brand">Brand</string>
+
+    <!--Billing/Cart-->
+    <string name="title_activity_barcode_capture">Billing</string>
+    <string name="title_activity_orders_details">Orders</string>
+    <string name="title_activity_order_scan_product">Billing</string>
+    <string name="title_activity_place_order">Billing</string>
+    <string name="title_activity_place_order_customise_price">Billing</string>
+    <string name="title_activity_place_order_cust_emp">Billing</string>
+    <string name="title_activity_payment_method">Billing</string>
+    <string name="title_activity_invoice">Billing</string>
+    <string name="title_activity_mix_payment">Mix Payment</string>
+    <string name="title_activity_return">Return Product</string>
+    <string name="title_add_to_cart">Add to cart</string>
+    <string name="title_cart">Cart</string>
+    <string name="title_checkout">Checkout</string>
+    <string name="checkout_use_wallet_balance">Use Wallet balance</string>
+
+
+
+
+
+
+    <!--Customer-->
+    <string name="title_activity_add_customer">Add Customer</string>
+    <string name="title_activity_edit_customer">Edit Customer</string>
+    <string name="title_activity_customer">Customer</string>
+
+    <!--Employee-->
+    <string name="title_activity_add_employee">Add Employee</string>
+    <string name="title_activity_edit_employee">Edit Employee</string>
+    <string name="title_activity_add_employee_password">Employee Password Setting</string>
+    <string name="title_activity_add_employee_permissions">Employee Access</string>
+    <string name="title_activity_employee">Employee</string>
+
+    <!--Product-->
+    <string name="title_activity_product">Product Details</string>
+    <string name="title_activity_add_product_selection">Select Type</string>
+    <string name="title_activity_add_product">Product Details</string>
+    <string name="title_activity_add_product_price">Add Price &amp; Quantity</string>
+    <string name="title_activity_add_product_bulk">Start Bulk Process</string>
+    <string name="title_activity_add_product_select_categories">Add Product</string>
+    <string name="title_activity_add_product_bulk_confirmation">Confirmation</string>
+    <string name="title_activity_product_edit">Edit Product</string>
+    <string name="title_activity_add_product_new_flow">Add Product</string>
+    <string name="title_activity_add_product_new_price">Add Product</string>
+    <string name="title_activity_add_product_new_size_qty">Add Product</string>
+    <string name="title_activity_add_product_new_barcode_selection">Add Product</string>
+    <string name="title_activity_add_product_new_bar_avail">Add Product</string>
+    <string name="title_activity_add_product_new_bar_not_avail">Add Product</string>
+
+
+    <!--Profiles-->
+    <string name="title_activity_edit_store">Edit Store</string>
+    <string name="title_activity_edit_profile">My Profile</string>
+    <string name="title_activity_store">Store</string>
+
+
+    <!--SignIn/SignUp-->
+    <string name="title_activity_login">Sign In</string>
+    <!--    <string name="title_activity_sign_up">Sign Up</string>-->
+    <string name="title_activity_sign_up">Welcome</string>
+    <string name="title_activity_sign_up_header">Sign Up</string>
+    <string name="title_activity_permissions">Permissions</string>
+    <string name="title_activity_set_password">Set Password</string>
+    <string name="title_activity_forgot_password">Forgot Password</string>
+    <string name="title_activity_owner_employee">Owner Or Employee</string>
+    <string name="title_activity_add_store">Add Store</string>
+
+
+    <!--Supplier-->
+    <string name="title_activity_add_supplier">Add Supplier</string>
+    <string name="title_activity_edit_supplier">Edit Supplier</string>
+    <string name="title_activity_supplier">Supplier</string>
+
+
+    <!--Start-->
+    <string name="title_activity_splach_screen">Splach Screen</string>
+    <string name="title_activity_tour">Tour</string>
+
+
+    <!--Vouchers-->
+    <string name="title_activity_voucher">Voucher</string>
+    <string name="title_activity_add_voucher">Add Voucher</string>
+    <string name="title_activity_edit_voucher">Edit Voucher</string>
+
+
+    <!--Misc-->
+    <string name="title_activity_scan_card">Scan Card</string>
+    <string name="title_activity_maps">Select Store Location</string>
+    <string name="title_activity_change_password">Change Password</string>
+    <string name="title_activity_user_profile">My Profile</string>
+    <string name="title_activity_invoice_settings">Invoice Settings</string>
+    <string name="title_activity_detailed_graph">Detailed Graph</string>
+    <string name="title_activity_terms_conditions">Terms and Conditions</string>
+    <string name="title_activity_privacy_policy">Privacy Policy</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+
+
+    <!--Crashlytics-->
+    <string name="com.crashlytics.CrashSubmissionPromptTitle">Send Crash Report?</string>
+    <string name="com.crashlytics.CrashSubmissionPromptMessage">Looks like we crashed! Please help us fix the problem by sending a crash report.</string>
+    <string name="com.crashlytics.CrashSubmissionSendTitle">Send</string>
+    <string name="com.crashlytics.CrashSubmissionAlwaysSendTitle">Always Send</string>
+    <string name="com.crashlytics.CrashSubmissionCancelTitle">Don\'t Send</string>
+    <string name="title_activity_invoice_tax_settings">Invoice Tax Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_transfer_stock">Transfer Stock</string>
+    <string name="title_activity_stock_transfer_scanning">Stock Transfer</string>
+    <string name="title_activity_invoice_number_setting">Invoice Number Setting</string>
+    <string name="title_activity_invoice_tn_c">Invoice T&amp;C</string>
+    <string name="title_activity_invoice_taxes_nos">Invoice Tax Numbers</string>
+
+    <string name="prompt_store">Select Store Category</string>
+    <string name="prompt_parent">Select Parent Category</string>
+    <string name="prompt_category">Select Category</string>
+    <string name="prompt_subcategory">Select SubCategory</string>
+    <string name="prompt_brand">Select Brand</string>
+    <string name="prompt_sort">Sort Options</string>
+    <string name="period_sort">Select Period</string>
+
+    <string name="title_activity_customer_promotion">Customer Promotion</string>
+    <string name="title_activity_generate_label">Generate Label</string>
+    <string name="title_activity_print">Print</string>
+    <string name="title_activity_partial_payment">Partial Payment</string>
+    <string name="title_activity_partial_payment_details">Billing</string>
+    <string name="title_activity_partial_payment_settlement">Partial Payment Settlement</string>
+    <string name="title_activity_receive_stock">Receive Stock</string>
+    <string name="title_activity_transfer_stock_details">Transfer Stock</string>
+    <string name="title_activity_print_label">Print Label</string>
+    <string name="title_activity_choose_device">Choose Device</string>
+    <string name="title_activity_select_template">Select Template</string>
+    <string name="title_activity_print_receipt">Print Receipt</string>
+    <string name="title_activity_add_product_new_info">Add Product</string>
+    <string name="title_activity_change_stock">Change Stock</string>
+    <string name="title_activity_store_business_settings">Store BusinessSettings</string>
+    <string name="title_activity_help">Help</string>
+    <string name="title_activity_product_add_flow_selection">Add Product Flow</string>
+    <string name="title_activity_mswipe_payments">Card Payment</string>
+    <string name="title_activity_item_master_scan">Item Master</string>
+    <string name="title_activity_stock_taking_complete_stock">Stock Taking</string>
+    <string name="title_activity_stock_taking_results">Stock Taking</string>
+    <string name="title_activity_stock_taking_result_list">Stock Taking Report</string>
+    <string name="title_activity_stock_taking_reports_list">Stock Taking Reports</string>
+    <string name="title_activity_stock_taking_initial">Stock Taking</string>
+    <string name="title_activity_image_cropping">Crop Image</string>
+    <string name="title_activity_invoice_tax_gst_settings">Invoice Tax Gst Settings</string>
+    <string name="title_activity_add_gst_config">Add GST Config</string>
+    <string name="title_activity_stock_transfer_search_product">Product Status</string>
+    <string name="title_activity_product_label_print">Label Printing</string>
+    <string name="title_activity_mswipe_login">Mswipe Merchant Login</string>
+    <string name="title_activity_mswipe_sale_decline">Sale Declined</string>
+    <string name="title_activity_device_info">Device Info</string>
+    <string name="title_activity_printer_settings">Printer Settings</string>
+    <string name="title_activity_scan_barcode">Stock Transfer</string>
+
+    <string name="label_report_download_reports">Download reports</string>
+    <string name="label_report_pending_orders">Pending orders</string>
+    <string name="label_report_declined_orders">Declined orders</string>
+    <string name="label_report_completed_orders">Completed orders</string>
+    <string name="label_report_pending_customer_resquest">Pending customer request</string>
+    <string name="label_report_save_success">Report downloaded successfully.</string>
+    <string name="label_report_save_falied">Fail to download report.</string>
+
+    <string name="folder_path">ShopXie</string>
+
+    <string name="prompt_mswipe_username">Mswipe username</string>
+    <string name="prompt_mswipe_password">Mswipe pin</string>
+
+
+    <!-- Printer -->
+    <string name="printer_command_success">Printer Command Success</string>
+    <string name="printer_no_paper">No Paper</string>
+    <string name="printer_wrong_cmd">wrong Printer Command</string>
+    <string name="printer_overheat">Printer Overheat</string>
+    <string name="printer_battery_low">Device battery low, please charge</string>
+    <string name="printer_battery_critically_low">Device battery critically low and powered off</string>
+    <string name="printer_unknown_error">Unknown Error</string>
+    <string name="printer_command_not_available">Command not available</string>
+    <string name="printer_device_no_response">No response from device</string>
+    <string name="printer_device_busy">Device Busy</string>
+    <string name="printer_out_of_range">Input out of range</string>
+    <string name="printer_input_invalid">Input Invalid</string>
+    <string name="printer_crc_error">CRC Error</string>
+    <string name="printer_fail_to_start_bluetooth">Fail to start bluetooth</string>
+    <string name="printer_comm_link_uninitialized">Comm link uninitialized</string>
+    <string name="printer_bluetooth_already_started">Bluetooth already started</string>
+    <string name="printer_request_printer_data">Request printer data:</string>
+    <string name="printer_request_reprint_data">Request reprint data:</string>
+    <string name="printer_no_paired_printer_device_found">No paired printer device found.</string>
+    <string name="printer_no_than_one_paried_printer_found">No than one paried printer found.</string>
+
+    <string name="printer_connecting_to_printer">Connecting to printer, if it\'s taking longer than usual, please restart the printer and try re-connecting.</string>
+    <string name="printer_no_paired_printer_found">No paired printer found !! Please pair the printer from your phone\'s bluetooth settings and try again.</string>
+    <string name="printer_unable_to_connect_to_the_bluetooth_printer">Unable to connect to the bluetooth printer.</string>
+    <string name="printer_not_connected">Printer not connected. Please make sure printer is switched on.</string>
+    <string name="printer_printing_in_process">Printing in progress</string>
+
+
+    <!-- Mswipe -->
+    <string name="waiting_for_card">Please insert or swipe card now.</string>
+
+    <string name="no_card_detected">No card detected. Please insert or swipe card again.</string>
+
+    <string name="icc_card_inserted">ICC Card Inserted</string>
+    <string name="card_inserted">Please use mag card</string>
+    <string name="pin_entered">PIN entered</string>
+    <string name="pin_bypassed">pin bypassed</string>
+    <string name="pin_canceled">Card not accepted</string>
+    <string name="pin_timeout">PIN timeout</string>
+    <string name="key_error">Key error</string>
+    <string name="pin_wrong_pin_length">Pin wrong length</string>
+    <string name="no_pin">No PIN</string>
+    <string name="bad_swipe">Bad Swipe. Please swipe again.</string>
+    <string name="card_swiped">Card Swiped: </string>
+    <string name="mag_head_fail">Magnetic head fail</string>
+
+    <string name="card_no_response">No response from card</string>
+
+    <string name="card_swiped_track2_only">Card Swiped (Track 2 only):\n</string>
+    <string name="nfc_track2">Card Tapped (Track 2 Emulation):\n</string>
+    <string name="use_icc_card">Please use chip card</string>
+
+    <string name="format_id">Format ID: </string>
+    <string name="masked_pan">Masked PAN: </string>
+    <string name="expiry_date">Expiry Date: </string>
+    <string name="cardholder_name">Cardholder Name: </string>
+    <string name="ksn">KSN: </string>
+    <string name="pin_ksn">PIN KSN:</string>
+    <string name="track_ksn">Track KSN:</string>
+    <string name="emv_ksn">EMV KSN:</string>
+    <string name="uid">UID:</string>
+    <string name="service_code">Service Code: </string>
+    <string name="track_1_length">Track 1 Length: </string>
+    <string name="track_2_length">Track 2 Length: </string>
+    <string name="track_3_length">Track 3 Length: </string>
+    <string name="encrypted_tracks">Encrypted Tracks: </string>
+    <string name="encrypted_track_1">Encrypted Track 1: </string>
+    <string name="encrypted_track_2">Encrypted Track 2: </string>
+    <string name="encrypted_track_3">Encrypted Track 3: </string>
+    <string name="partial_track">Partial Track: </string>
+    <string name="card_data">Card Data: </string>
+    <string name="start_emv_fail">Start EMV failed</string>
+    <string name="start_emv_success">Start EMV success</string>
+    <string name="app_version">App Version: </string>
+    <string name="bootloader_version">Bootloader Version: </string>
+    <string name="firmware_version">Firmware Version: </string>
+    <string name="product_id">product id:</string>
+    <string name="usb">USB: </string>
+    <string name="charge">Charge: </string>
+    <string name="battery_level">Battery Level: </string>
+    <string name="hardware_version">Hardware Version: </string>
+    <string name="supported_track">Supported Track: </string>
+    <string name="track_1_supported">Track 1 Supported: </string>
+    <string name="track_2_supported">Track 2 Supported: </string>
+    <string name="track_3_supported">Track 3 Supported: </string>
+    <string name="unknown">Unknown</string>
+    <string name="set_amount">Set Amount</string>
+    <string name="amount_confirmed">Amount confirmed</string>
+    <string name="amount_canceled">Amount cancelled</string>
+    <string name="please_confirm_amount">Please confirm amount on Wisepad</string>
+    <string name="enter_pin">Please enter PIN on Wisepad</string>
+    <string name="online_process_requested">Online process requested.</string>
+    <string name="request_data_to_server">Request data to server.</string>
+    <string name="replied_connected">Replied connected.</string>
+    <string name="replied_success">Replied success.</string>
+    <string name="replied_failed">Replied failed.</string>
+    <string name="batch_data">Batch Data:\n</string>
+    <string name="transaction_log">Transaction Log:\n</string>
+    <string name="reversal_data">Reversal Data:\n</string>
+    <string name="please_select_app">Please select app</string>
+    <string name="transaction_result">Transaction Result</string>
+    <string name="transaction_approved">Approved</string>
+    <string name="transaction_terminated">Terminated</string>
+    <string name="transaction_declined">Offline Declined</string>
+    <string name="transaction_cancel">Cancel</string>
+    <string name="transaction_capk_fail">Fail (CAPK fail)</string>
+    <string name="transaction_not_icc">Please use Mag Card</string>
+    <string name="transaction_app_fail">Card Block</string>
+    <string name="transaction_device_error">Device Error</string>
+    <string name="transaction_application_blocked">transaction application blocked</string>
+    <string name="transaction_icc_card_removed">transaction icc card removed</string>
+    <string name="transaction_card_blocked">transaction card blocked</string>
+    <string name="transaction_condition_not_satisfied">transaction condition not satisfied</string>
+    <string name="transaction_invalid_icc_data">transaction invalid icc data</string>
+    <string name="transaction_card_not_supported">transaction card not supported</string>
+    <string name="transaction_missing_mandatory_data">transaction missing mandatory data</string>
+    <string name="transaction_no_emv_apps">transaction no emv apps</string>
+    <string name="tlv_list">TLV List:\n</string>
+    <string name="advice_process">Advice Process.</string>
+    <string name="call_your_bank">Please call your bank</string>
+    <string name="request_terminal_time">Request Terminal Time. Replied </string>
+    <string name="confirm_amount">Confirm amount</string>
+    <string name="amount">Amount</string>
+    <string name="amount_ok">Amount OK?</string>
+    <string name="approved">Approved</string>
+    <string name="cancel_or_enter">Cancel or Enter</string>
+    <string name="card_error">Card error</string>
+    <string name="declined">Offline Declined</string>
+    <string name="enter_amount">Please enter amount</string>
+    <string name="incorrect_pin">Incorrect PIN</string>
+    <string name="insert_card">Please insert card</string>
+    <string name="not_accepted">Not accepted</string>
+    <string name="pin_ok">PIN OK</string>
+    <string name="wait">Please wait&#8230;</string>
+    <string name="processing_error">Processing error</string>
+    <string name="remove_card">Please remove card</string>
+    <string name="use_chip_reader">Please use chip card</string>
+    <string name="use_mag_stripe">Please use mag stripe</string>
+    <string name="try_again">Please try again</string>
+    <string name="refer_payment_device">Please refer to your payment device</string>
+    <string name="try_another_interface">Please try another interface</string>
+    <string name="online_required">Online required</string>
+    <string name="processing">Loading&#8230;</string>
+    <string name="welcome">Welcome</string>
+    <string name="present_one_card">Please present only one card</string>
+    <string name="capk_failed">CAPK loading failed</string>
+    <string name="last_pin_try">Last PIN try</string>
+    <string name="select_account">select account</string>
+    <string name="battery_low">Device battery low, please charge</string>
+    <string name="battery_critically_low">Device battery critically low and powered off</string>
+    <string name="no_device_detected">No device detected.</string>
+    <string name="device_plugged">Device plugged.</string>
+    <string name="device_unplugged">Device unplugged.</string>
+    <string name="command_not_available">Command not available</string>
+    <string name="device_no_response">Device no response</string>
+    <string name="device_reset">Device reset</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="device_busy">Device Busy</string>
+    <string name="out_of_range">Input out of range.</string>
+    <string name="invalid_format">Input invalid format.</string>
+    <string name="zero_values">Input are zero values.</string>
+    <string name="input_invalid">Input invalid.</string>
+    <string name="cashback_not_supported">Cashback not supported.</string>
+    <string name="crc_error">CRC Error.</string>
+    <string name="comm_error">Communication Error.</string>
+    <string name="fail_to_start_bluetooth_v2">Failed to connect to the Wisepad, please make sure the Wisepad is switched on.</string>
+    <string name="invalid_function">Invalid function</string>
+    <string name="comm_link_uninitialized">Comm link uninitialized</string>
+    <string name="bluetooth_already_started">Bluetooth already started</string>
+    <string name="fail_to_start_audio">Fail to start audio</string>
+    <string name="fail_to_start_bluetooth_v4">Fail to start bluetooth</string>
+    <string name="bluetooth_4_not_supported">Bluetooth 4 not supported</string>
+    <string name="device_off">Device powered off.</string>
+    <string name="get_info">Get Device Info</string>
+    <string name="clear_log">Clear Log</string>
+    <string name="check_card">Start</string>
+    <string name="start_emv">Start EMV</string>
+    <string name="cancel">Cancel</string>
+    <string name="pin">PIN</string>
+    <string name="cashback_amount">Cashback</string>
+    <string name="confirm">Confirm</string>
+    <string name="bypass">PIN bypass</string>
+    <string name="decline">Decline</string>
+    <string name="getting_info">Getting device info&#8230;</string>
+    <string name="starting">Starting&#8230;</string>
+    <string name="power_on_icc">Power on ICC</string>
+    <string name="power_off_icc">Power off ICC</string>
+    <string name="send_apdu">Send APDU</string>
+    <string name="power_on_icc_success">Power on ICC Success</string>
+    <string name="power_on_icc_failed">Power on ICC Failed</string>
+    <string name="power_off_icc_success">Power off ICC Success</string>
+    <string name="power_off_icc_failed">Power off ICC Failed</string>
+    <string name="apdu_result">APDU Result:</string>
+    <string name="atr">ATR:</string>
+    <string name="apdu_failed">APDU Failed</string>
+    <string name="sending">Sending:</string>
+    <string name="atr_length">ATR Length:</string>
+    <string name="get_ksn">Get KSN</string>
+    <string name="getting_ksn">Getting KSN&#8230;</string>
+    <string name="powering_on_icc">Powering on ICC&#8230;</string>
+    <string name="powering_off_icc">Powering off ICC&#8230;</string>
+    <string name="card_not_supported">Card not support</string>
+    <string name="missing_mandatory_data">Missing mandatory data</string>
+    <string name="card_blocked_or_no_evm_apps">Please use Magnetic card</string>
+    <string name="invalid_icc_data">Invalid ICC data</string>
+    <string name="power_on_nfc">Power on NFC</string>
+    <string name="power_off_nfc">Power off NFC</string>
+    <string name="data_exchange">Data exchange</string>
+    <string name="power_on_nfc_success">Power on NFC Success</string>
+    <string name="power_on_nfc_failed">Power on NFC Failed</string>
+    <string name="power_off_nfc_success">Power off NFC Success</string>
+    <string name="power_off_nfc_failed">Power off NFC Failed</string>
+    <string name="data_received">Data received:</string>
+    <string name="data_length">Data length:</string>
+    <string name="data_exchange_failed">Data exchange failed</string>
+    <string name="response">Response:</string>
+    <string name="card_emulation">Card Emulation</string>
+    <string name="card_emulation_result">Card emulation result:</string>
+    <string name="card_emulation_failed">Card emulation failed</string>
+    <string name="performing_card_emulation">Performing card emulation&#8230;</string>
+    <string name="app_name_paused">aLogcat (paused)</string>
+    <string name="app_prefs">aLogcat - Preferences</string>
+    <string name="ok">Okay</string>
+    <string name="fatal_title">Fatal</string>
+    <string name="error_title">Error</string>
+    <string name="warn_title">Warning</string>
+    <string name="info_title">Information</string>
+    <string name="verbose_title">Verbose</string>
+    <string name="debug_title">Debug</string>
+    <string name="filter_menu">Filter (%s)</string>
+    <string name="filter_dialog_title">Log Filter</string>
+    <string name="filter_menu_empty">Filter</string>
+    <string name="filter_dialog_text">A log filter can be a simple substring or a Java-conforming regular expression.</string>
+    <string name="pattern_error_text">Invalid regular expression</string>
+    <string name="clear">Clear</string>
+    <string name="brief_title">Brief</string>
+    <string name="process_title">Process</string>
+    <string name="tag_title">Tag</string>
+    <string name="thread_title">Thread</string>
+    <string name="raw_title">Raw</string>
+    <string name="time_title">Time</string>
+    <string name="long_title">Long</string>
+    <string name="reading_logs">Reading logs, please wait.</string>
+    <string name="share_menu">Share</string>
+    <string name="play_menu">Play</string>
+    <string name="pause_menu">Pause</string>
+    <string name="jump_start_menu">Top</string>
+    <string name="jump_end_menu">Bottom</string>
+    <string name="main_title">Main</string>
+    <string name="events_title">Events</string>
+    <string name="radio_title">Radio</string>
+    <string name="small_title">Small</string>
+    <string name="medium_title">Medium</string>
+    <string name="large_title">Large</string>
+    <string name="clear_menu">Clear</string>
+    <string name="save_menu">Save</string>
+    <string name="prefs_menu">Preferences</string>
+    <string name="saving_log">Saving log to: %s, please wait</string>
+    <string name="threadtime_title">Thread Time</string>
+    <string name="black_title">Black</string>
+    <string name="white_title">White</string>
+    <string name="gray_title">Gray</string>
+    <string name="apply_as_regexp">Apply as regular expression?</string>
+    <string name="title_activity_set_gate_way">SetGateWay</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="device_comm_error">device communication error</string>
+    <string name="failed">failed</string>
+    <string name="no_update_required">no update required</string>
+    <string name="server_comm_error">server communication error</string>
+    <string name="setup_error">setup error</string>
+    <string name="stopped">stopped</string>
+    <string name="canceled_please_try_again"> canceled, please try again</string>
+    <string name="bluetooth_permission_denied">bluetooth permission denied</string>
+    <string name="channel_buffer_full">channel buffer full permission denied</string>
+    <string name="swipe">Swipe</string>
+    <string name="insert">Insert</string>
+    <string name="connect">Connect</string>
+
+    <string name="mswisepadview_wisepad_not_connected_please_make_sure_that_the_wisepad_is_switched_on">device not connected. please make sure device is switched on.</string>
+    <string name="mswisepadview_wisepad_not_connected_please_try_to_reconnect_the_device">Device not connected. please make sure device is switched on</string>
+    <string name="mswisepadview_connecting_to_wisepad_if_its_taking_longer_than_usual_please_restart_the_wisepad_and_try_reconnecting">connecting to device, if it\'s taking longer than usual, please restart the device and try re-connecting.</string>
+    <string name="please_enter_pin_on_wisepad_or_press_enter_green_key_to_bypass_pin">please enter pin on wisepad or press enter (green key) to bypass pin</string>
+    <string name="mswisepadview_select_wisepad">Select device</string>
+    <string name="creditsale_swiperview_pin_bypass_disabled">Pin bypass disabled</string>
+
+    <string name="device_connected">Device connected</string>
+    <string name="connecting">Connecting</string>
+    <string name="connecting_device">Connecting device</string>
+    <string name="device_detected">Device detected</string>
+    <string name="device_not_found">Device not found</string>
+    <string name="device_disconnected">Device disconnected.</string>
+    <string name="device_not_connected">Device not connected</string>
+    <string name="creditsaleswiperfragment_enable_bluetooth">Enable bluetooth</string>
+    <string name="creditsale_swiperview_lable_enter_pin">Enter pin</string>
+    <string name="creditsaleswiperfragment_status">status</string>
+    <string name="cardsaleactivity_cardinsertinsert_msg_creditsaleswiperfragment">CreditSaleSwiperFragment Screen \n\n card insert successful, select OK to post the details online</string>
+    <string name="cardsaleactivity_cardswiperead_msg_creditsaleswiperfragment">CreditSaleSwiperFragment Screen \n\n swipe card successful, select OK to post the details online</string>
+    <string name="no_paired_wisepad_found_please_pair_the_wisepad_from_your_phones_bluetooth_settings_and_try_again">no paired wisepad found !! please pair the Wisepad from your phone\'s bluetooth settings and try again</string>
+
+    <string name="processing_card_in_progress_press_back_key_twice_in_succession_to_terminate_the_transaction">processing card in progress&#8230; press back key twice in succession to terminate the transaction.</string>
+    <string name="cardsaleactivity_cardswiperead_msg_creditsaleactivity">CreditSaleActivity Screen \n\n swipe card successful, select OK to post the details online</string>
+    <string name="cardsaleactivity_cardinsertinsert_msg_creditsaleactivity">CreditSaleActivity Screen \n\n card insert successful, select OK to post the details online</string>
+    <string name="title_activity_mswipe_signature">Mswipe Payment</string>
+    <string name="creditsalesignatureactivity_please_sign_the_receipt_to_proceed">please sign the receipt to proceed.</string>
+    <string name="creditsalesignatureactivity_card_swiped_successfully">card swiped successfully</string>
+    <string name="creditsalesignatureactivity_please_remove_the_card">please remove the card</string>
+    <string name="title_activity_xprinter_label">Xprinter Label Printing</string>
+    <string name="employee_basic"><![CDATA[This type of access provides the permissions for employee to view all statistics except for statistics related to revenue & profits of your store’s business, view the sections viz. Billing, Stock, employee, customers, brands without their contact information. The employee will be able to perform billing to customer, manage returns, add stock, add customer, stock transfer & receive stock.]]></string>
+    <string name="employee_advanced"><![CDATA[This type of access provides the permissions for employee to view all statistics except for statistics related to revenue & profits of your store’s business, view the sections viz. Billing, Stock, employee, customers, brands without their contact information. The employee will be able to perform billing to customer, add stock, edit product, add customer, add/edit brand, add/edit voucher and stock transfer & receive stock.]]></string>
+    <string name="employee_expert"><![CDATA[This type of access provides the permissions for employee to view all statistics, view/add/edit all elements, configure & setting of all profiles & sections.]]></string>
+    <string name="title_activity_select_employee">Select Employee</string>
+    <string name="title_activity_add_product_category_selection">Select Categories</string>
+    <string name="title_activity_add_product_confirmation">Add Product</string>
+    <string name="title_activity_product_size_price">Size And Price</string>
+    <string name="title_activity_customers_bulk_delete">"Delete Customers"</string>
+    <string name="title_activity_brands_bulk_delete">Delete Brands</string>
+    <string name="title_activity_supplier_bulk_delete">Delete Suppliers</string>
+    <string name="title_activity_cart_setting">Cart Settings</string>
+    <string name="title_activity_confirmation">Bill Details</string>
+    <string name="title_activity_store_meta_capture">Scan Barcode</string>
+    <string name="title_activity_edit_custom_fields">Edit Custom Fields</string>
+    <string name="title_activity_label_template">Label Templates</string>
+    <string name="title_activity_stock_receive_scanning">Receive Stock</string>
+    <string name="title_activity_receive_stock_qty">Receive Stock Qty</string>
+    <string name="title_activity_reject_stock_qty">Reject Stock</string>
+    <string name="selectSizeQty">Select Size And Quantity</string>
+    <string name="title_activity_add_product_details">Add Product Details</string>
+    <string name="title_activity_custom_attributes">Custom Attributes</string>
+    <string name="title_activity_add_product_select_sizes">Select Sizes</string>
+    <string name="title_activity_add_product_quantity">Add Quantity</string>
+    <string name="title_activity_add_product_supplier">Select Supplier</string>
+    <string name="title_activity_add_product_barcoding_method">Select Barcoding Method</string>
+    <string name="title_activity_cart_discount">Add Discount</string>
+    <string name="title_activity_cart_tax">Taxes</string>
+    <string name="tap_to_add_supplier"><u>Tap here to add new supplier.</u></string>
+
+    <string name="barcode_add_or_skip">Do you want to generate barcodes for your product?</string>
+    <string name="selling_price_err">Enter the valid selling price</string>
+
+
+    <!-- MBaseket-->
+    <string name="terms_condition_label"><![CDATA[Read our Terms & Conditions and Privacy Policy]]></string>
+    <string name="action_login_sentence_case">Login</string>
+    <string name="mbasket_tap_to_share">Tap on ‘Share link’ to share your product list with your customers</string>
+    <string name="profile_share_link_btn_text">Share link</string>
+    <string name="edit_customer">Edit Customer</string>
+    <string name="mbasket_tap_to_refer"><![CDATA[Tap on ‘Refer & Earn’ to invite and earn the rewards]]></string>
+    <string name="mbasket_refer_where_neighborhood"><![CDATA[Hey,\n\nMeraOnlineStore is an app where neighborhood shops can sell online allowing for localized e-commerce.\n\nGet it for free at\n\n]]></string>
+
+    <string name="profile_refer_link_btn_text"><![CDATA[Refer & Earn]]></string>
+    <string name="profile_share_referral_link">Share referral link</string>
+    <string name="profile_share_referral_linkto_friends">Share referral link with your friends via SMS/Whatsapp etc, and earn rewards once your friends sign up</string>
+    <string name="profile_share_your_link_with_friends">Share your link\nwith friends</string>
+    <string name="profile_friend_downloads_signs_up"><![CDATA[Friends download\nand signup]]></string>
+    <string name="profile_you_earn_exciting_rewards">You earn\nexciting rewards</string>
+
+    <string name="sww_resp_empty">Something went wrong. Response is empty.</string>
+    <string name="sww">Something went wrong</string>
+    <string name="dialog_title_error">Error</string>
+    <string name="mbasket_order_online_with_url">To order online from us, click here %s</string>
+    <string name="hint_customers_listing_search">Search for customers</string>
+    <string name="navigation_home_mbasket"> </string>
+    <string name="mbasket_home_label_revenue">Today’s Revenue</string>
+    <string name="mbasket_home_label_orders">Orders</string>
+    <string name="mbasket_home_label_products">Products</string>
+    <string name="product_search_hint">Search for products</string>
+    <string name="orders_search_hint">Search for orders</string>
+    <string name="order_detail_label_order_no">Order number:</string>
+    <string name="order_detail_label_payment_mode">Mode of payment:</string>
+    <string name="order_detail_label_cust_name">Customer name:</string>
+    <string name="order_detail_label_mobile_no">Mobile number.:</string>
+    <string name="order_detail_label_total_amt">Total amount:</string>
+    <string name="general_use_remove">Remove</string>
+    <string name="activity_order_accept_hint">If an item is not in stock or stock is insufficient, you can edit the quantity before confirming the order</string>
+    <string name="order_detail_label_cta_delivered">Delivered</string>
+    <string name="order_detail_label_cta_returned">Returned</string>
+    <string name="order_detail_label_cta_cancel">Decline</string>
+    <string name="order_detail_label_cta_accept">Accept</string>
+    <string name="no_orders_found">No orders found</string>
+    <string name="no_completed_orders_found">No completed orders found</string>
+    <string name="dialog_order_status_accepted">Order accepted</string>
+    <string name="dialog_order_status_declined">Order declined</string>
+    <string name="dialog_order_all_removed_subtitle">Complete order will be declined</string>
+    <string name="dialog_payment_not_done">Payment not received, do you want to continue?</string>
+    <string name="orders_title_tab_pending">Pending</string>
+    <string name="general_use_are_you_sure">Are you sure?</string>
+    <string name="general_payment_status">Payment status</string>
+
+    <string name="general_use_are_you_sure_delete_categoty_title"> </string>
+    <string name="general_use_are_you_sure_delete_categoty_desp">Are you sure want to delete the category?\n\nThe category will be archived, you can restore the category later.</string>
+
+    <string name="general_use_are_you_sure_delete_subcategoty_title"> </string>
+    <string name="general_use_are_you_sure_delete_subcategoty_desp">Are you sure want to delete the subcategory?\n\nThe category will be archived, you can restore the subcategory later.</string>
+
+    <string name="general_use_yes">Yes</string>
+    <string name="general_use_no">No</string>
+    <string name="general_use_login">Login</string>
+    <string name="general_use_continue">Continue</string>
+    <string name="delivery_label">You can offer your customers the option to pick up the order from your store or home delivery.</string>
+    <string name="delivery_time_slot_label">Set shop timings and time of delivery options for your customers convenience. You can create upto 2 time slots.</string>
+    <string name="delivery_subtitle">You can change the delivery mode at any time.</string>
+    <string name="delivery_select_delivery_type">Select a delivery method</string>
+    <string name="delivery_select_date_and_time_for_delivery"><![CDATA[Select date & time for delivery]]></string>
+
+    <string name="delivery_select_time_slot">Select time slot</string>
+    <string name="mventry_cta_add_to_store">Add to store</string>
+    <string name="enter_price_hint">Enter product price</string>
+    <string name="enter_mrpprice_hint">Enter mrp</string>
+    <string name="enter_qty_hint">Enter qty</string>
+
+
+
+    <string name="general_use_submit">Submit</string>
+    <string name="request_otp">Request OTP</string>
+    <string name="dialog_message_new_product_added">New product added</string>
+    <string name="dialog_message_new_order_accepted">New order accepted</string>
+
+    <string name="products_select_category_title">Add product</string>
+    <string name="products_add_category_title">Add New category</string>
+    <string name="products_archived_categories">Archived categories</string>
+    <string name="products_add_sub_category_title">Add subcategory</string>
+    <string name="products_archived_subcategories">Deleted subcategories</string>
+    <string name="products_select_category_label">Select a product category</string>
+    <string name="products_select_sub_category_label">Select a sub category</string>
+    <string name="mventry_cta_view_in_store">View in store</string>
+    <string name="mventry_cta_edit_price">Edit price</string>
+    <string name="mventry_cta_remove">Remove</string>
+    <string name="mventry_cta_add_again">Add again</string>
+    <string name="products_instore_title">My store</string>
+    <string name="signup_enter_name">Contact person name *</string>
+    <string name="signup_enter_mobile">Phone number *</string>
+    <string name="signup_enter_store_address">Store address *</string>
+    <string name="signup_enter_name_hint">Enter your name</string>
+    <string name="signup_enter_store_addr_hint">Enter store address</string>
+    <string name="signup_enter_mobile_hint">Enter Phone number</string>
+    <string name="signup_final_main_label">Signed up successfully. Use the username and password given below to login in.</string>
+    <string name="general_use_sign_in">Sign In</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="mbasket_tap_to_share_customer">Tap on ‘Share link’ to share your product list with the customer</string>
+    <string name="general_use_dash">-</string>
+    <string name="orders_title_tab_pending_with_count">Pending (%s)</string>
+    <string name="orders_title_tab_returned">Declined</string>
+    <string name="orders_title_tab_returned_with_count">Declined (%s)</string>
+    <string name="orders_title_tab_completed">Completed</string>
+    <string name="orders_title_tab_completed_with_count">Completed (%s)</string>
+    <string name="no_categories_found">No categories found</string>
+    <string name="no_subcategories_found">No subcategories found</string>
+    <string name="click_on_add_tab">Click on Add tab, to Add your product categories.</string>
+    <string name="no_products_found">No products found</string>
+    <string name="general_use_add_capital_case">ADD</string>
+    <string name="general_use_add_sentence_case">Add</string>
+    <string name="title_enter_price">Enter price</string>
+    <string name="price_updated">Price Updated Successfully</string>
+    <string name="signup_enter_shop_name">Shop name *</string>
+    <string name="signup_enter_shop_name_hint">Enter shop name </string>
+    <string name="otp_mobile_number">Please type the verification code sent to %s</string>
+    <string name="share_store_link">Share store link</string>
+    <string name="share_whatsapp_link">Whatsapp</string>
+    <string name="share_facebook_link">Facebook</string>
+    <string name="share_sms_link">SMS</string>
+    <string name="share_other_link">Other</string>
+    <string name="no_product_selected_to_add">Please select a product to add in your store</string>
+    <string name="title_customer_past_orders">Past Orders</string>
+    <string name="order_detail_label_payment_status">Payment status</string>
+    <string name="app_namev2">>MOM Store</string>
+    <string name="app_name_meraonlinestore">MOM Store</string>
+    <string name="product_name_empty">Product name cannot be empty</string>
+    <string name="product_amount_empty">Amount cannot be empty</string>
+    <string name="invalid_server_response">Invalid response from server.</string>
+    <string name="error_invalid_empty_address">Address cannot be empty</string>
+    <string name="onboarding_existing_grocery_merchant">Onboarding is done successfully. Please sign in again.</string>
+    <string name="order_detail_label_address">Address</string>
+    <string name="order_detail_label_delivery_slot">Delivery slot</string>
+    <string name="order_detail_label_address_line1">Address line 1</string>
+    <string name="order_detail_label_address_line2">Address line 2</string>
+    <string name="enter_mswipe_creds">Login</string>
+    <string name="null_list_to_show">Something went wrong: List is null</string>
+    <string name="city_state_not_found_from_pincode">Unable to find your location from pincode</string>
+    <string name="error_field_required_pincode">Please enter valid 6-digit pincode</string>
+    <string name="dialog_payment_status_still_pending">Payment status is still pending. Are you sure you want to accept the order ?</string>
+    <string name="dialog_payment_status_not_paid_amount">You have not received the payment, do you wish to decline the transaction? on declining the order amount will not be added to customer Wallet.</string>
+    <string name="order_detail_label_landmark">Nearest Landmark</string>
+    <string name="error_invalid_empty_address_line1">Address line 1 cannot be empty</string>
+    <string name="error_invalid_empty_address_line2">Address line 2 cannot be empty</string>
+    <string name="dashboard_home_my_products">Add products</string>
+    <string name="dashboard_home_my_customers">My customers</string>
+    <string name="dashboard_home_delivery_menu">Delivery options</string>
+    <string name="view_in_store_select_your_store">Select your store</string>
+    <string name="view_in_store_store_name_label">Store Name</string>
+    <string name="view_in_store_deleted_items">Deleted items</string>
+    <string name="view_in_store_items">Store items</string>
+
+    <string name="default_notification_channel_id">General</string>
+    <string name="default_notification_channel_name">General</string>
+    <string name="default_notification_channel_description">General Notification for the app</string>
+    <string name="products_generic_select_multiple_items">Select multiple items</string>
+    <string name="products_generic_title_products">Products</string>
+    <string name="products_instore_search_hint">Search for products</string>
+
+    <string name="dialog_sure_to_remove_instore_product">This product will be removed.</string>
+    <string name="dialog_sure_to_add_again_instore_product">This product will be add again.</string>
+    <string name="instore_item_removed">Product removed successfully</string>
+    <string name="instore_item_added">Product added successfully</string>
+    <string name="no_network_try_again">No Network. Please check your internet connection and try again</string>
+    <string name="general_use_select_day">Select day</string>
+    <string name="general_use_from">From</string>
+    <string name="general_use_to">To</string>
+    <string name="general_use_select_time_slot">Select time slot</string>
+    <string name="general_use_cancel">Cancel</string>
+    <string name="general_use_delete">Delete</string>
+    <string name="title_activity_delivery_pickup_timings"><![CDATA[Set day & time]]></string>
+    <string name="delivery_label_select_time_delivery"><![CDATA[Select a day & time slot for home delivery]]></string>
+    <string name="delivery_label_select_time_pickup"><![CDATA[Select a day & time slot for pick up from store]]></string>
+    <string name="title_activity_edit_delivery_slot">Edit delivery slot</string>
+
+    <string name="general_use_set">Set</string>
+    <string name="delivery_options_add_new_time_slot">Add a new time slot</string>
+    <string name="delivery_pickup_select_one_day">Please select atleast one day</string>
+    <string name="login_mbasket_forgot_password">Forgot Password?</string>
+    <string name="signup_enter_shop_category">Select your shop category</string>
+    <string name="no_shop_categories">No Shop categories found</string>
+    <string name="payment_type_upi_display_text">UPI</string>
+    <string name="payment_status_pending">Pending</string>
+    <string name="payment_status_paid">Paid</string>
+    <string name="no_sub_categories_found">No Sub Categories Found</string>
+    <string name="signup_hint_enter_country_name">Enter country name</string>
+    <string name="signup_hint_enter_state_name">Enter state name</string>
+    <string name="signup_hint_enter_city_name">Enter city name</string>
+    <string name="signup_hint_enter_pin_code">Enter pin code</string>
+    <string name="signup_hint_enter_address_line_2">Enter address line 2</string>
+    <string name="signup_hint_enter_address_line_1">Enter address line 1</string>
+    <string name="signup_loading_message">creating your store\nplease wait</string>
+    <string name="login_loadind_creating_profile">please wait\ncreating profile</string>
+    <string name="add_product_hint_product_price_including_gst">Product price (Including GST)*</string>
+    <string name="add_product_hint_product_name">Product name*</string>
+    <string name="signup_verifying_otp">verifying otp\nplease wait</string>
+    <string name="home_mbasket_label_declined">Declined</string>
+    <string name="home_mbasket_label_pending">Pending</string>
+    <string name="home_mbasket_label_completed">Completed</string>
+    <string name="home_mbasket_label_vouchers">Vouchers</string>
+    <string name="home_mbasket_label_add_offers">Add Offers</string>
+    <string name="home_mbasket_label_reports">Reports</string>
+    <string name="general_use_resend_otp">Resend Otp</string>
+    <string name="otp_verification">OTP verification</string>
+    <string name="general_use_total">Total</string>
+    <string name="label_pick_up_from_store">Pick up from store</string>
+    <string name="label_home_delivery">Home delivery</string>
+    <string name="my_profile">My Profile</string>
+    <string name="settings">Settings</string>
+    <string name="tap_on_share_link_to_share_your_product_list_with_your_customers">Share your products with customer via their preferred channel</string>
+    <string name="error_adding_custom_product">Something went wrong while adding this product</string>
+    <string name="general_use_update">Update App</string>
+    <string name="past_orders">Past Orders</string>
+    <!--    <string name="store_pic_image_size_to_large">The image size is too large. Please try uploading an image with size less than 2Mb</string>-->
+    <string name="store_pic_image_size_to_large">The image size is too large.</string>
+    <string name="general_welcome">Welcome</string>
+    <string name="profile_upload_shop_image_text">Upload Shop Image</string>
+    <string name="store_setting_label_lock_customer_list">Lock Customer list</string>
+    <string name="store_setting_desc_lock_customer_list">Lock your customer list and choose who can place and order</string>
+    <string name="store_setting_label_delivery_options">Set delivery options</string>
+    <string name="store_setting_label_store_details">View store details</string>
+    <string name="navigation_reports_setting">Reports</string>
+
+    <string name="view_your_store">View your store</string>
+    <string name="view_store_report">View store reports</string>
+    <string name="modify_your_store">Modify your store</string>
+    <string name="share_your_store">Share your store with friends</string>
+
+
+    <string name="store_settings">Store Settings</string>
+    <string name="store_repo">Store Reports</string>
+    <string name="log_out">Log Out</string>
+
+    <string name="navigation_store_setting">Store setting</string>
+    <string name="update_successfully">Updated successfully</string>
+    <string name="want_to_unlock_list">Unlocking the customer list will allow orders from customers who are not in your customer list.\n\nDo you want to unlock your customer list?</string>
+    <string name="want_to_lock_list">Locking the customer list will block orders from customers who are not in your customer list. Only customers added by you in your customer list will be able to place orders from your store.\n\n Do you want to lock your customer list?</string>
+    <string name="general_powered_by">Powered by</string>
+    <string name="customer_frag_label_customer_list">Customer List</string>
+    <string name="customer_frag_label_pending_list">Pending Requests</string>
+    <string name="customer_frag_label_customer_list_s">Customer List(%d)</string>
+    <string name="customer_frag_label_pending_list_s">Pending Requests(%d)</string>
+    <string name="no_data_found">No data found</string>
+    <string name="order_detail_lbl_view_permit">View permit</string>
+    <string name="order_detail_lbl_view_invoice">View invoice</string>
+    <string name="order_detail_lbl_upload_invoice">Upload invoice</string>
+    <string name="order_detail_lbl_do_you_wish_upload_invoice">Do you wish to upload invoice for this order?</string>
+    <string name="activity_customer_lbl_contact_details">Contact details</string>
+    <string name="profile_decline_text">Decline</string>
+    <string name="profile_accept_btn_text">Accept</string>
+    <string name="title_pending_request">Pending request</string>
+    <string name="status_pending_customer_request">Status: %s</string>
+    <string name="signup_enter_referral_code">Do you have a referral code?</string>
+    <string name="signup_hint_enter_referral_code">Enter the referral code</string>
+    <string name="facebook_app_id">2623182267894381</string>
+    <string name="fb_login_protocol_scheme">fb2623182267894381</string>
+    <string name="rate_your_meraonline_app_experiance">Rate your meraonline app experience.</string>
+    <string name="how_was_you_experience">How was you experience with MeraOnlineStore app?</string>
+    <string name="we_re_sorry_you">We\'re sorry you had an unpleasant experience. Can you please help us improve.</string>
+    <string name="thank_you_for_your_feedback">Thank you for your feedback it will help us improve.</string>
+    <string name="unable_to_share_the_link">"Unable to share the link, App not avaliable</string>
+
+    <string name="modify_store">Modify Store</string>
+    <string name="store_name">Store Name</string>
+
+    <string name="enter_your_feedback">Pleasae provide your feedback</string>
+    <string name="rate_later">Rate later</string>
+    <string name="submit">Submit</string>
+    <string name="proceed">Proceed</string>
+    <string name="reupload">Re-upload</string>
+    <string name="restore">Restore</string>
+    <string name="remove">Remove</string>
+    <string name="store_setting_store_images">Store Images</string>
+    <string name="store_setting_category_images">Category Images</string>
+    <string name="store_setting_item_images">Item Images</string>
+    <string name="remark">Remark</string>
+    <string name="please_set_remark_for_the_invoice">Please set remark for the invoice.</string>
+    <string name="quantityc">Quantity:</string>
+    <string name="quantity">Quantity</string>
+    <string name="size">Size :</string>
+    <string name="tax">"Tax : "</string>
+    <string name="userid">Phone Number :</string>
+    <string name="discount">"Discount : "</string>
+    <string name="address">Address :</string>
+    <string name="bankacno">Bank A/c no.:</string>
+    <string name="product_name">Product Name</string>
+    <string name="subcategory">Subcategory</string>
+    <string name="barcodeno">Barcode No.</string>
+    <string name="delete">Delete</string>
+    <string name="select_all">Select All</string>
+    <string name="select_size">Select Size</string>
+    <string name="edit_attribute">Edit Attribute</string>
+    <string name="display_in_invoice">Display in invoice</string>
+    <string name="save">Save</string>
+    <string name="qty">"Qty : "</string>
+    <string name="quantitiy">Quantitiy</string>
+    <string name="variable_gst">Variable GST(%)</string>
+    <string name="variable_dis">Variable Dis(%)</string>
+    <string name="variable_price">Variable Price</string>
+    <string name="skip">Skip</string>
+    <string name="continuee">Continue</string>
+    <string name="print">Print</string>
+    <string name="no_printers_found">No Printers Found</string>
+    <string name="brand">Brand</string>
+    <string name="all_products_saved_successfully">All products saved successfully.</string>
+    <string name="from_store">From store</string>
+    <string name="dispatch_no">Dispatch no</string>
+    <string name="status">Status</string>
+    <string name="to_store">to store</string>
+    <string name="date">Date</string>
+    <string name="scan_code">Scan Code</string>
+    <string name="enter_manually">Enter Manually</string>
+    <string name="enter_product_barcode_name_category">Enter product barcode/name/category</string>
+    <string name="new_update_found">New Update Found</string>
+    <string name="please_select_quantity_of_product">Please select quantity of product.</string>
+    <string name="select_quantity">Select Quantity</string>
+    <string name="mobile_number_already_exist">This mobile number is already registered with us. Please use your existing user id and password to login or use alternate number to proceed.</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions]]></string>
+    <string name="dashboard_home_orders">Orders</string>
+    <string name="dashboard_home_my_store">My Store</string>
+    <string name="add_newcategory">Add new category</string>
+    <string name="subcategory_name">Subcategory name*</string>
+    <string name="category_image">Category image</string>
+    <string name="subcategory_image">Subcategory image</string>
+    <string name="category_name">Category name*</string>
+    <string name="store_setting_label_change_language">Change language</string>
+    <string name="navigation_change_language">Change language</string>
+    <string name="change_language_label_language_english">English</string>
+    <string name="change_language_label_language_hindi">हिंदी</string>
+    <string name="general_save_changes">Save changes</string>
+    <string name="delete_category">Delete Category</string>
+    <string name="archived_subcategories">Deleted Subcategories</string>
+    <string name="upload_product_photo">Upload product photo</string>
+    <string name="order_noc">Order no:</string>
+    <string name="name">Name</string>
+    <string name="mobile_no">Mobile Number</string>
+    <string name="address_line_one">Address Line 1</string>
+    <string name="address_line_two">Address Line 2</string>
+    <string name="landmark">Landmark</string>
+    <string name="pincode">Pincode</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="country">Country</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="change_language_continue">Continue / जारी रखें</string>
+    <string name="change_language_choose_language">Select language</string>
+    <string name="customer_name_header">Customer</string>
+    <string name="order_name_header">Orders</string>
+    <string name="change_language_choose_language_hin">भाषा चुनें</string>
+    <string name="add_new_subcategory">Add new subcategory</string>
+    <string name="upload_photo">Upload photo</string>
+    <string name="welcome_text">Hello</string>
+    <string name="your_store">Your Store</string>
+
+    <string name="title_activity_home_tab">HomeTabActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
+
+
+
+
+
+
+

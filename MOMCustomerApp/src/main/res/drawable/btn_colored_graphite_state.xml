@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- pressed state -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/graphite" />
+        </shape>
+    </item>
+
+    <!-- focused state -->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/graphite" />
+        </shape>
+    </item>
+
+    <!-- disabled state -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#CCCCCC" />
+        </shape>
+    </item>
+
+    <!-- normal state -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/graphite" />
+        </shape>
+    </item>
+</selector>

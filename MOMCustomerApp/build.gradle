@@ -1,0 +1,110 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 29
+
+    defaultConfig {
+        applicationId "com.mom.momcustomerapp"
+        minSdk 14
+        targetSdk 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "mom"
+
+    productFlavors {
+
+        dev {
+            dimension "mom"
+            applicationIdSuffix ".dev"
+            versionNameSuffix " UAT"
+        }
+
+
+        prod {
+
+            dimension "mom"
+
+
+        }
+
+
+    }
+
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation('com.mikepenz:materialdrawer:6.0.9@aar') {
+        transitive = true
+    }
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    implementation 'com.google.android.material:material:1.0.0'
+
+
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+
+
+    testImplementation 'junit:junit:4.13.2'
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+
+
+    implementation 'io.github.inflationx:calligraphy3:3.1.1'
+    implementation 'io.github.inflationx:viewpump:2.0.3'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+
+    implementation 'com.jakewharton:butterknife:10.0.0'
+
+    implementation 'com.isseiaoki:simplecropview:1.1.4'
+
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+    implementation 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
+
+
+
+    implementation("com.jakewharton:butterknife:10.2.1") {
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude group: 'com.android.support', module: 'support-compat'
+    }
+    annotationProcessor "com.jakewharton:butterknife-compiler:10.2.1"
+
+
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

@@ -1,0 +1,1596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Font Family-->
+
+    <style name="TextAppearance.FontPath.Regular" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Regular.ttf</item>
+    </style>
+
+    <style name="TextAppearance.FontPath.Medium" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Medium.ttf</item>
+    </style>
+
+    <style name="TextAppearance.FontPath.Bold" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Bold.ttf</item>
+    </style>
+
+    <style name="TextAppearance.FontPath.Light" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Light.ttf</item>
+    </style>
+
+    <style name="TextAppearance.FontPath.Thin" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Thin.ttf</item>
+    </style>
+
+    <style name="TextAppearance.FontPath.Italic" parent="android:TextAppearance">
+        <item name="fontPath">fonts/Roboto-Italic.ttf</item>
+    </style>
+
+
+    <!--Text Appearance Styles-->
+
+    <style name="font_roboto_regular">
+        <item name="android:textAppearance">@style/TextAppearance.FontPath.Regular</item>
+    </style>
+
+    <style name="font_roboto_medium">
+        <item name="android:textAppearance">@style/TextAppearance.FontPath.Medium</item>
+    </style>
+
+    <style name="font_roboto_bold">
+        <item name="android:textAppearance">@style/TextAppearance.FontPath.Bold</item>
+    </style>
+
+    <style name="font_roboto_light">
+        <item name="android:textAppearance">@style/TextAppearance.FontPath.Light</item>
+    </style>
+
+    <style name="font_roboto_thin">
+        <item name="android:textAppearance">@style/TextAppearance.FontPath.Thin</item>
+    </style>
+
+    <style name="font_roboto_italic">
+        <item name="android:textAppearance">@style/TextAppearance.FontPath.Italic</item>
+    </style>
+
+
+    <!--Font Sizes (Regular font) -->
+    <style name="font_regular_extra_small" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_extra_small</item>
+    </style>
+
+    <style name="font_regular_caption" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_caption</item>
+    </style>
+
+    <style name="font_regular_body" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_body</item>
+    </style>
+
+    <style name="font_regular_subhead" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_subhead</item>
+    </style>
+
+    <style name="font_regular_medium" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="font_regular_title" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_title</item>
+    </style>
+
+    <style name="font_regular_headline" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_headline</item>
+    </style>
+
+    <style name="font_regular_display_0" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_display_0</item>
+    </style>
+
+    <style name="font_regular_display_1" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_display_1</item>
+    </style>
+
+    <style name="font_regular_display_2" parent="font_roboto_regular">
+        <item name="android:textSize">@dimen/font_display_2</item>
+    </style>
+
+
+    <!--Font Sizes (Medium font) -->
+    <style name="font_medium_extra_small" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_extra_small</item>
+    </style>
+
+    <style name="font_medium_caption" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_caption</item>
+    </style>
+
+    <style name="font_medium_body" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_body</item>
+    </style>
+
+    <style name="font_medium_subhead" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_subhead</item>
+    </style>
+
+    <style name="font_medium_medium" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="font_medium_title" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_title</item>
+    </style>
+
+    <style name="font_medium_headline" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_headline</item>
+    </style>
+
+    <style name="font_medium_display_0" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_display_0</item>
+    </style>
+
+    <style name="font_medium_display_1" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_display_1</item>
+    </style>
+
+    <style name="font_medium_display_2" parent="font_roboto_medium">
+        <item name="android:textSize">@dimen/font_display_2</item>
+    </style>
+
+
+    <!--Font Sizes (Bold font) -->
+    <style name="font_bold_extra_small" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_extra_small</item>
+    </style>
+
+    <style name="font_bold_caption" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_caption</item>
+    </style>
+
+    <style name="font_bold_body" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_body</item>
+    </style>
+
+    <style name="font_bold_subhead" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_subhead</item>
+    </style>
+
+    <style name="font_bold_medium" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="font_bold_title" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_title</item>
+    </style>
+
+    <style name="font_bold_headline" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_headline</item>
+    </style>
+
+    <style name="font_bold_display_0" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_display_0</item>
+    </style>
+
+    <style name="font_bold_display_1" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_display_1</item>
+    </style>
+
+    <style name="font_bold_display_2" parent="font_roboto_bold">
+        <item name="android:textSize">@dimen/font_display_2</item>
+    </style>
+
+
+    <!--Font Sizes (Light font) -->
+    <style name="font_light_extra_small" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_extra_small</item>
+    </style>
+
+    <style name="font_light_caption" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_caption</item>
+    </style>
+
+    <style name="font_light_body" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_body</item>
+    </style>
+
+    <style name="font_light_subhead" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_subhead</item>
+    </style>
+
+    <style name="font_light_medium" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="font_light_title" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_title</item>
+    </style>
+
+    <style name="font_light_headline" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_headline</item>
+    </style>
+
+    <style name="font_light_display_0" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_display_0</item>
+    </style>
+
+    <style name="font_light_display_1" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_display_1</item>
+    </style>
+
+    <style name="font_light_display_2" parent="font_roboto_light">
+        <item name="android:textSize">@dimen/font_display_2</item>
+    </style>
+
+
+    <!--Font Sizes (Thin font) -->
+    <style name="font_thin_extra_small" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_extra_small</item>
+    </style>
+
+    <style name="font_thin_caption" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_caption</item>
+    </style>
+
+    <style name="font_thin_body" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_body</item>
+    </style>
+
+    <style name="font_thin_subhead" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_subhead</item>
+    </style>
+
+    <style name="font_thin_medium" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_medium</item>
+    </style>
+
+    <style name="font_thin_title" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_title</item>
+    </style>
+
+    <style name="font_thin_headline" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_headline</item>
+    </style>
+
+    <style name="font_thin_display_0" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_display_0</item>
+    </style>
+
+    <style name="font_thin_display_1" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_display_1</item>
+    </style>
+
+    <style name="font_thin_display_2" parent="font_roboto_thin">
+        <item name="android:textSize">@dimen/font_display_2</item>
+    </style>
+
+
+    <!--Font Regular Carbon -->
+
+    <style name="font_regular_10_carbon" parent="font_regular_extra_small">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_regular_12_carbon" parent="font_regular_caption">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_regular_14_carbon" parent="font_regular_body">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_regular_16_carbon" parent="font_regular_subhead">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_regular_18_carbon" parent="font_regular_medium">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_regular_20_carbon" parent="font_regular_title">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_regular_24_carbon" parent="font_regular_headline">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_regular_30_carbon" parent="font_regular_display_0">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_regular_34_carbon" parent="font_regular_display_1">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_regular_45_carbon" parent="font_regular_display_2">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+
+    <!--Font Regular Graphite -->
+
+    <style name="font_regular_10_graphite" parent="font_regular_extra_small">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_regular_12_graphite" parent="font_regular_caption">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_regular_14_graphite" parent="font_regular_body">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_regular_16_graphite" parent="font_regular_subhead">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_regular_18_graphite" parent="font_regular_medium">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_regular_20_graphite" parent="font_regular_title">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_regular_24_graphite" parent="font_regular_headline">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_regular_30_graphite" parent="font_regular_display_0">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_regular_34_graphite" parent="font_regular_display_1">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_regular_45_graphite" parent="font_regular_display_2">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <!--Font Regular Slate -->
+
+    <style name="font_regular_10_slate" parent="font_regular_extra_small">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_regular_12_slate" parent="font_regular_caption">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_regular_14_slate" parent="font_regular_body">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_regular_16_slate" parent="font_regular_subhead">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_regular_18_slate" parent="font_regular_medium">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_regular_20_slate" parent="font_regular_title">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_regular_24_slate" parent="font_regular_headline">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_regular_30_slate" parent="font_regular_display_0">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_regular_34_slate" parent="font_regular_display_1">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_regular_45_slate" parent="font_regular_display_2">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+
+    <!--Font Regular Money -->
+
+    <style name="font_regular_10_money" parent="font_regular_extra_small">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_regular_12_money" parent="font_regular_caption">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_regular_14_money" parent="font_regular_body">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_regular_16_money" parent="font_regular_subhead">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_regular_18_money" parent="font_regular_medium">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_regular_20_money" parent="font_regular_title">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_regular_24_money" parent="font_regular_headline">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_regular_30_money" parent="font_regular_display_0">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_regular_34_money" parent="font_regular_display_1">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_regular_45_money" parent="font_regular_display_2">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+
+    <!--Font Regular White -->
+
+    <style name="font_regular_10_white" parent="font_regular_extra_small">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_regular_12_white" parent="font_regular_caption">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_regular_14_white" parent="font_regular_body">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_regular_16_white" parent="font_regular_subhead">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_regular_18_white" parent="font_regular_medium">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_regular_20_white" parent="font_regular_title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_regular_24_white" parent="font_regular_headline">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_regular_30_white" parent="font_regular_display_0">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_regular_34_white" parent="font_regular_display_1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_regular_45_white" parent="font_regular_display_2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!--Font Medium Carbon -->
+
+    <style name="font_medium_10_carbon" parent="font_medium_extra_small">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_medium_12_carbon" parent="font_medium_caption">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_medium_14_carbon" parent="font_medium_body">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_medium_16_carbon" parent="font_medium_subhead">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_medium_18_carbon" parent="font_medium_medium">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_medium_20_carbon" parent="font_medium_title">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_medium_24_carbon" parent="font_medium_headline">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_medium_30_carbon" parent="font_medium_display_0">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_medium_34_carbon" parent="font_medium_display_1">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_medium_45_carbon" parent="font_medium_display_2">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+
+    <!--Font Medium Graphite -->
+
+    <style name="font_medium_10_graphite" parent="font_medium_extra_small">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_medium_12_graphite" parent="font_medium_caption">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_medium_14_graphite" parent="font_medium_body">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_medium_16_graphite" parent="font_medium_subhead">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_medium_18_graphite" parent="font_medium_medium">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_medium_20_graphite" parent="font_medium_title">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_medium_24_graphite" parent="font_medium_headline">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_medium_30_graphite" parent="font_medium_display_0">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_medium_34_graphite" parent="font_medium_display_1">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_medium_45_graphite" parent="font_medium_display_2">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+
+    <!--Font Medium Slate -->
+
+    <style name="font_medium_10_slate" parent="font_medium_extra_small">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_medium_12_slate" parent="font_medium_caption">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_medium_14_slate" parent="font_medium_body">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_medium_14_blue" parent="font_medium_body">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="font_medium_16_slate" parent="font_medium_subhead">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_medium_18_slate" parent="font_medium_medium">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_medium_20_slate" parent="font_medium_title">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_medium_24_slate" parent="font_medium_headline">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_medium_30_slate" parent="font_medium_display_0">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_medium_34_slate" parent="font_medium_display_1">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_medium_45_slate" parent="font_medium_display_2">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+
+    <!--Font Medium Money-->
+
+    <style name="font_medium_10_money" parent="font_medium_extra_small">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_medium_12_money" parent="font_medium_caption">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_medium_14_money" parent="font_medium_body">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_medium_16_money" parent="font_medium_subhead">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_medium_18_money" parent="font_medium_medium">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_medium_20_money" parent="font_medium_title">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_medium_24_money" parent="font_medium_headline">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_medium_30_money" parent="font_medium_display_0">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_medium_34_money" parent="font_medium_display_1">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_medium_45_money" parent="font_medium_display_2">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+
+    <!--Font Medium White -->
+
+    <style name="font_medium_10_white" parent="font_medium_extra_small">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_medium_12_white" parent="font_medium_caption">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_medium_14_white" parent="font_medium_body">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_medium_16_white" parent="font_medium_subhead">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_medium_18_white" parent="font_medium_medium">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_medium_20_white" parent="font_medium_title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_medium_24_white" parent="font_medium_headline">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="font_medium_26_white" parent="font_medium_headline">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="font_medium_30_white" parent="font_medium_display_0">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_medium_34_white" parent="font_medium_display_1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_medium_45_white" parent="font_medium_display_2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!--Font Bold Carbon -->
+
+    <style name="font_bold_10_carbon" parent="font_bold_extra_small">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_12_carbon" parent="font_bold_caption">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_14_carbon" parent="font_bold_body">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_16_carbon" parent="font_bold_subhead">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_18_carbon" parent="font_bold_medium">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_20_carbon" parent="font_bold_title">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_24_carbon" parent="font_bold_headline">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_30_carbon" parent="font_bold_display_0">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_34_carbon" parent="font_bold_display_1">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_45_carbon" parent="font_bold_display_2">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+
+    <!--Font Bold Blak-->
+    <style name="font_bold_24_black" parent="font_bold_title">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Font Bold Graphite -->
+
+    <style name="font_bold_10_graphite" parent="font_bold_extra_small">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_bold_12_graphite" parent="font_bold_caption">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_bold_14_graphite" parent="font_bold_body">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_bold_16_graphite" parent="font_bold_subhead">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_bold_18_graphite" parent="font_bold_medium">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_bold_20_graphite" parent="font_bold_title">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_bold_24_graphite" parent="font_bold_headline">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_bold_30_graphite" parent="font_bold_display_0">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_bold_34_graphite" parent="font_bold_display_1">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_bold_45_graphite" parent="font_bold_display_2">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+
+    <!--Font Bold Slate -->
+
+    <style name="font_bold_10_slate" parent="font_bold_extra_small">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_bold_12_slate" parent="font_bold_caption">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_bold_14_slate" parent="font_bold_body">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_bold_16_slate" parent="font_bold_subhead">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_bold_18_slate" parent="font_bold_medium">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_bold_20_slate" parent="font_bold_title">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_bold_24_slate" parent="font_bold_headline">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_bold_30_slate" parent="font_bold_display_0">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_bold_34_slate" parent="font_bold_display_1">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_bold_45_slate" parent="font_bold_display_2">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+
+    <!--Font Bold Money -->
+
+    <style name="font_bold_10_money" parent="font_bold_extra_small">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_bold_12_money" parent="font_bold_caption">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_bold_14_money" parent="font_bold_body">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_bold_16_money" parent="font_bold_subhead">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_bold_18_money" parent="font_bold_medium">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_bold_20_money" parent="font_bold_title">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_bold_24_money" parent="font_bold_headline">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_bold_30_money" parent="font_bold_display_0">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_bold_34_money" parent="font_bold_display_1">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_bold_45_money" parent="font_bold_display_2">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+
+    <!--Font Bold White -->
+
+    <style name="font_bold_10_white" parent="font_bold_extra_small">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_bold_12_white" parent="font_bold_caption">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_bold_14_white" parent="font_bold_body">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_bold_14_black" parent="font_bold_medium">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="font_bold_14_blue" parent="font_bold_medium">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="font_bold_16_white" parent="font_bold_subhead">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_bold_18_white" parent="font_bold_medium">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_bold_20_white" parent="font_bold_title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_bold_24_white" parent="font_bold_headline">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_bold_30_white" parent="font_bold_display_0">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_bold_34_white" parent="font_bold_display_1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_bold_45_white" parent="font_bold_display_2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!--Font Light Carbon -->
+
+    <style name="font_light_10_carbon" parent="font_light_extra_small">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_light_12_carbon" parent="font_light_caption">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_light_14_carbon" parent="font_light_body">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_light_16_carbon" parent="font_light_subhead">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_light_18_carbon" parent="font_light_medium">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_light_20_carbon" parent="font_light_title">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_light_24_carbon" parent="font_light_headline">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_light_30_carbon" parent="font_light_display_0">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_light_34_carbon" parent="font_light_display_1">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_light_45_carbon" parent="font_light_display_2">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+
+    <!--Font Light Graphite -->
+
+    <style name="font_light_10_graphite" parent="font_light_extra_small">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_light_12_graphite" parent="font_light_caption">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_light_14_graphite" parent="font_light_body">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_light_16_graphite" parent="font_light_subhead">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_light_18_graphite" parent="font_light_medium">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_light_20_graphite" parent="font_light_title">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_light_24_graphite" parent="font_light_headline">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_light_30_graphite" parent="font_light_display_0">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_light_34_graphite" parent="font_light_display_1">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_light_45_graphite" parent="font_light_display_2">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+
+    <!--Font Light Slate -->
+
+    <style name="font_light_10_slate" parent="font_light_extra_small">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_light_12_slate" parent="font_light_caption">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_light_14_slate" parent="font_light_body">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_light_16_slate" parent="font_light_subhead">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_light_18_slate" parent="font_light_medium">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_light_20_slate" parent="font_light_title">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_light_24_slate" parent="font_light_headline">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_light_30_slate" parent="font_light_display_0">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_light_34_slate" parent="font_light_display_1">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_light_45_slate" parent="font_light_display_2">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+
+    <!--Font Light Money -->
+
+    <style name="font_light_10_money" parent="font_light_extra_small">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_light_12_money" parent="font_light_caption">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_light_14_money" parent="font_light_body">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_light_16_money" parent="font_light_subhead">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_light_18_money" parent="font_light_medium">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_light_20_money" parent="font_light_title">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_light_24_money" parent="font_light_headline">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_light_30_money" parent="font_light_display_0">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_light_34_money" parent="font_light_display_1">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_light_45_money" parent="font_light_display_2">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+
+    <!--Font Light White -->
+
+    <style name="font_light_10_white" parent="font_light_extra_small">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_light_12_white" parent="font_light_caption">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_light_14_white" parent="font_light_body">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_light_16_white" parent="font_light_subhead">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_light_18_white" parent="font_light_medium">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_light_20_white" parent="font_light_title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_light_24_white" parent="font_light_headline">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_light_30_white" parent="font_light_display_0">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_light_34_white" parent="font_light_display_1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_light_45_white" parent="font_light_display_2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <!--Font Thin Carbon -->
+
+    <style name="font_thin_10_carbon" parent="font_thin_extra_small">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_thin_12_carbon" parent="font_thin_caption">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_thin_14_carbon" parent="font_thin_body">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_thin_16_carbon" parent="font_thin_subhead">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_thin_18_carbon" parent="font_thin_medium">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_thin_20_carbon" parent="font_thin_title">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_thin_24_carbon" parent="font_thin_headline">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_thin_30_carbon" parent="font_thin_display_0">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_thin_34_carbon" parent="font_thin_display_1">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_thin_45_carbon" parent="font_thin_display_2">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+
+    <!--Font Thin Ggraphite -->
+
+    <style name="font_thin_10_graphite" parent="font_thin_extra_small">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_thin_12_graphite" parent="font_thin_caption">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_thin_14_graphite" parent="font_thin_body">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_thin_16_graphite" parent="font_thin_subhead">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_thin_18_graphite" parent="font_thin_medium">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_thin_20_graphite" parent="font_thin_title">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_thin_24_graphite" parent="font_thin_headline">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_thin_30_graphite" parent="font_thin_display_0">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_thin_34_graphite" parent="font_thin_display_1">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+    <style name="font_thin_45_graphite" parent="font_thin_display_2">
+        <item name="android:textColor">@color/graphite</item>
+    </style>
+
+
+    <!--Font Thin Slate -->
+
+    <style name="font_thin_10_slate" parent="font_thin_extra_small">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_thin_12_slate" parent="font_thin_caption">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_thin_14_slate" parent="font_thin_body">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_thin_16_slate" parent="font_thin_subhead">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_thin_18_slate" parent="font_thin_medium">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_thin_20_slate" parent="font_thin_title">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_thin_24_slate" parent="font_thin_headline">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_thin_30_slate" parent="font_thin_display_0">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_thin_34_slate" parent="font_thin_display_1">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+    <style name="font_thin_45_slate" parent="font_thin_display_2">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+
+    <!--Font Thin Money -->
+
+    <style name="font_thin_10_money" parent="font_thin_extra_small">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_thin_12_money" parent="font_thin_caption">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_thin_14_money" parent="font_thin_body">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_thin_16_money" parent="font_thin_subhead">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_thin_18_money" parent="font_thin_medium">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_thin_20_money" parent="font_thin_title">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_thin_24_money" parent="font_thin_headline">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_thin_30_money" parent="font_thin_display_0">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_thin_34_money" parent="font_thin_display_1">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+    <style name="font_thin_45_money" parent="font_thin_display_2">
+        <item name="android:textColor">@color/money</item>
+    </style>
+
+
+    <!--Font Thin White -->
+
+    <style name="font_thin_10_white" parent="font_thin_extra_small">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_thin_12_white" parent="font_thin_caption">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_thin_14_white" parent="font_thin_body">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_thin_16_white" parent="font_thin_subhead">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_thin_18_white" parent="font_thin_medium">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_thin_20_white" parent="font_thin_title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_thin_24_white" parent="font_thin_headline">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_thin_30_white" parent="font_thin_display_0">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_thin_34_white" parent="font_thin_display_1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="font_thin_45_white" parent="font_thin_display_2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+
+    <!--Font Regular Carbon -->
+
+    <style name="font_bold_10_forest_green" parent="font_bold_extra_small">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_12forest_green" parent="font_bold_caption">
+        <item name="android:textColor">@color/carbon</item>
+    </style>
+
+    <style name="font_bold_14_forest_green" parent="font_bold_body">
+        <item name="android:textColor">@color/forest_green_258430</item>
+    </style>
+
+    <style name="font_bold_16_forest_green" parent="font_bold_subhead">
+        <item name="android:textColor">@color/forest_green_258430</item>
+    </style>
+
+    <style name="font_bold_18_forest_green" parent="font_bold_medium">
+        <item name="android:textColor">@color/forest_green_258430</item>
+    </style>
+
+    <style name="font_bold_20_forest_green" parent="font_bold_title">
+        <item name="android:textColor">@color/forest_green_258430</item>
+    </style>
+
+    <style name="font_bold_24_forest_green" parent="font_bold_headline">
+        <item name="android:textColor">@color/forest_green_258430</item>
+    </style>
+
+    <style name="font_bold_30_forest_green" parent="font_bold_display_0">
+        <item name="android:textColor">@color/forest_green_258430</item>
+    </style>
+
+    <style name="font_bold_34_forest_green" parent="font_bold_display_1">
+        <item name="android:textColor">@color/forest_green_258430</item>
+    </style>
+
+    <style name="font_bold_45_forest_green" parent="font_bold_display_2">
+        <item name="android:textColor">@color/forest_green_258430</item>
+    </style>
+
+
+
+    <style name="font_regular_14_hex258430" parent="font_regular_body">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+
+    <style name="font_regular_10_hex258430" parent="font_regular_extra_small">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+    <style name="font_medium_14_hex258430" parent="font_medium_body">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+
+    <style name="font_medium_20_hex258430" parent="font_medium_title">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+    <style name="font_regular_16_hex258430" parent="font_regular_subhead">
+        <item name="android:textColor">@color/slate</item>
+    </style>
+
+
+
+    <style name="font_regular_24_hex258430" parent="font_regular_headline">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+    <style name="font_medium_30_hex258430" parent="font_regular_display_0">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+
+    <style name="font_medium_16_hex258430" parent="font_medium_subhead">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+
+
+    <style name="font_medium_18_hex258430" parent="font_medium_medium">
+        <item name="android:textColor">@color/color_413D3D</item>
+    </style>
+
+
+    <style name="font_regular_12_hex258430" parent="font_regular_caption">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+
+    <style name="font_medium_12_hex258430" parent="font_regular_caption">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+
+    <style name="font_regular_18_hex258430" parent="font_regular_medium">
+        <item name="android:textColor">@color/color_258430</item>
+    </style>
+
+
+    <style name="AppNameFont" parent="android:TextAppearance">
+        <item name="fontPath">fonts/century_gothic_bold.ttf</item>
+    </style>
+
+
+    <!-- Black color -->
+    <style name="font_medium_16_black" parent="font_medium_subhead">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="font_regular_12_black" parent="font_regular_caption">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="font_medium_20_black" parent="font_medium_title">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+    <style name="font_medium_14_black" parent="font_medium_body">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+
+    <style name="font_regular_18_black" parent="font_regular_medium">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+
+    <style name="font_medium_18_black" parent="font_medium_medium">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+
+    <style name="font_medium_12_black" parent="font_regular_caption">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+
+    <!--
+
+        <style name="font_regular_14_black" parent="font_regular_body">
+            <item name="android:textColor">@color/color_258430</item>
+        </style>
+
+    -->
+
+
+
+    <!-- Grey 717171 -->
+
+    <style name="font_medium_20_hex717171" parent="font_medium_title">
+        <item name="android:textColor">@color/color_717171</item>
+    </style>
+
+
+    <style name="font_medium_18_hex717171" parent="font_medium_medium">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="font_regular_12_hex717171" parent="font_regular_caption">
+        <item name="android:textColor">@color/color_717171</item>
+    </style>
+
+    <style name="font_regular_14_hex717171" parent="font_regular_body">
+        <item name="android:textColor">@color/color_717171</item>
+    </style>
+
+
+    <style name="font_regular_16_hex717171" parent="font_medium_subhead">
+        <item name="android:textColor">@color/color_717171</item>
+    </style>
+
+
+    <style name="font_medium_14_hex717171" parent="font_medium_body">
+        <item name="android:textColor">@color/color_717171</item>
+    </style>
+
+
+
+
+
+    <style name="font_regular_10_hex717171" parent="font_regular_extra_small">
+        <item name="android:textColor">@color/color_717171</item>
+    </style>
+
+
+
+    <!-- Grey 898989 -->
+    <style name="font_medium_14_hex898989" parent="font_medium_body">
+        <item name="android:textColor">@color/color_898989</item>
+    </style>
+
+
+    <style name="font_regular_12_hex898989" parent="font_regular_caption">
+        <item name="android:textColor">@color/color_898989</item>
+    </style>
+
+    <style name="font_medium_16_hex898989" parent="font_medium_subhead">
+        <item name="android:textColor">@color/color_898989</item>
+    </style>
+
+
+
+    <style name="font_medium_14_hex413d3d" parent="font_medium_body">
+        <item name="android:textColor">@color/color_413D3D</item>
+    </style>
+
+
+
+    <style name="font_regular_14_hex413d3d" parent="font_regular_body">
+        <item name="android:textColor">@color/color_413D3D</item>
+    </style>
+
+
+
+    <style name="font_regular_30_black" parent="font_regular_display_0">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+
+</resources>

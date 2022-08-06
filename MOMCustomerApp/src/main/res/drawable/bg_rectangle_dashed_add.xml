@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <solid android:color="@color/transparent" />
+            <corners android:radius="8dp" />
+            <stroke
+                android:width="2dp"
+                android:color="@color/colorAccent"
+                android:dashGap="8dp"
+                android:dashWidth="8dp" />
+            <padding
+                android:bottom="24dp"
+                android:left="24dp"
+                android:right="24dp"
+                android:top="24dp" />
+        </shape>
+    </item>
+    <item>
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/ic_add_24dp"
+            android:tint="@color/colorAccent" />
+    </item>
+
+</layer-list>

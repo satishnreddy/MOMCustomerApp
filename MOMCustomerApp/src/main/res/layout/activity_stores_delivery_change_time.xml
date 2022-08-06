@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:elevation="0dp"
+        android:id="@+id/appbar">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/view_bg_mbasket"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                style="@style/font_medium_14_black"
+                android:text="@string/delivery_select_date_and_time_for_delivery" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/card_elevation_mbasket"
+                app:cardCornerRadius="3dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/rect_filled_corner_3dp_border_aaa_1dp"
+                    android:layout_height="wrap_content">
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:scrollbars="none"
+                        android:layout_marginLeft="@dimen/padding_normal"
+                        android:layout_marginRight="@dimen/padding_normal"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:id="@+id/fragment_change_delivery_option_date_slot"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:orientation="horizontal">
+
+                            <!-- <include layout="@layout/inflate_select_date_slot_data"/>-->
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:id="@+id/fragment_change_delivery_option_time_slot"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/padding_normal"
+                        android:layout_marginRight="@dimen/padding_normal"
+                        android:layout_marginTop="@dimen/margin_medium"
+                        android:orientation="vertical">
+
+                        <!--<include layout="@layout/inflate_select_time_slot_data"/>-->
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/fragment_change_delivery_option_btn_save"
+            style="@style/ButtonAccentStyle"
+            android:layout_width="match_parent"
+            android:background="@drawable/rect_filled_01b108_corner_6dp"
+            android:layout_height="wrap_content"
+            android:elevation="0dp"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:layout_alignParentBottom="true"
+            android:text="@string/save_menu" />
+
+    </RelativeLayout>
+
+</LinearLayout>

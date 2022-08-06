@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+
+    <dimen name="margin_below_small">4dp</dimen>
+    <dimen name="margin_large">35dp</dimen>
+    <dimen name="margin_medium">15dp</dimen>
+    <dimen name="margin_normal">10dp</dimen>
+    <dimen name="margin_small">5dp</dimen>
+    <dimen name="margin_very_large">50dp</dimen>
+    <dimen name="margin_very_small">2dp</dimen>
+
+    <dimen name="padding_normal">10dp</dimen>
+    <dimen name="padding_small">5dp</dimen>
+    <dimen name="padding_very_small">2dp</dimen>
+
+    <dimen name="font_size">15sp</dimen>
+    <dimen name="font_size_RH10">14sp</dimen>
+    <dimen name="font_size_RH12">27sp</dimen>
+    <dimen name="font_size_RH2">17sp</dimen>
+    <dimen name="font_size_RH3">26sp</dimen>
+    <dimen name="font_size_RH7">21sp</dimen>
+    <dimen name="font_size_RH8">19sp</dimen>
+    <dimen name="font_size_RH9">15sp</dimen>
+    <dimen name="font_size_RLH10">22sp</dimen>
+    <dimen name="font_size_RLH15">37sp</dimen>
+    <dimen name="font_size_RLH20">48sp</dimen>
+    <dimen name="font_size_RLH4">12sp</dimen>
+    <dimen name="font_size_RLH5">15sp</dimen>
+    <dimen name="font_size_RLH6">10sp</dimen>
+    <dimen name="font_size_RLH8">18sp</dimen>
+
+
+</resources>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:elevation="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/font_bold_18_money"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/half_padding"
+        android:paddingLeft="48dip"
+        android:paddingRight="48dip"
+        android:paddingTop="@dimen/half_padding"
+        android:text="@string/new_update_found" />
+
+    <TextView
+        android:id="@+id/update_dialog_tv_versionname"
+        style="@style/font_regular_16_carbon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/update_dialog_tv_whats_new"
+                style="@style/font_regular_14_graphite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/basic_margin"
+                android:layout_marginEnd="@dimen/half_margin"
+                android:layout_marginLeft="@dimen/half_margin"
+                android:layout_marginRight="@dimen/half_margin"
+                android:layout_marginStart="@dimen/half_margin"
+                android:layout_marginTop="@dimen/full_margin"
+                android:text="" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#CCC" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/update_dialog_button_later"
+            style="@style/ButtonBorderlessGreyStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="LATER" />
+
+        <Button
+            android:id="@+id/update_dialog_button_ok"
+            style="@style/ButtonBorderlessAccentStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="UPDATE" />
+
+
+    </LinearLayout>
+</LinearLayout>
+

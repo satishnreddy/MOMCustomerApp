@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.mom.momcustomerapp.customviews.CalendarRowView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="4dp"
+    android:layout_marginTop="4dp">
+
+    <com.mom.momcustomerapp.customviews.CalendarCellView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.mom.momcustomerapp.customviews.CalendarCellView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.mom.momcustomerapp.customviews.CalendarCellView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.mom.momcustomerapp.customviews.CalendarCellView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.mom.momcustomerapp.customviews.CalendarCellView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.mom.momcustomerapp.customviews.CalendarCellView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.mom.momcustomerapp.customviews.CalendarCellView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</com.mom.momcustomerapp.customviews.CalendarRowView>

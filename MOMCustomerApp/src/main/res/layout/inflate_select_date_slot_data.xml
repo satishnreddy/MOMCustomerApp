@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:layout_marginRight="@dimen/padding_medium"
+        android:layout_width="wrap_content"
+        app:cardElevation="@dimen/card_elevation_mbasket"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="3dp">
+
+        <LinearLayout
+            android:id="@+id/inflate_date_slot_LIN_day"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/rect_filled_grey_corner_5dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:paddingLeft="@dimen/padding_medium"
+                android:paddingRight="@dimen/padding_medium"
+                android:paddingTop="@dimen/padding_normal"
+                android:gravity="center"
+                android:paddingBottom="@dimen/padding_normal"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:paddingStart="@dimen/padding_small"
+                    android:paddingEnd="@dimen/padding_small"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/inflate_date_slot_tv_day"
+                    style="@style/font_regular_20_white"
+                    android:textColor="@color/grey500"
+                    tools:text="Today" />
+
+                <TextView
+                    android:paddingStart="@dimen/padding_small"
+                    android:paddingEnd="@dimen/padding_small"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/inflate_date_slot_tv_date"
+                    android:layout_height="wrap_content"
+                    style="@style/font_regular_18_white"
+                    android:textColor="@color/grey500"
+                    tools:text="Jun 30" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

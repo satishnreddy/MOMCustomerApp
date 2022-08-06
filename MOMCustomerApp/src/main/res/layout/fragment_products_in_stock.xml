@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/view_bg_mbasket"
+         android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/LNR_header"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/view_bg_mbasket"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="@string/order_name_header"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+            <View
+                android:id="@+id/seperator_line"
+                android:layout_below="@+id/header"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:clickable="true"
+            android:layout_width="0px"
+            android:layout_height="0px" />
+
+        <include
+            android:id="@+id/layout_search"
+            layout="@layout/layout_search" />
+
+        <LinearLayout
+            android:id="@+id/fragment_products_in_stock_preselected_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_normal"
+                android:paddingStart="@dimen/padding_medium"
+                android:paddingEnd="@dimen/padding_medium"
+                style="@style/font_medium_14_black"
+                tools:text="@tools:sample/lorem/random"
+                android:maxLines="1"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:ellipsize="end"
+                android:id="@+id/fragment_products_in_stock_label_cat_subcat_tv"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:visibility="visible"
+                    android:id="@+id/cat_left"
+                    android:background="?attr/selectableItemBackground"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_vector_left_24dp_state"/>
+
+                <HorizontalScrollView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:id="@+id/fragment_products_in_stock_to_be_selected_cat_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_black"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                    </LinearLayout>
+
+
+                </HorizontalScrollView>
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:id="@+id/cat_right"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackground"
+                    android:src="@drawable/ic_vector_right_24dp_state"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:padding="3dp"
+                android:id="@+id/fragment_products_in_stock_subcat"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/fragment_products_in_stock_rl_edit_subcat"
+                    android:layout_width="match_parent"
+                    android:background="@drawable/ms_round_rect_898989_fill_white_bground"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/fragment_products_in_stock_label_subcat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" "
+                        android:layout_centerHorizontal="true"
+                        android:padding="@dimen/padding_normal"
+                        style="@style/font_medium_14_black"
+                        android:layout_centerVertical="true"/>
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_down_24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_products_in_stock_rl_edit_subcat_new"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:background="@drawable/ms_round_rect_898989_fill_white_bground"
+                    android:layout_height="80dp">
+
+                    <ListView
+                        android:id="@+id/fragment_products_in_stock_lv_edit_subcat_new"
+                        android:layout_width="match_parent"
+                        android:dividerHeight="0dp"
+                        android:divider="@color/white"
+                        android:scrollbars="none"
+                        android:layout_height="80dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/fragment_products_in_stock_btn_edit_subcat_up"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_up_24dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"/>
+
+                        <ImageView
+                            android:id="@+id/fragment_products_in_stock_btn_edit_subcat_down"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_down_24dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"/>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/margin_small"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:visibility="visible"
+                    android:id="@+id/subcat_left"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_left_24dp"/>
+
+                <HorizontalScrollView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        android:layout_width="wrap_content"
+                        android:id="@+id/fragment_products_in_stock_to_be_selected_subcat_ll"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages 1"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_hex258430"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages 2"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_hex258430"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages 3"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_hex258430"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages 4"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_hex258430"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages 4"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_hex258430"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Beverages"
+                            android:padding="@dimen/padding_normal"
+                            style="@style/font_medium_14_hex258430"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_height="match_parent"
+                            />
+
+                    </LinearLayout>
+
+
+                </HorizontalScrollView>
+
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:visibility="visible"
+                    android:id="@+id/subcat_right"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_right_24dp"/>
+            </LinearLayout>
+
+            <com.mom.momcustomerapp.customviews.EmptyRecyclerView
+                android:id="@+id/fragment_products_in_stock_recycler_view"
+                android:layout_width="match_parent"
+                android:paddingStart="@dimen/half_padding"
+                android:paddingEnd="@dimen/half_padding"
+                tools:listitem="@layout/item_product_cardview_small"
+                android:layout_height="match_parent"
+                android:scrollbarStyle="outsideOverlay"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:layout_marginTop="80dp"
+                android:gravity="center"
+                tools:visibility="visible"
+                android:alpha="0.6"
+                android:visibility="gone"
+                style="@style/font_regular_14_graphite"
+                android:text="@string/no_products_found"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/fragment_products_in_stock_btm_subcat"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

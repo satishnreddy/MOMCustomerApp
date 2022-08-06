@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ShopXie.Widget" />
+
+    <style name="ToolbarStyle">
+        <item name="android:elevation" tools:targetApi="lollipop">0dp</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.ActionBar</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="titleTextColor">@color/white</item>
+        <item name="titleTextAppearance">@style/ToolbarTitleStyle</item>
+    </style>
+
+    <style name="ToolbarTitleStyle" parent="@style/font_bold_title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SimpleToolbarTitleStyle" parent="@style/font_bold_title">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="ShopXie.Widget.TextView" parent="android:TextAppearance.Widget.TextView">
+        <item name="fontPath">fonts/Roboto-Regular.ttf</item>
+    </style>
+
+    <style name="ShopXie.Widget.menuOverflow" parent="android:Widget.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu_24dp</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@color/colorPrimaryDark</item>
+        <item name="tabIndicatorHeight">4dp</item>
+        <item name="tabPaddingStart">8dp</item>
+        <item name="tabPaddingEnd">8dp</item>
+        <item name="tabMode">fixed</item>
+        <item name="tabBackground">?attr/selectableItemBackground</item>
+        <item name="tabTextAppearance">@style/FixedTabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/black</item>
+    </style>
+
+    <style name="TabLayoutStyleScrollable" parent="TabLayoutStyle">
+        <item name="tabIndicatorColor">@color/slate</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabTextAppearance">@style/TabTextAppearance</item>
+        <item name="tabSelectedTextColor">@color/slate</item>
+    </style>
+
+    <style name="TabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textAppearance">@style/font_medium_16_money</item>
+        <item name="android:textStyle">normal</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="FixedTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textAppearance">@style/font_regular_14_white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="SwitchStyle" parent="Widget.AppCompat.CompoundButton.Switch">
+        <!--<item name="thumbTint">@color/switch_thumb_color_selector</item>-->
+        <item name="trackTint">@color/switch_track_color_selector</item>
+    </style>
+
+
+    <style name="SpinnerStyle" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:textAppearance">@style/SpinnerTextStyle</item>
+    </style>
+
+    <style name="SpinnerTextStyle" parent="TextAppearance.AppCompat.Widget.TextView.SpinnerItem">
+        <item name="android:textAppearance">@style/font_regular_24_white</item>
+    </style>
+
+</resources>

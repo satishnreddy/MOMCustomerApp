@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dip"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/item_camerabutton_chooserdialog_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingEnd="@dimen/full_padding"
+        android:paddingLeft="@dimen/full_padding"
+        android:paddingRight="@dimen/full_padding"
+        android:paddingStart="@dimen/full_padding">
+
+        <ImageView
+            android:id="@+id/item_camerabutton_chooserdialog_iv_icon"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="@string/content_description" />
+
+        <TextView
+            android:id="@+id/item_camerabutton_chooserdialog_tv_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="1"
+            android:padding="3dip"
+            android:paddingLeft="@dimen/half_padding"
+            android:paddingStart="@dimen/half_padding" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/item_camerabutton_chooserdialog_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@drawable/shape_line_separator"
+        android:visibility="gone" />
+
+</LinearLayout>

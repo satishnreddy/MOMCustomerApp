@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.mom.momcustomerapp.views.stores.delivery.DeliveryPickupTimeActivity">
+
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:elevation="0dp"
+        android:id="@+id/appbar">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="@color/view_bg_mbasket"
+        android:layout_height="match_parent">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="@dimen/card_elevation_mbasket"
+            app:cardCornerRadius="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/rect_filled_corner_3dp_border_aaa_1dp"
+                android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginBottom="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/margin_normal"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/font_medium_14_black"
+                            android:text="@string/general_use_select_time_slot"/>
+
+                        <LinearLayout
+                            android:layout_marginTop="@dimen/margin_normal"
+                            android:id="@+id/activity_delivery_pickup_time_v_start_time"
+                            android:layout_width="wrap_content"
+                            android:gravity="center_vertical"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                tools:text="9:00 AM - 12:00AM"
+                                android:background="@drawable/rect_filled_corner_3dp_border_aaa_1dp"
+                                android:padding="@dimen/padding_small"
+                                android:id="@+id/activity_delivery_pickup_time_tv_start_time"
+                                style="@style/font_medium_18_hex717171"
+                                />
+
+                            <ImageView
+                                android:id="@+id/activity_delivery_pickup_time_iv_start_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_small"
+                                android:src="@drawable/ic_edit_24dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/font_medium_14_black"
+                    android:text="@string/general_use_select_day"/>
+
+                <com.mom.momcustomerapp.customviews.FlowLayout
+                    android:paddingTop="@dimen/padding_small"
+                    android:paddingBottom="@dimen/padding_small"
+                    android:layout_marginStart="@dimen/margin_normal"
+                    android:layout_marginEnd="@dimen/margin_normal"
+                    android:layout_marginBottom="@dimen/margin_medium"
+                    android:gravity="center_horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        tools:enabled="true"
+                        android:id="@+id/activity_delivery_pickup_time_v_day_sun"
+                        android:layout_margin="@dimen/margin_very_small"
+                        android:textColor="@drawable/selector_delivery_days_text_color"
+                        style="@style/font_medium_18_hex258430"
+                        android:background="@drawable/selector_bg_circle_white_48dp"
+                        android:text="S"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        tools:enabled="false"
+                        android:id="@+id/activity_delivery_pickup_time_v_day_mon"
+                        android:layout_margin="@dimen/margin_very_small"
+                        style="@style/font_medium_18_hex258430"
+                        android:textColor="@drawable/selector_delivery_days_text_color"
+                        android:background="@drawable/selector_bg_circle_white_48dp"
+                        android:text="M"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        tools:enabled="false"
+                        android:id="@+id/activity_delivery_pickup_time_v_day_tue"
+                        android:layout_margin="@dimen/margin_very_small"
+                        style="@style/font_medium_18_hex258430"
+                        android:textColor="@drawable/selector_delivery_days_text_color"
+                        android:background="@drawable/selector_bg_circle_white_48dp"
+                        android:text="T"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        tools:enabled="false"
+                        android:id="@+id/activity_delivery_pickup_time_v_day_wed"
+                        android:layout_margin="@dimen/margin_very_small"
+                        style="@style/font_medium_18_hex258430"
+                        android:textColor="@drawable/selector_delivery_days_text_color"
+                        android:background="@drawable/selector_bg_circle_white_48dp"
+                        android:text="W"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        tools:enabled="false"
+                        android:id="@+id/activity_delivery_pickup_time_v_day_thur"
+                        android:layout_margin="@dimen/margin_very_small"
+                        style="@style/font_medium_18_hex258430"
+                        android:textColor="@drawable/selector_delivery_days_text_color"
+                        android:background="@drawable/selector_bg_circle_white_48dp"
+                        android:text="T"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_margin="@dimen/margin_very_small"
+                        tools:enabled="false"
+                        android:id="@+id/activity_delivery_pickup_time_v_day_fri"
+                        style="@style/font_medium_18_hex258430"
+                        android:textColor="@drawable/selector_delivery_days_text_color"
+                        android:background="@drawable/selector_bg_circle_white_48dp"
+                        android:text="F"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:id="@+id/activity_delivery_pickup_time_v_day_sat"
+                        android:layout_margin="@dimen/margin_very_small"
+                        style="@style/font_medium_18_hex258430"
+                        android:textColor="@drawable/selector_delivery_days_text_color"
+                        android:background="@drawable/selector_bg_circle_white_48dp"
+                        android:text="S"/>
+
+
+                </com.mom.momcustomerapp.customviews.FlowLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:padding="@dimen/padding_normal"
+                    android:id="@+id/activity_delivery_pickup_time_btn_add_time_slot"
+                    android:background="@color/color_gradient_mid"
+                    android:layout_height="wrap_content"
+                    style="@style/font_medium_12_white"
+                    android:text="@string/general_use_add_sentence_case"/>
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+</LinearLayout>
