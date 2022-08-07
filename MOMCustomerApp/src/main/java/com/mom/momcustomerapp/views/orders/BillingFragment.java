@@ -16,8 +16,10 @@ import com.mom.momcustomerapp.R;
 import com.mom.momcustomerapp.customviews.adapters.GenericFragmentPagerAdapter;
 
 import com.mom.momcustomerapp.data.application.Consts;
+import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.views.home.Home_Tab_Activity;
 import com.mom.momcustomerapp.views.shared.BaseFragment;
+import com.mswipetech.sdk.network.util.Logs;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,10 +36,6 @@ public class BillingFragment extends BaseFragment
 
     @BindView(R.id.fragment_billing_tabs)
     TabLayout mTabLayout;
-    @BindView(R.id.fragment_billing_viewpager)
-    ViewPager mViewpager;
-    @BindView(R.id.fragment_billing_fab_bg)
-    View mFabBg;
 
     private GenericFragmentPagerAdapter mAdapter;
     private boolean isFabPressed = false;
@@ -51,6 +49,7 @@ public class BillingFragment extends BaseFragment
     private Unbinder unbinder;
     private boolean isFabOpen = false;
     private boolean isTabSelectedOnce = false;
+    private int iTabFirstSelectedIgnore = 0;
 
     private Home_Tab_Activity context;
 
@@ -105,33 +104,20 @@ public class BillingFragment extends BaseFragment
         unbinder = ButterKnife.bind(this, rootView);
         setHasOptionsMenu(true);
 
-        //((Home_Tab_Activity) getActivity()).setToolBarCollapsible(false);
-        /*setUpFab();*/
 
-        mViewpager = rootView.findViewById(R.id.fragment_billing_viewpager);
-        if (mViewpager != null)
-        {
-            setupViewPager();
-
-
-        }
-
-        mTabLayout.setupWithViewPager(mViewpager);
+        setupBillingFramgment();
         Bundle bundle = this.getArguments();
-        if(bundle != null){
-            if(bundle.get("key")=="pending")
-            {
-                TabLayout.Tab tab = mTabLayout.getTabAt(0);
-                tab.select();
+        if(bundle != null) {
+            if (bundle.get("key") == "pending") {
+                //TabLayout.Tab tab = mTabLayout.getTabAt(0);
+                //tab.select();
             }
 
-            if(bundle.get("key")=="declined")
-            {
+            if (bundle.get("key") == "declined") {
                 TabLayout.Tab tab = mTabLayout.getTabAt(1);
                 tab.select();
             }
-            if(bundle.get("key")=="completed")
-            {
+            if (bundle.get("key") == "completed") {
                 TabLayout.Tab tab = mTabLayout.getTabAt(2);
                 tab.select();
             }
@@ -140,28 +126,44 @@ public class BillingFragment extends BaseFragment
         return rootView;
     }
 
-    private void setupViewPager()
+    private void setupBillingFramgment()
     {
-        mAdapter = new GenericFragmentPagerAdapter(getActivity(), getChildFragmentManager());
+
         mPendingOrdersFragment = PendingOrdersFragment.newInstance();
         mReturnsFragment = ReturnsFragment.newInstance();
         mCompletedFragment = CompletedFragment.newInstance();
-        mAdapter.addFragment(mPendingOrdersFragment, getString(R.string.orders_title_tab_pending));
-        mAdapter.addFragment(mReturnsFragment, getString(R.string.orders_title_tab_returned));
-        mAdapter.addFragment(mCompletedFragment, getString(R.string.orders_title_tab_completed));
 
-        mViewpager.setAdapter(mAdapter);
+        mTabLayout.addTab(mTabLayout.newTab().setText(getString(R.string.orders_title_tab_pending)),true);
+        mTabLayout.addTab(mTabLayout.newTab().setText(getString(R.string.orders_title_tab_returned)));
+        mTabLayout.addTab(mTabLayout.newTab().setText(getString(R.string.orders_title_tab_completed)));
+
+
+        getChildFragmentManager().beginTransaction().replace(R.id.main_container, mPendingOrdersFragment).commit();
+
+
 
         mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener()
         {
             @Override
             public void onTabSelected(TabLayout.Tab tab)
             {
-                if (!isTabSelectedOnce) {
-                    isTabSelectedOnce = true;
-                }
-                else {
-                    //fetchOrdersStockCount();
+
+
+                switch (mTabLayout.getSelectedTabPosition())
+                {
+                    case 0:
+                        //mFab.setVisibility(View.GONE);
+                        getChildFragmentManager().beginTransaction().replace(R.id.main_container, mPendingOrdersFragment).commit();
+                        break;
+                    case 1:
+                        //mFab.setVisibility(View.GONE);
+                        getChildFragmentManager().beginTransaction().replace(R.id.main_container, mReturnsFragment).commit();
+                        break;
+                    case 2:
+                        //mFab.setVisibility(View.GONE);
+                        getChildFragmentManager().beginTransaction().replace(R.id.main_container, mCompletedFragment).commit();
+                        break;
+
                 }
 
             }
@@ -173,38 +175,18 @@ public class BillingFragment extends BaseFragment
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-                switch (tab.getPosition()) {
-                    case 0:
-                        if (mPendingOrdersFragment.isLoaded)
-                        {
 
-                            mPendingOrdersFragment.loadBills();
-                        }
-                        break;
-                    case 1:
-                        if (mReturnsFragment.isLoaded)
-                        {
-
-                            mReturnsFragment.loadReturns();
-                        }
-                        break;
-                    case 2:
-                        if (mCompletedFragment.isLoaded)
-                        {
-
-                            mCompletedFragment.loadBills();
-                        }
-                        break;
-                }
             }
+
+
         });
+
+
+
+
         mCurrentFragment = mPendingOrdersFragment;
+
     }
-
-
-
-
-
 
 
 
@@ -214,7 +196,7 @@ public class BillingFragment extends BaseFragment
     {
         if (requestCode == Consts.REQUEST_CODE_CART) {
             if (resultCode == Activity.RESULT_OK) {
-                mAdapter.getItem(mViewpager.getCurrentItem()).onActivityResult(requestCode, resultCode, data);
+                //mAdapter.getItem(mViewpager.getCurrentItem()).onActivityResult(requestCode, resultCode, data);
             }
         }
         super.onActivityResult(requestCode, resultCode, data);

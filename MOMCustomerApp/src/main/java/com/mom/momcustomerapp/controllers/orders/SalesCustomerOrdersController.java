@@ -115,7 +115,7 @@ public class SalesCustomerOrdersController extends NetworkManager
 
         mPostData = "vendor_id=" + vendor_id + "&person_id=" + person_id + "&store_id=" + store_id +
                 "&user_name=" + username + "&page=" + currentPage + "&search=" + searchQuery;
-        mRequestUrl = MOMApplication.getInstance().getServerUrl() + "cust/getSalesCustRetunredOrders";
+        mRequestUrl = MOMApplication.getInstance().getServerUrl() + "cust/getSalesCustCompletedOrders";
         start();
 
     }

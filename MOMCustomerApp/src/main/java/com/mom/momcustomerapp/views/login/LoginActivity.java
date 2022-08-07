@@ -74,7 +74,7 @@ import retrofit2.Response;
 
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static com.mom.momcustomerapp.data.application.Consts.REQUEST_CODE_CHANGE_LANGUAGE;
-import static com.mom.momcustomerapp.data.application.MOMApplication.INTERNAL_MBASKET_VERSION_CODE;
+import static com.mom.momcustomerapp.data.application.app.INTERNAL_MBASKET_VERSION_CODE;
 
 /**
  * A login screen that offers login via email/mPassword.

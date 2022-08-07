@@ -33,6 +33,7 @@ import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrdersResp;
 import com.mom.momcustomerapp.controllers.sales.models.ORDER_STATUS;
 import com.mom.momcustomerapp.customviews.EmptyRecyclerView;
 import com.mom.momcustomerapp.data.application.Consts;
+import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.data.shared.network.MOMNetworkResDataStore;
 import com.mom.momcustomerapp.interfaces.OnLoadMoreListener;
 import com.mom.momcustomerapp.interfaces.RecyclerViewItemClickListener;
@@ -62,7 +63,9 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
 
 
     public boolean isSearchQuery = false;
-    public boolean isLoaded = false;
+    int iLoadMoreStatus = 0;
+    public boolean bolIgnoreLoadMoreOnCreateView = false;
+
 
     @BindView(R.id.fragment_bills_recycler_view)
     EmptyRecyclerView mRecyclerView;
@@ -83,7 +86,6 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
     private int mTotalRecordsBills = 0;
     private boolean billsInProgress = false;
     private String searchQuery = "";
-    private boolean ignoreLoadMore = true;
     @BindView(R.id.header)
     LinearLayout header;
 
@@ -110,10 +112,8 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
-        // ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-
-        //this.getSupportActionBar().hide();
         super.onCreate(savedInstanceState);
+
     }
 
 
@@ -123,6 +123,7 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
         super.onAttach(context);
         activity = (Home_Tab_Activity) context;
 
+
     }
 
     @Override
@@ -131,6 +132,7 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_sales_completed_bills, container, false);
         ButterKnife.bind(this, rootView);
+
 
 
         ImageView backarrow = rootView.findViewById(R.id.back_arrow);
@@ -149,7 +151,10 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
         /*mRecyclerView.addItemDecoration(new LineDividerItemDecoration(getActivity()));*/
         setUpSearchView();
 
-        isLoaded = true;
+        iLoadMoreStatus = 1;
+        //bolIgnoreLoadMoreOnCreateView = true;
+
+
         return rootView;
     }
 
@@ -224,6 +229,7 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
+
         if (requestCode == Consts.REQUEST_CODE_CART)
         {
             //MventryCart.loadCartContents();
@@ -246,6 +252,7 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
 
     public void loadBills()
     {
+
         if (mRecyclerView != null) {
             mRecyclerView.setAdapter(null);
             mRecyclerView.invalidate();
@@ -281,9 +288,11 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
     public void onLoadMore(int currentPage, int totalItemCount)
     {
 
-        if (ignoreLoadMore)
+        iLoadMoreStatus = 0;
+
+        if (bolIgnoreLoadMoreOnCreateView)
         {
-            ignoreLoadMore = false;
+            bolIgnoreLoadMoreOnCreateView = false;
             return;
         }
 
@@ -295,7 +304,8 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
         }
     }
 
-    private void setDataToAdapter(List<SalesCustOrder> ordersModelList) {
+    private void setDataToAdapter(List<SalesCustOrder> ordersModelList)
+    {
         mRecyclerView.setEmptyView(mEmptyView);
         mBillingRecyclerViewAdapter.removeItem(null);
 
@@ -384,14 +394,14 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
                         }
                     }
 
-                    if (mBillingRecyclerViewAdapter != null)
+                    if (mBillingListModel != null)
                     {
                         mBillingRecyclerViewAdapter.setCurrentPage(mPageNo);
+                        setDataToAdapter(mBillingModelArrayList);
                     }
                     else {
-                        initiateBillingRecyclerViewAdapter(mPageNo);
+                        showErrorDialog("Error", "Something went wrong: List is null");
                     }
-                    setDataToAdapter(mBillingModelArrayList);
 
                 }
                 else {
@@ -454,10 +464,6 @@ public class CompletedFragment extends BaseFragment implements RecyclerViewItemC
         }
     }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) onLoadMore(1, 0);
-    }
+
 }
 

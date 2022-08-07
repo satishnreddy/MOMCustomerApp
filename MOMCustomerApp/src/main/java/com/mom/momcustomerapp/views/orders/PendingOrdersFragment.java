@@ -31,6 +31,7 @@ import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrder;
 import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrdersResp;
 import com.mom.momcustomerapp.customviews.EmptyRecyclerView;
 import com.mom.momcustomerapp.data.application.Consts;
+import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.data.shared.network.MOMNetworkResDataStore;
 import com.mom.momcustomerapp.interfaces.OnLoadMoreListener;
 import com.mom.momcustomerapp.interfaces.RecyclerViewItemClickListener;
@@ -63,7 +64,10 @@ public class PendingOrdersFragment extends BaseFragment
 
 
     public boolean isSearchQuery = false;
-    public boolean isLoaded = false;
+    int iLoadMoreStatus = 0;
+    boolean  bolIgnoreLoadMoreOnCreateView = false;
+    int iTabFirstSelectedIgnore = 0;
+
 
     @BindView(R.id.fragment_partial_recycler_view)
     EmptyRecyclerView mRecyclerView;
@@ -123,22 +127,9 @@ public class PendingOrdersFragment extends BaseFragment
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
     }
 
-    @Override
-    public void onResume()
-    {
-        super.onResume();
-        //  ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
-    }
-
-
-    @Override
-    public void onStop()
-    {
-        super.onStop();
-        // ((AppCompatActivity)getActivity()).getSupportActionBar().show();
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -147,16 +138,7 @@ public class PendingOrdersFragment extends BaseFragment
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_sales_partial, container, false);
         ButterKnife.bind(this, rootView);
-        /*
-        Bundle bundle = this.getArguments();
 
-        if(bundle != null){
-            if(bundle.get("key")=="pending")
-            {
-                header.setVisibility(View.VISIBLE);
-            }
-        }
-         */
         ImageView backarrow = rootView.findViewById(R.id.back_arrow);
         backarrow.setOnClickListener(new View.OnClickListener()
         {
@@ -174,18 +156,20 @@ public class PendingOrdersFragment extends BaseFragment
         mBillingRecyclerViewAdapter = new BillingMbasketRVAdapter(mRecyclerView, mBillingModelArrayList, this, this);
         mRecyclerView.setAdapter(mBillingRecyclerViewAdapter);
         /*mRecyclerView.addItemDecoration(new LineDividerItemDecoration(getActivity()));*/
-
         setUpSearchView();
 
-        isLoaded = true;
+        iLoadMoreStatus = 1;
+        //if(iTabFirstSelectedIgnore != 0)
+            //bolIgnoreLoadMoreOnCreateView = true;
+        //iTabFirstSelectedIgnore = 1;
+
         return rootView;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState)
     {
-        super.onViewCreated(view, savedInstanceState);
-        loadBills();
+       super.onViewCreated(view, savedInstanceState);
 
         /*view.findViewById(R.id.layout_search).setVisibility(View.GONE);*/
     }
@@ -261,7 +245,7 @@ public class PendingOrdersFragment extends BaseFragment
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        if (requestCode == Consts.REQUEST_CODE_CART)
+         if (requestCode == Consts.REQUEST_CODE_CART)
         {
             //MventryCart.loadCartContents();
             mPageNo = 0;
@@ -288,6 +272,7 @@ public class PendingOrdersFragment extends BaseFragment
 
     public void loadBills()
     {
+
         if (mRecyclerView != null) {
             mRecyclerView.setAdapter(null);
             mRecyclerView.invalidate();
@@ -308,6 +293,32 @@ public class PendingOrdersFragment extends BaseFragment
     }
 
     @Override
+    public void onLoadMore(int currentPage, int totalItemCount)
+    {
+
+        iLoadMoreStatus = 0;
+        if (bolIgnoreLoadMoreOnCreateView)
+        {
+            bolIgnoreLoadMoreOnCreateView = false;
+            return;
+        }
+        /*
+        if (ignoreLoadMore)
+        {
+            ignoreLoadMore = false;
+            return;
+        }
+        */
+        if (isSearchQuery) {
+            getOrdersBills(currentPage,totalItemCount, searchQuery);
+        }
+        else {
+            getOrdersBills(currentPage, totalItemCount,"");
+        }
+    }
+
+
+    @Override
     public void OnRecyclerViewItemClick(int position)
     {
         Intent intent = new Intent(getActivity(), OrderDetailsActivity.class);
@@ -325,24 +336,6 @@ public class PendingOrdersFragment extends BaseFragment
         startActivityForResult(intent, Consts.REQUEST_CODE_VIEW_INVOICE);
     }
 
-    @Override
-    public void onLoadMore(int currentPage, int totalItemCount)
-    {
-
-
-        if (ignoreLoadMore)
-        {
-            ignoreLoadMore = false;
-            return;
-        }
-
-        if (isSearchQuery) {
-            getOrdersBills(currentPage,totalItemCount, searchQuery);
-        }
-        else {
-            getOrdersBills(currentPage, totalItemCount,"");
-        }
-    }
 
     private void setDataToAdapter(List<SalesCustOrder> ordersModelList)
     {
@@ -388,28 +381,6 @@ public class PendingOrdersFragment extends BaseFragment
         }
     }
 
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser)
-    {
-        super.setUserVisibleHint(isVisibleToUser);
-        if (isVisibleToUser) {
-            onLoadMore(1, 0);
-            if (mRecyclerView != null){
-                mRecyclerView.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mRecyclerView.setVisibility(View.VISIBLE);
-                    }
-                },500);
-            }
-        }
-        else {
-            if (mRecyclerView != null){
-                mRecyclerView.setVisibility(View.INVISIBLE);
-            }
-
-        }
-    }
 
     private void getOrdersBills(final int currentPage, int totalItemCount, String searchQuery)
     {
@@ -489,15 +460,14 @@ public class PendingOrdersFragment extends BaseFragment
                             }
                         }
 
-                        if (mBillingRecyclerViewAdapter != null)
+                        if (mBillingListModel != null)
                         {
                             mBillingRecyclerViewAdapter.setCurrentPage(mPageNo);
+                            setDataToAdapter(mBillingModelArrayList);
                         }
                         else {
-                            initiateBillingRecyclerViewAdapter(mPageNo);
+                            showErrorDialog("Error", "Something went wrong: List is null");
                         }
-                        setDataToAdapter(mBillingModelArrayList);
-
                     }
                     else {
                         showErrorDialog("Error", "Something went wrong: List is null");

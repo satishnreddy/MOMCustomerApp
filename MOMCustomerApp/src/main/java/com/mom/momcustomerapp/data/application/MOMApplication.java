@@ -17,23 +17,7 @@ import com.mom.momcustomerapp.R;
 public class MOMApplication extends MultiDexApplication
 {
 
-    public static final int INTERNAL_MBASKET_VERSION_CODE = 1;
-    public static final boolean is_DEBUGGING_ON = true;
-    public static final boolean IS_PROD = false;
-    //public static final String APPLICATION_ID = "ccom.mom.momcustomerapp";
-
-    public static final String packName = "com.mom";
     private static MOMApplication mMOMApplication = null;
-
-    //private static final String baseWEBSOCKET_URL_LIVE = "https://556b-2405-201-c00b-9895-104e-a526-a67b-3ba.in.ngrok.io/momapi/api/";
-    //private static final String baseWEBSOCKET_URL_UAT  = "https://556b-2405-201-c00b-9895-104e-a526-a67b-3ba.in.ngrok.io/momapi/api/";
-
-    //private static final String baseWEBSOCKET_URL_LIVE = "http://ec2-13-126-69-193.ap-south-1.compute.amazonaws.com/momapi/api/";
-    //private static final String baseWEBSOCKET_URL_UAT  = "http://ec2-13-126-69-193.ap-south-1.compute.amazonaws.com/momapi/api/";
-
-    private static final String baseWEBSOCKET_URL_LIVE = "http://10.0.2.2/momapi/api/";
-    private static final String baseWEBSOCKET_URL_UAT  = "http://10.0.2.2/momapi/api/";
-
 
     private String mToken = "";
     private String mVendor_id = "";
@@ -71,10 +55,10 @@ public class MOMApplication extends MultiDexApplication
 
     public String getServerUrl()
     {
-        if(IS_PROD)
-            return baseWEBSOCKET_URL_LIVE;
+        if(app.IS_PROD)
+            return app.baseWEBSOCKET_URL_LIVE;
         else
-            return baseWEBSOCKET_URL_UAT;
+            return app.baseWEBSOCKET_URL_UAT;
     }
 
 

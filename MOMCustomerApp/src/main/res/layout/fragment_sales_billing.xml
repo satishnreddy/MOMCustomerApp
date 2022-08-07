@@ -5,12 +5,6 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--    <com.google.android.material.appbar.AppBarLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-    <!--        app:elevation="0dp">-->
-
     <TextView
         android:id="@+id/header"
         android:layout_width="match_parent"
@@ -40,48 +34,19 @@
         app:tabSelectedTextColor="@color/black"
         app:tabTextColor="@color/grey">
 
-        <!--app:tabTextAppearance="@style/font_regular_24_hex258430"
-            app:tabSelectedTextColor="#fff"-->
-
-        <!--<android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="asdfasdf"/>
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="123123231"/>
-
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="123123231"/>-->
 
     </com.google.android.material.tabs.TabLayout>
 
-    <!--    </com.google.android.material.appbar.AppBarLayout>-->
-
     <FrameLayout
-        android:layout_below="@+id/fragment_billing_tabs"
+        android:id="@+id/main_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_below="@+id/fragment_billing_tabs"
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/fragment_billing_viewpager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
 
-        <View
-            android:id="@+id/fragment_billing_fab_bg"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0"
-            android:background="#88000000"
-            android:clickable="true"
-            android:focusable="true"
-            android:visibility="gone" />
+
     </FrameLayout>
+
+
 </RelativeLayout>

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Environment;
 import android.util.Log;
 
+import com.mom.momcustomerapp.data.application.app;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -60,6 +62,28 @@ public class Logs
 			if(adbWriteEnabled  && writeToADB )
 			{
 				Log.v(LOG_TAG, msgMetaData);
+			}
+		}
+	}
+
+
+	public static void adb (String msg)
+	{
+		if (IS_DEBUGGING_ON)
+		{
+			final String fullClassName = Thread.currentThread().getStackTrace()[3].getClassName();
+			final String className = fullClassName.substring(fullClassName.lastIndexOf(".") + 1);
+			final String methodName = Thread.currentThread().getStackTrace()[3].getMethodName();
+			final int lineNumber = Thread.currentThread().getStackTrace()[3].getLineNumber();
+			//final String msgMetaData = "##" + Thread.currentThread() +  "## " + className + "." + methodName + "() ## ln " + lineNumber + " ## msg => " + msg;
+			final String msgMetaData = className + "." + methodName + "() ## ln " + lineNumber + " ## msg => " + msg;
+
+			if(instance.disableLogsTemporarly)
+				return;
+
+			if(adbWriteEnabled)
+			{
+				Log.v(app.packName, msgMetaData);
 			}
 		}
 	}
