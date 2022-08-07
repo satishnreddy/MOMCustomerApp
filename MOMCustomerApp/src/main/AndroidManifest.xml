@@ -100,6 +100,9 @@
             android:name=".views.home.Home_Tab_Activity"
             android:exported="true" />
 
+
+
+
 <!-- Orders activities-->
         <activity
             android:name=".views.orders.OrderDetailsActivity"
@@ -112,6 +115,12 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
 
+        <activity
+            android:name=".views.orders.ReportsViewActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+
 <!-- Cart activities-->
         <activity
             android:name=".views.sales.SalesCheckoutDetailsActivity"
@@ -119,6 +128,16 @@
             android:stateNotNeeded="true"
             android:windowSoftInputMode="stateAlwaysHidden"
             tools:ignore="LockedOrientationActivity" />
+
+<!-- Setting activities-->
+
+
+        <activity
+            android:name=".views.customers.EditProfileActivity"
+            android:label="@string/title_activity_edit_profile"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
 
     </application>
 

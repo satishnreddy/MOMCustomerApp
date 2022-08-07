@@ -36,6 +36,8 @@ import com.mom.momcustomerapp.networkservices.ErrorUtils;
 import com.mom.momcustomerapp.networkservices.ParseUtils;
 import com.mom.momcustomerapp.networkservices.ServiceGenerator;
 import com.mom.momcustomerapp.observers.network.MOMNetworkResponseListener;
+import com.mom.momcustomerapp.views.orders.BillingFragment;
+import com.mom.momcustomerapp.views.orders.ReportsViewActivity;
 import com.mom.momcustomerapp.widget.SafeClickListener;
 import com.mom.momcustomerapp.R;
 import com.mswipetech.sdk.network.util.Logs;
@@ -96,6 +98,8 @@ public class HomeFragment extends  Fragment {
     TextView ordertitle;
 
     String data;
+    private Home_Tab_Activity activity;
+
 
     private Typeface boldTypeface,boldTypeface1;
 
@@ -120,7 +124,7 @@ public class HomeFragment extends  Fragment {
         super.onCreate(savedInstanceState);
 
     }
-    private Home_Tab_Activity activity;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -128,7 +132,7 @@ public class HomeFragment extends  Fragment {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this, rootView);
         setHasOptionsMenu(true);
-
+        modifystore.setVisibility(View.GONE);
 
         boldTypeface = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Bold.ttf");
         boldTypeface1 = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Roboto-Regular.ttf");
@@ -169,7 +173,7 @@ public class HomeFragment extends  Fragment {
             public void onClick(View v) {
                 Bundle bundle = new Bundle();
                 bundle.putString("key","pending"); // Put anything what you want
-                /*
+
                 BillingFragment fragment2 = new BillingFragment();
                 fragment2.setArguments(bundle);
 
@@ -177,7 +181,7 @@ public class HomeFragment extends  Fragment {
                         .beginTransaction()
                         .replace(R.id.flFragment, fragment2)
                         .commit();
-                */
+
             }
         });
 
@@ -188,7 +192,7 @@ public class HomeFragment extends  Fragment {
             {
                 Bundle bundle = new Bundle();
                 bundle.putString("key","declined"); // Put anything what you want
-                /*
+
                 BillingFragment fragment2 = new BillingFragment();
                 fragment2.setArguments(bundle);
 
@@ -196,7 +200,7 @@ public class HomeFragment extends  Fragment {
                         .beginTransaction()
                         .replace(R.id.flFragment, fragment2)
                         .commit();
-                */
+
             }
         });
 
@@ -206,7 +210,7 @@ public class HomeFragment extends  Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putString("key","completed"); // Put anything what you want
 
-                /*BillingFragment fragment2 = new BillingFragment();
+                BillingFragment fragment2 = new BillingFragment();
                 fragment2.setArguments(bundle);
 
                 getFragmentManager()
@@ -214,17 +218,18 @@ public class HomeFragment extends  Fragment {
                         .replace(R.id.flFragment, fragment2)
                         .commit();
 
-                 */
+
 
             }
         });
+
         modifystore.setOnClickListener(new SafeClickListener(new SafeClickListener.Callback() {
             @Override
             public void onClick(View v)
             {
                 //Intent intent = new Intent(getActivity(), ModifyStoreActivity.class);
                 //startActivity(intent);
-              //  getFragmentManager().beginTransaction().replace(R.id.flFragment, new ModifyStoreFragement()).commit();
+                //getFragmentManager().beginTransaction().replace(R.id.flFragment, new ModifyStoreFragement()).commit();
 
             }
         }));
@@ -232,23 +237,27 @@ public class HomeFragment extends  Fragment {
         sharelink.setOnClickListener( new SafeClickListener(new SafeClickListener.Callback() {
             @Override
             public void onClick(View v) {
+
                 mShareType = 4;
-                //();
+                sendSimpleMsgs(getString(R.string.mbasket_order_online_with_url, "http://mom.com"));
+
             }
         }));
 
         storereports.setOnClickListener( new SafeClickListener(new SafeClickListener.Callback() {
             @Override
-            public void onClick(View v) {
-                //Intent intentReports = new Intent(getContext(), ReportsViewActivity.class);
-                //startActivity(intentReports);
+            public void onClick(View v)
+            {
+                Intent intentReports = new Intent(getContext(), ReportsViewActivity.class);
+                startActivity(intentReports);
             }
         }));
 
-        viewstore.setOnClickListener( new SafeClickListener(new SafeClickListener.Callback() {
+        viewstore.setOnClickListener( new SafeClickListener(new SafeClickListener.Callback()
+        {
             @Override
             public void onClick(View v) {
-                String d = data;
+                String data = (getString(R.string.mbasket_order_online_with_url, "http://mom.com"));;
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                 browserIntent.setData(Uri.parse(data));
                 startActivity(browserIntent);
