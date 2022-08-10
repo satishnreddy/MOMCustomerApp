@@ -73,8 +73,9 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
+
                         <TextView
-                            style="@style/font_medium_16_hex258430"
+                            style="@style/font_medium_14_black"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_gravity="end"
@@ -83,9 +84,10 @@
 
                         <TextView
                             android:id="@+id/item_product_cardview_small_tv_price"
-                            style="@style/font_medium_16_hex258430"
+                            style="@style/font_medium_20_black"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
                             android:layout_weight="1"
                             android:gravity="center_vertical"
                             tools:text="5000" />

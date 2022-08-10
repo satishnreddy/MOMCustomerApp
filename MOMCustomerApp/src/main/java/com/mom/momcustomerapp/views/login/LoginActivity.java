@@ -155,8 +155,8 @@ public class LoginActivity extends BaseActivity
 		//mEtLoginMobile.setText("9833195559");
 		//mEtPassword.setText("305347");
 
-		mEtLoginMobile.setText("9885135489");
-		mEtPassword.setText("988513");
+		//mEtLoginMobile.setText("9885135489");
+		//mEtPassword.setText("988513");
 
 		forgotPwdView.setOnClickListener(new SafeClickListener(new SafeClickListener.Callback()
 		{

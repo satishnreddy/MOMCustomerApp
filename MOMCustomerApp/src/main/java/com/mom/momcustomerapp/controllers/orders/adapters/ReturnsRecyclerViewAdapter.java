@@ -13,34 +13,38 @@ import com.mom.momcustomerapp.R;
 import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrder;
 import com.mom.momcustomerapp.controllers.sales.models.BillingListModelNew;
 import com.mom.momcustomerapp.customviews.AbstractRecyclerViewLoadingAdapter;
+import com.mom.momcustomerapp.customviews.BaseRecyclerViewLoadingAdapter;
 import com.mom.momcustomerapp.data.application.Consts;
 import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.interfaces.OnLoadMoreListener;
+import com.mom.momcustomerapp.interfaces.OnRecylerViewLoadMoreListener;
 import com.mom.momcustomerapp.interfaces.RecyclerViewItemClickListener;
 import com.mom.momcustomerapp.utils.DateTimeUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
  * Created by nishant on 17/08/16.
  */
 
-public class ReturnsRecyclerViewAdapter extends AbstractRecyclerViewLoadingAdapter<SalesCustOrder> {
+public class ReturnsRecyclerViewAdapter extends BaseRecyclerViewLoadingAdapter<SalesCustOrder> {
 
     private RecyclerViewItemClickListener mRecyclerViewItemClickListener;
-    private List<SalesCustOrder> mDataset;
+    private ArrayList<SalesCustOrder> mDataset;
     private String mUserType;
     private int mInvoiceType = Consts.INVOICE_TYPE_BILL;
 
-    public ReturnsRecyclerViewAdapter(RecyclerView recyclerView, List<SalesCustOrder> items, RecyclerViewItemClickListener itemClickListener,
-                                      OnLoadMoreListener onLoadMoreListener) {
+    public ReturnsRecyclerViewAdapter(RecyclerView recyclerView, ArrayList<SalesCustOrder> items, RecyclerViewItemClickListener itemClickListener,
+                                      OnRecylerViewLoadMoreListener onLoadMoreListener) {
         super(recyclerView, items, onLoadMoreListener);
         this.mDataset = items;
         this.mRecyclerViewItemClickListener = itemClickListener;
         this.mUserType = MOMApplication.getSharedPref().getUserType();;
     }
 
-    public ReturnsRecyclerViewAdapter(RecyclerView recyclerView, List<SalesCustOrder> items, int invoiceType, RecyclerViewItemClickListener itemClickListener, OnLoadMoreListener onLoadMoreListener) {
+    public ReturnsRecyclerViewAdapter(RecyclerView recyclerView, ArrayList<SalesCustOrder> items,
+                                      int invoiceType, RecyclerViewItemClickListener itemClickListener, OnRecylerViewLoadMoreListener onLoadMoreListener) {
         super(recyclerView, items, onLoadMoreListener);
         this.mDataset = items;
         this.mRecyclerViewItemClickListener = itemClickListener;

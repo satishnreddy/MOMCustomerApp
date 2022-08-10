@@ -48,7 +48,7 @@
             android:id="@+id/layout_search"
             layout="@layout/layout_search" />
 
-        <com.mom.momcustomerapp.customviews.EmptyRecyclerView
+        <com.mom.momcustomerapp.customviews.RecyclerViewEmptyAndLoaderView
             android:id="@+id/fragment_bills_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

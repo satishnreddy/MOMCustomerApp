@@ -18,6 +18,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -35,10 +36,12 @@ import com.mom.momcustomerapp.controllers.sales.models.BillingListModelNew;
 import com.mom.momcustomerapp.controllers.sales.models.BillingListModelNewOuter;
 import com.mom.momcustomerapp.controllers.sales.models.ORDER_STATUS;
 import com.mom.momcustomerapp.customviews.EmptyRecyclerView;
+import com.mom.momcustomerapp.customviews.RecyclerViewEmptyAndLoaderView;
 import com.mom.momcustomerapp.data.application.Consts;
 import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.data.shared.network.MOMNetworkResDataStore;
 import com.mom.momcustomerapp.interfaces.OnLoadMoreListener;
+import com.mom.momcustomerapp.interfaces.OnRecylerViewLoadMoreListener;
 import com.mom.momcustomerapp.interfaces.RecyclerViewItemClickListener;
 import com.mom.momcustomerapp.networkservices.ErrorUtils;
 import com.mom.momcustomerapp.networkservices.ServiceGenerator;
@@ -63,16 +66,16 @@ import retrofit2.Response;
  * Use the {@link PendingOrdersFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ReturnsFragment extends BaseFragment implements RecyclerViewItemClickListener, OnLoadMoreListener
+public class ReturnsFragment extends BaseFragment implements RecyclerViewItemClickListener,
+        OnRecylerViewLoadMoreListener
 {
-
 
     public boolean isSearchQuery = false;
     int iLoadMoreStatus = 0;
     boolean bolIgnoreLoadMoreOnCreateView = false;
 
     @BindView(R.id.fragment_returns_recycler_view)
-    EmptyRecyclerView mRecyclerView;
+    RecyclerViewEmptyAndLoaderView mRecyclerView;
     @BindView(R.id.empty_view)
     View mEmptyView;
     @BindView(R.id.layout_search_edittext)
@@ -80,17 +83,16 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
     @BindView(R.id.layout_search_btn_go)
     ImageButton mBtnSearchGo;
 
-    private ReturnsRecyclerViewAdapter mReturnsRecyclerViewAdapter;
+    private ReturnsRecyclerViewAdapter mBillingRecyclerViewAdapter;
     private SalesCustOrdersResp mBillingListModel;
-    private ArrayList<SalesCustOrder> mBillingModelArrayList = new ArrayList<>();
 
-    private int mPageNo = 0, mPreviousPageNo = 0;
-    private int mTotalRecordsReturns = 0;
-    private boolean returnsInProgress = false;
+    private ArrayList<SalesCustOrder> mBillingModelArrayList = new ArrayList<>();
+    private int mPageNo = 0, mTotalRecordsBills = 0;
+
+    private boolean billsInProgress = false;
     private String searchQuery;
-    private long lastUpdatedTime;
-    private boolean isFetchInitiated = false;
-    private boolean ignoreLoadMore = true;
+
+
     @BindView(R.id.header)
     LinearLayout header;
 
@@ -136,14 +138,21 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
             }
         });
 
+
+
+        mPageNo = 0;
+        mTotalRecordsBills = 0;
+
+        mBillingListModel = null;
+        mBillingModelArrayList.clear();
+
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        FloatingActionButton mFab = getActivity().findViewById(R.id.fragment_home_fab);
-        mRecyclerView.setScrollingFab(mFab);
-        mReturnsRecyclerViewAdapter = new ReturnsRecyclerViewAdapter(mRecyclerView,
-                mBillingModelArrayList, this, this);
-        mRecyclerView.setAdapter(mReturnsRecyclerViewAdapter);
-        /*mRecyclerView.addItemDecoration(new LineDividerItemDecoration(getActivity()));*/
+
+        mBillingRecyclerViewAdapter = new ReturnsRecyclerViewAdapter(mRecyclerView, mBillingModelArrayList, this, this);
+        mRecyclerView.setAdapter(mBillingRecyclerViewAdapter);
+        mBillingRecyclerViewAdapter.mTotalRecordsBills = mTotalRecordsBills;
+
 
         setUpSearchView();
 
@@ -173,106 +182,87 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
     private void setUpSearchView()
     {
         mSearchEditText.setHint(getString(R.string.orders_search_hint));
-        mSearchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
-                if (/*id == R.id.search || */id == EditorInfo.IME_NULL || id == EditorInfo.IME_ACTION_SEARCH) {
-                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                    imm.hideSoftInputFromWindow(mSearchEditText.getWindowToken(), 0);
-
-                    if (!TextUtils.isEmpty(mSearchEditText.getText())) {
-                        searchQuery = mSearchEditText.getText().toString().trim();
-                        searchBarEditorAction(searchQuery);
-                        return true;
-                    }
-                }
-                return false;
-            }
-        });
+        mBtnSearchGo.setVisibility(View.VISIBLE);
 
         mSearchEditText.addTextChangedListener(new TextWatcher()
         {
+
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
             }
 
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (TextUtils.isEmpty(s)) {
-                    searchQuery = "";
-                } else {
-                    searchQuery = s.toString().trim();
-                }
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
+
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (TextUtils.isEmpty(s)) {
-                    searchQuery = "";
-                    searchBarTextCleared();
-                    mBtnSearchGo.setVisibility(View.GONE);
-                } else {
-                    mBtnSearchGo.setVisibility(View.VISIBLE);
+                if (TextUtils.isEmpty(s))
+                {
+                    mSearchEditText.setHint(getString(R.string.orders_search_hint));
                 }
             }
         });
 
-        mBtnSearchGo.setOnClickListener(new View.OnClickListener() {
+        mBtnSearchGo.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(mSearchEditText.getWindowToken(), 0);
-                if (!TextUtils.isEmpty(mSearchEditText.getText())) {
-                    searchQuery = mSearchEditText.getText().toString().trim();
-                    searchBarEditorAction(searchQuery);
+                if (imm != null) {
+                    imm.hideSoftInputFromWindow(mSearchEditText.getWindowToken(), 0);
+                }
+                if (!TextUtils.isEmpty(mSearchEditText.getText()))
+                {
+                    if(!billsInProgress)
+                    {
+
+                        searchQuery = mSearchEditText.getText().toString().trim();
+                        mSearchEditText.setHint(searchQuery);
+
+                        loadBills();
+                    }else {
+                        Toast.makeText(getActivity(), "loading in progress", Toast.LENGTH_SHORT);
+
+                    }
+                }else {
+                    if(!billsInProgress)
+                    {
+                        mSearchEditText.setHint(getString(R.string.orders_search_hint));
+                        loadBills();
+                    }else {
+                        Toast.makeText(getActivity(), "loading in progress", Toast.LENGTH_SHORT);
+
+                    }
                 }
             }
         });
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         if (requestCode == Consts.REQUEST_CODE_CART) {
             //MventryCart.loadCartContents();
-            mPageNo = 0;
-            mBillingListModel = null;
-            mBillingModelArrayList.clear();
-            onLoadMore(1, 0);
+
+            loadBills();
 
         } else if (requestCode == Consts.REQUEST_CODE_VIEW_INVOICE) {
             if (resultCode == Activity.RESULT_OK) {
                 if (data != null && data.hasExtra(Consts.EXTRA_ISUPDATED)) {
                     if (data.getBooleanExtra(Consts.EXTRA_ISUPDATED, false)) {
-                        onLoadMore(1, 0);
+                        loadBills();
                     }
                 }
             }
         }
     }
 
-    public void loadReturns()
-    {
-
-        if (mRecyclerView != null) {
-            mRecyclerView.setAdapter(null);
-            mRecyclerView.invalidate();
-        }
-
-        mPageNo = 0;
-        mPreviousPageNo = 0;
-        mTotalRecordsReturns = 0;
-        mPreviousPageNo = 0;
-        mBillingListModel = null;
-        mBillingModelArrayList.clear();
-        //mBillingSearchModelArrayList.clear();
-
-        mReturnsRecyclerViewAdapter = new ReturnsRecyclerViewAdapter(mRecyclerView, mBillingModelArrayList, this, this);
-        mReturnsRecyclerViewAdapter.setCurrentPage(mPageNo);
-        mRecyclerView.setAdapter(mReturnsRecyclerViewAdapter);
-        /*mRecyclerView.addItemDecoration(new LineDividerItemDecoration(getActivity()));*/
-    }
 
     @Override
     public void OnRecyclerViewItemClick(int position)
@@ -281,11 +271,30 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
         intent.putExtra(Consts.EXTRA_ORDER_ID, mBillingModelArrayList.get(position).sale_id);
         intent.putExtra(Consts.EXTRA_ORDER_AMOUNT, mBillingModelArrayList.get(position).total_price);
         intent.putExtra(Consts.EXTRA_ORDER_INVOCIE, mBillingModelArrayList.get(position).invoice_number);
-        /*}*/
         intent.putExtra(Consts.EXTRA_INVOICE_RETURN, Consts.INVOICE_TYPE_BILL);
         intent.putExtra(Consts.EXTRA_CURRENT_STATUS_CODE, mBillingModelArrayList.get(position).delivery_status);
         intent.putExtra(Consts.EXTRA_CURRENT_STATUS_CODE_INT_STRING, mBillingModelArrayList.get(position).order_status);
         startActivityForResult(intent, Consts.REQUEST_CODE_VIEW_INVOICE);
+    }
+
+
+    public void loadBills()
+    {
+        if (mRecyclerView != null)
+        {
+            mRecyclerView.setAdapter(null);
+            mRecyclerView.invalidate();
+        }
+
+        mPageNo = 0;
+        mTotalRecordsBills = 0;
+        mBillingListModel = null;
+        mBillingModelArrayList.clear();
+
+        mBillingRecyclerViewAdapter = new ReturnsRecyclerViewAdapter(mRecyclerView, mBillingModelArrayList, this, this);
+        mBillingRecyclerViewAdapter.mTotalRecordsBills = mTotalRecordsBills;
+        mRecyclerView.setAdapter(mBillingRecyclerViewAdapter);
+
     }
 
     @Override
@@ -293,72 +302,52 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
     {
 
         iLoadMoreStatus = 0;
-
         if (bolIgnoreLoadMoreOnCreateView)
         {
             bolIgnoreLoadMoreOnCreateView = false;
             return;
         }
 
-        if (isSearchQuery)
+        if (!TextUtils.isEmpty(searchQuery))
         {
-            getOrdersReturns(currentPage, totalItemCount, searchQuery);
+            getOrdersReturns(currentPage,totalItemCount, searchQuery);
         } else {
             getOrdersReturns(currentPage, totalItemCount,"");
         }
-
-
     }
 
-    private void setDataToAdapter(List<SalesCustOrder> ordersModelList) {
-        mRecyclerView.setEmptyView(mEmptyView);
-        mReturnsRecyclerViewAdapter.removeItem(null);
-
-        mBillingModelArrayList = new ArrayList<>(ordersModelList);
-
-        mReturnsRecyclerViewAdapter.resetItems(new ArrayList<>(ordersModelList));
-    }
-
-    private void initiateBillingRecyclerViewAdapter(int currentPage)
+    @Override
+    public void onLoadMoreError(String msg)
     {
-        mReturnsRecyclerViewAdapter = new ReturnsRecyclerViewAdapter(mRecyclerView, mBillingModelArrayList, this, this);
-        mReturnsRecyclerViewAdapter.setCurrentPage(currentPage);
-        mRecyclerView.setAdapter(mReturnsRecyclerViewAdapter);
-        /*mRecyclerView.addItemDecoration(new LineDividerItemDecoration(getActivity()));*/
+        Toast.makeText(getActivity(),msg,Toast.LENGTH_SHORT).show();
     }
+
 
     private void getOrdersReturns(final int currentPage, int totalItemCount, String searchQuery)
     {
 
-        if (!returnsInProgress)
+        if (!billsInProgress)
         {
-            returnsInProgress = true;
-            if (totalItemCount <= mTotalRecordsReturns || mTotalRecordsReturns == 0)
-            {
-                if (currentPage <= 1 && mReturnsRecyclerViewAdapter != null)
-                {
-                    mReturnsRecyclerViewAdapter.startFreshLoading();
-                }
+            billsInProgress = true;
 
 
-                try {
-                    new SalesCustomerOrdersController( activity, new ReturnsFragment.CustomerNetworkObserver())
-                            .getSalesCustReturnedOrders(currentPage, searchQuery);
-                }
-                catch (Exception ex ) {
-
-                    returnsInProgress = false;
-                    showErrorDialog(ErrorUtils.getFailureError(ex));
-                }
-
-
-            } else {
-                returnsInProgress = false;
-                if (mReturnsRecyclerViewAdapter != null) {
-                    mReturnsRecyclerViewAdapter.removeItem(null);
-                }
+            try {
+                new SalesCustomerOrdersController( activity, new ReturnsFragment.CustomerNetworkObserver())
+                        .getSalesCustReturnedOrders(mPageNo + 1, searchQuery);
             }
+            catch (Exception ex ) {
+
+                showErrorDialog(ErrorUtils.getFailureError(ex));
+                if(mBillingRecyclerViewAdapter != null)
+                    mBillingRecyclerViewAdapter.setLoadingCompleteWithData(null);
+            }
+
+
+        }else {
+            if(mBillingRecyclerViewAdapter != null)
+                mBillingRecyclerViewAdapter.setLoadingCompleteWithData(null);
         }
+
 
     }
 
@@ -370,48 +359,20 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
             SalesCustOrdersResp responseData = (SalesCustOrdersResp) mMOMNetworkResDataStore;
             if(responseData.status ==1)
             {
-                returnsInProgress = false;
-                mPreviousPageNo++;
+                billsInProgress = false;
                 mBillingListModel = responseData;
+                ArrayList<SalesCustOrder> arr = new ArrayList<SalesCustOrder>();
+
 
                 if (mBillingListModel != null)
                 {
-                    mPageNo = mBillingListModel.current_page ;
-                    mTotalRecordsReturns = mBillingListModel.total_records;
+                    mTotalRecordsBills = mBillingListModel.total_records;
+                    mBillingRecyclerViewAdapter.mTotalRecordsBills = mTotalRecordsBills;
 
-                    //the api call will actaully currentPage-1, so adding + 1 below to get
-                    //the actuall current page passed
-                    int currentPage = mPageNo +1;
-
-                    if (currentPage <= 1)
+                    if(mBillingListModel.getData() !=null && mBillingListModel.getData().size() > 0)
                     {
-                        mBillingModelArrayList = new ArrayList<>(mBillingListModel.getData());
-                    }
-                    else if (currentPage < mPageNo)
-                    {
-                        mBillingModelArrayList.addAll(mBillingListModel.getData());
-                    }
-                    else if (currentPage == mPageNo)
-                    {
-                        if (mBillingModelArrayList.size() < mTotalRecordsReturns)
-                        {
-                            if (mPreviousPageNo <= mPageNo)
-                            {
-                                mBillingModelArrayList.addAll(mBillingListModel.getData());
-                            }
-                            else {
-                                mPreviousPageNo = mPageNo;
-                            }
-                        }
-                    }
-
-                    if (mBillingListModel != null)
-                    {
-                        mReturnsRecyclerViewAdapter.setCurrentPage(mPageNo);
-                        setDataToAdapter(mBillingModelArrayList);
-                    }
-                    else {
-                        showErrorDialog("Error", "Something went wrong: List is null");
+                        arr.addAll(mBillingListModel.getData());
+                        mPageNo ++;
                     }
 
 
@@ -420,51 +381,24 @@ public class ReturnsFragment extends BaseFragment implements RecyclerViewItemCli
                     showErrorDialog("Error", "Something went wrong: List is null");
                 }
 
+                if(mBillingRecyclerViewAdapter != null)
+                    mBillingRecyclerViewAdapter.setLoadingCompleteWithData(arr);
+                mRecyclerView.setEmptyView(mEmptyView);
+                billsInProgress = false;
 
             }
             else {
                 String errorMsg = "Error : " + responseData.statusmsg + " " + responseData.statuscode;
-                returnsInProgress = false;
+                billsInProgress = false;
                 showErrorDialog(errorMsg);
+                if(mBillingRecyclerViewAdapter != null)
+                    mBillingRecyclerViewAdapter.setLoadingCompleteWithData(null);
             }
 
 
         }
     }
 
-    public void searchBarEditorAction(String searchString) {
-        if (!TextUtils.isEmpty(searchString)) {
-            searchQuery = searchString;
-            isSearchQuery = true;
-
-            if (mRecyclerView != null) {
-                mRecyclerView.setAdapter(null);
-                mRecyclerView.invalidate();
-            }
-
-            mPageNo = 0;
-            mPreviousPageNo = 0;
-            mTotalRecordsReturns = 0;
-            mBillingListModel = null;
-            mBillingModelArrayList.clear();
-            mReturnsRecyclerViewAdapter = new ReturnsRecyclerViewAdapter(mRecyclerView, mBillingModelArrayList, ReturnsFragment.this, ReturnsFragment.this);
-            mReturnsRecyclerViewAdapter.setCurrentPage(mPageNo);
-            mRecyclerView.setAdapter(mReturnsRecyclerViewAdapter);
-            /*mRecyclerView.addItemDecoration(new LineDividerItemDecoration(getActivity()));*/
-            loadReturns();
-        }
-    }
-
-    public void searchBarTextCleared() {
-        if (isSearchQuery) {
-            searchQuery = "";
-            isSearchQuery = false;
-            loadReturns();
-        } else {
-            searchQuery = "";
-            isSearchQuery = false;
-        }
-    }
 
 
 

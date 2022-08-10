@@ -8,7 +8,11 @@
         <entry key="..\:/Users/satishn/AndroidStudioProjects/MOMCustomerApp/MOMCustomerApp/src/main/res/menu/bottom_nav_tab.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_login_splach_screen.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_sales_billing.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_sales_completed_bills.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_sales_partial.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_sales_reports.xml" value="0.1" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_sales_returns.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/item_product_cardview_small.xml" value="0.1" />
       </map>
     </option>
   </component>

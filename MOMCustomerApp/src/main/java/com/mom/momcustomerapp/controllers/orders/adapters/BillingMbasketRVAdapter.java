@@ -12,25 +12,28 @@ import android.widget.TextView;
 import com.mom.momcustomerapp.R;
 import com.mom.momcustomerapp.controllers.orders.models.SalesCustOrder;
 import com.mom.momcustomerapp.customviews.AbstractRecyclerViewLoadingAdapter;
+import com.mom.momcustomerapp.customviews.BaseRecyclerViewLoadingAdapter;
 import com.mom.momcustomerapp.data.application.Consts;
 import com.mom.momcustomerapp.interfaces.OnLoadMoreListener;
+import com.mom.momcustomerapp.interfaces.OnRecylerViewLoadMoreListener;
 import com.mom.momcustomerapp.interfaces.RecyclerViewItemClickListener;
 import com.mom.momcustomerapp.utils.DateTimeUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
  * Created by nishant on 17/08/16.
  */
 
-public class BillingMbasketRVAdapter extends AbstractRecyclerViewLoadingAdapter<SalesCustOrder>
+public class BillingMbasketRVAdapter extends BaseRecyclerViewLoadingAdapter<SalesCustOrder>
 {
 
     private RecyclerViewItemClickListener mRecyclerViewItemClickListener;
-    private List<SalesCustOrder> mDataset;
+    private ArrayList<SalesCustOrder> mDataset;
 
-    public BillingMbasketRVAdapter(RecyclerView recyclerView, List<SalesCustOrder> items, RecyclerViewItemClickListener itemClickListener,
-                                   OnLoadMoreListener onLoadMoreListener)
+    public BillingMbasketRVAdapter(RecyclerView recyclerView, ArrayList<SalesCustOrder> items, RecyclerViewItemClickListener itemClickListener,
+                                   OnRecylerViewLoadMoreListener onLoadMoreListener)
     {
         super(recyclerView, items, onLoadMoreListener);
         this.mDataset = items;

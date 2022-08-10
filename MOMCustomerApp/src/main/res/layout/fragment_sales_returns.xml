@@ -45,7 +45,7 @@
             android:id="@+id/layout_search"
             layout="@layout/layout_search" />
         
-        <com.mom.momcustomerapp.customviews.EmptyRecyclerView
+        <com.mom.momcustomerapp.customviews.RecyclerViewEmptyAndLoaderView
             tools:visibility="gone"
             android:id="@+id/fragment_returns_recycler_view"
             android:layout_width="match_parent"

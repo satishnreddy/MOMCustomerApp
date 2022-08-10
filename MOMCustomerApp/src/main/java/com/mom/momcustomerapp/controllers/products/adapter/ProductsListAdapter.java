@@ -15,9 +15,12 @@ import com.bumptech.glide.Glide;
 import com.mom.momcustomerapp.R;
 import com.mom.momcustomerapp.controllers.products.models.Items;
 import com.mom.momcustomerapp.customviews.AbstractRecyclerViewLoadingAdapter;
+import com.mom.momcustomerapp.customviews.BaseRecyclerViewLoadingAdapter;
 import com.mom.momcustomerapp.interfaces.OnLoadMoreListener;
+import com.mom.momcustomerapp.interfaces.OnRecylerViewLoadMoreListener;
 import com.mswipetech.sdk.network.util.Logs;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
@@ -32,46 +35,23 @@ import java.util.List;
  */
 
 
-public class ProductsListAdapter extends AbstractRecyclerViewLoadingAdapter<Items>
+public class ProductsListAdapter extends BaseRecyclerViewLoadingAdapter<Items>
 {
 
     private ProductListClickListener mRecyclerViewItemClickListener;
-    private List<Items> mDataset;
-    private HashSet<Items> selectedModelList = new HashSet<>();
-
-    public void setEditing(boolean editing, int update_cart_mode, int position)
-    {
-
-        if(!editing)
-        {
-            if (update_cart_mode == 1)
-                mDataset.get(position).iQrySelected = mDataset.get(position).iQrySelected + 1;
-            else
-                mDataset.get(position).iQrySelected = mDataset.get(position).iQrySelected - 1;
-        }
-        notifyDataSetChanged();
-        //notifyDataSetChanged();
+    private ArrayList<Items> mDataset;
 
 
-    }
-
-    public ProductsListAdapter(RecyclerView recyclerView, List<Items> items,
-                               HashSet<Items> selectionList, ProductListClickListener itemClickListener,
-                               OnLoadMoreListener onLoadMoreListener, boolean isEditing,
-                               boolean isPreSelectedSubCat , String checkboxvalue)
+    public ProductsListAdapter(RecyclerView recyclerView, ArrayList<Items> items, ProductListClickListener itemClickListener,
+                               OnRecylerViewLoadMoreListener onLoadMoreListener )
     {
         super(recyclerView, items, onLoadMoreListener);
         this.mDataset = items;
         this.mRecyclerViewItemClickListener = itemClickListener;
-        this.selectedModelList = selectionList;
+
 
     }
 
-
-    public HashSet<Items> getSelectedModelList()
-    {
-        return selectedModelList;
-    }
 
     @Override
     public RecyclerView.ViewHolder onCreateItemViewHolder(ViewGroup parent, int viewType)
@@ -180,39 +160,6 @@ public class ProductsListAdapter extends AbstractRecyclerViewLoadingAdapter<Item
             }
 
 
-            /*
-            rootView.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    if (MventryApp.IS_DEBUGGING_ON)
-                        Logs.v(MventryApp.packName,  " ProductsListAdapter rootView.setOnClickListener ", true, true);
-
-
-                    if (!isPresentInSelectedList(model))
-                    {
-
-                       selectedModelList.add(model);
-                       mRecyclerViewItemClickListener.onProductSelected(model);
-                       //mRecyclerViewItemClickListener.onnavigationbuttonset(value);
-                    }
-                    else {
-                        //checkBox.setChecked(false);
-                        selectedModelList.remove(model);
-                        mRecyclerViewItemClickListener.onProductUnSelected(model);
-                        {
-
-                            //mRecyclerViewItemClickListener.onnavigationbuttonset(value);
-                        }
-                    }
-
-                    if (MventryApp.IS_DEBUGGING_ON)
-                        Logs.v(MventryApp.packName,  " ProductsListAdapter rootView.setOnClickListener " + selectedModelList.size(), true, true);
-
-                }
-            });
-            */
         }
 
         @Override
@@ -234,33 +181,10 @@ public class ProductsListAdapter extends AbstractRecyclerViewLoadingAdapter<Item
              }
 
 
-           /*if(checkBox.isChecked()==true){
-               mRecyclerViewItemClickListener.onnavigationbuttonset(position);
-           }*/
-            //if (view.getId() == addToStoreBtn.getId())
-            //{
-                //mRecyclerViewItemClickListener.onAddToStoreClicked(position);
-            //}
-            //else {
-                //mRecyclerViewItemClickListener.onViewInStoreClicked(position);
-            //}
 
 
         }
     }
-
-    private boolean isPresentInSelectedList(Items model)
-    {
-        if (selectedModelList.contains(model))
-        {
-            for (Items obj : selectedModelList) {
-                if (obj.equals(model))
-                    return true;
-            }
-        }
-        return false;
-    }
-
 
     public interface ProductListClickListener
     {
@@ -272,13 +196,22 @@ public class ProductsListAdapter extends AbstractRecyclerViewLoadingAdapter<Item
 
     }
 
-    /*private View.OnLongClickListener onLongClickListener = new View.OnLongClickListener() {
-        @Override
-        public boolean onLongClick(View v) {
-            setEditing(!isEditing);
-            return false;
+    public void setEditing(boolean editing, int update_cart_mode, int position)
+    {
+
+        if(!editing)
+        {
+            if (update_cart_mode == 1)
+                mDataset.get(position).iQrySelected = mDataset.get(position).iQrySelected + 1;
+            else
+                mDataset.get(position).iQrySelected = mDataset.get(position).iQrySelected - 1;
         }
-    };*/
+        //notifyDataSetChanged();
+        notifyItemChanged(position);
+
+
+
+    }
 
 
 }

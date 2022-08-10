@@ -7,7 +7,7 @@ public class app
     public static final boolean IS_PROD = false;
     //public static final String APPLICATION_ID = "ccom.mom.mommerchantapp";
 
-    public static final String packName = "ok";
+    public static final String packName = "com.mom";
      //public static final String baseWEBSOCKET_URL_LIVE = "https://556b-2405-201-c00b-9895-104e-a526-a67b-3ba.in.ngrok.io/momapi/api/";
     //public static final String baseWEBSOCKET_URL_UAT  = "https://556b-2405-201-c00b-9895-104e-a526-a67b-3ba.in.ngrok.io/momapi/api/";
 
