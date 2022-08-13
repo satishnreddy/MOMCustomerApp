@@ -19,7 +19,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 
+import com.mom.momcustomerapp.data.application.Consts;
 import com.mom.momcustomerapp.interfaces.OnBackPressed;
+import com.mom.momcustomerapp.views.customers.AddCustomerActivity;
 import com.mom.momcustomerapp.views.customers.EditProfileActivity;
 import com.mom.momcustomerapp.views.home.Home_Tab_Activity;
 import com.mom.momcustomerapp.views.shared.BaseFragment;
@@ -105,8 +107,14 @@ public class SettingsFragmentNew extends BaseFragment implements OnBackPressed {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getContext(), EditProfileActivity.class);
-                startActivityForResult(intent, REQUEST_CODE_PROFILE);
+                //Intent intent = new Intent(getContext(), EditProfileActivity.class);
+                //startActivityForResult(intent, REQUEST_CODE_PROFILE);
+
+                Intent intent = new Intent(getContext(), AddCustomerActivity.class);
+                //intent.putExtra(Consts.EXTRA_CUSTOMER, mCustomerModel);
+                intent.putExtra(Consts.EXTRA_ACTIVITY_MODE, Consts.ACTIVITY_MODE_EDIT);
+                startActivityForResult(intent, Consts.REQUEST_CODE_ADD_CUSTOMER);
+
             }
         }));
 

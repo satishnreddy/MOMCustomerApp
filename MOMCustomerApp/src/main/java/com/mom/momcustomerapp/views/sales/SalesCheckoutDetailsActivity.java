@@ -404,6 +404,8 @@ public class SalesCheckoutDetailsActivity extends BaseActivity
 
 	private void updateItemsOnUI()
 	{
+
+
 		if(mWalletAmount <= 0)
 		{
 			mLnr_voucher.setVisibility(View.GONE);
@@ -421,6 +423,21 @@ public class SalesCheckoutDetailsActivity extends BaseActivity
 		} else {
 			mTvGrandTotal.setText(Consts.getCommaFormatedStringWithDecimal(Float.parseFloat((mTotalAmount) + "")));
 
+		}
+
+		if(mDelivery_type == 0)
+		{
+			mRadio_pickup.setVisibility(View.GONE);
+			mRadio_home.setVisibility(View.VISIBLE);
+
+		}
+		else if(mDelivery_type == 1)
+		{
+			mRadio_pickup.setVisibility(View.VISIBLE);
+			mRadio_home.setVisibility(View.GONE);
+		}else {
+			mRadio_home.setVisibility(View.VISIBLE);
+			mRadio_pickup.setVisibility(View.VISIBLE);
 		}
 	}
 
@@ -440,6 +457,7 @@ public class SalesCheckoutDetailsActivity extends BaseActivity
 					{
 
 						mWalletAmount = ((LoginCustomerResp) mMOMNetworkResDataStore).waller_amt;
+						mDelivery_type = ((LoginCustomerResp) mMOMNetworkResDataStore).delivery_type;
 						updateItemsOnUI();
 
 

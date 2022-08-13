@@ -303,6 +303,7 @@ public class Consts {
 
 
     public static final long DIALOG_DISPLAY_TIME = 2000;
+
     public static final String EXTRA_IS_FROM_NEW_CAT_SUBCAT = "is from new cat subcat";
 
     public static boolean switchToOldGallery = false;

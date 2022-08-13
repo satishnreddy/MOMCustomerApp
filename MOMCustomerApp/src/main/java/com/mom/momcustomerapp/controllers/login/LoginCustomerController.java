@@ -237,6 +237,9 @@ public class LoginCustomerController extends NetworkManager
 
                             } else if (key.toLowerCase().equals("wallet _amt")) {
                                 oLoginCustomerResp.waller_amt = reader.nextDouble();
+                            } else if (key.toLowerCase().equals("delivery_type _amt")) {
+                                oLoginCustomerResp.delivery_type = reader.nextInt();
+
 
                             } else {
                                 reader.skipValue();

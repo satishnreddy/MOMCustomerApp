@@ -323,6 +323,7 @@ public class SalesCartDetailsActivity extends BaseFragment implements OnFragment
 				@Override
 				public void onClick(View v)
 				{
+					Logs.adb("items de increment " + itemsModel.qty);
 
 					updateCart(itemsModel.quantity_id, 0, "1");
 
@@ -334,6 +335,8 @@ public class SalesCartDetailsActivity extends BaseFragment implements OnFragment
 				@Override
 				public void onClick(View v)
 				{
+					Logs.adb("items increment " + itemsModel.qty);
+
 					updateCart(itemsModel.quantity_id, 1, "1");
 
 
@@ -345,7 +348,8 @@ public class SalesCartDetailsActivity extends BaseFragment implements OnFragment
 				@Override
 				public void onClick(View v)
 				{
-					updateCart(itemsModel.quantity_id, 1, itemsModel.qty);
+					Logs.adb("items removed " + itemsModel.qty);
+					updateCart(itemsModel.quantity_id, 0, itemsModel.qty);
 
 				}
 			});
@@ -470,7 +474,7 @@ public class SalesCartDetailsActivity extends BaseFragment implements OnFragment
 
 
 				}
-			}).updateCustCartWithItemRes(quantity_id, update_cart_mode, 1);
+			}).updateCustCartWithItemRes(quantity_id, update_cart_mode, qty );
 
 		}
 		catch (Exception ex ) {

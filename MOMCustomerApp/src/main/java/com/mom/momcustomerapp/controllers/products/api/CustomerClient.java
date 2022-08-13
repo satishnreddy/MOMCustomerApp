@@ -84,6 +84,25 @@ public interface CustomerClient
 
     );
 
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    @FormUrlEncoded
+    @POST("customers/signupCustomer")
+    Call<CustomerModel> signupCustomer(
+            @Field("name") String name,
+            @Field("email") String email,
+            @Field("gstin") String gstin,
+            @Field("phone_number") String phone,
+            @Field("address_1") String address,
+            @Field("address_2") String address2,
+            @Field("land_mark") String land_mark,
+            @Field("zip") String zip,
+            @Field("city") String city,
+            @Field("state") String state,
+            @Field("country") String country,
+            @Field("password") String password
+
+
+    );
 
     @Headers("Content-Type: application/x-www-form-urlencoded")
     @FormUrlEncoded
@@ -105,12 +124,43 @@ public interface CustomerClient
 
             );
 
+    @Headers("Content-Type: application/x-www-form-urlencoded")
+    @FormUrlEncoded
+    @POST("cust/updateCustomerDetails")
+    Call<CustomerModel> updateCustomerDetails(
+
+            @Field("person_id") String person_id,
+            @Field("vendor_id") String vendor_id,
+            @Field("store_id") String store_id,
+            @Field("user_name") String user_name,
+            @Field("name") String name,
+            @Field("email") String email,
+            @Field("gstin") String gstin,
+            @Field("phone_number") String phone,
+            @Field("address_1") String address,
+            @Field("address_2") String address2,
+            @Field("land_mark") String land_mark,
+            @Field("zip") String zip,
+            @Field("city") String city,
+            @Field("state") String state,
+            @Field("country") String country,
+            @Field("password") String password
+
+    );
 
     @POST("customers/view/{customerId}")
     Call<CustomerModel> getCustomerFromId(
             @Path("customerId") String customerId
     );
 
+    @FormUrlEncoded
+    @POST("cust/getCustomerDetails")
+    Call<CustomerModel> getCustomerDetails(
+            @Field("person_id") String person_id,
+            @Field("vendor_id") String vendor_id,
+            @Field("store_id") String store_id,
+            @Field("user_name") String user_name
+    );
 
     @Headers("Content-Type: application/x-www-form-urlencoded")
     @FormUrlEncoded

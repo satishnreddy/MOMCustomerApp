@@ -217,7 +217,7 @@
                 android:textSize="@dimen/font_size_RH7" />
         </LinearLayout>
 
-        <LinearLayout
+        <LinearLayout android:visibility="gone"
             android:background="@drawable/rect_corner_3dp_border_898989_1dp"
             android:layout_width="match_parent"
             android:layout_marginLeft="@dimen/font_size_RLH8"
@@ -273,7 +273,7 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <LinearLayout android:visibility="gone"
             android:background="@drawable/rect_corner_3dp_border_898989_1dp"
             android:layout_width="match_parent"
             android:layout_marginLeft="@dimen/font_size_RLH8"

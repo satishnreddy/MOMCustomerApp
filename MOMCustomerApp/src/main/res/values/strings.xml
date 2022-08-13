@@ -736,6 +736,10 @@
     <string name="request_otp">Request OTP</string>
     <string name="dialog_message_new_product_added">New product added</string>
     <string name="dialog_message_new_order_accepted">New order accepted</string>
+    <string name="dialog_message_new_customer_created">Customer created</string>
+    <string name="dialog_message_new_customer_updated">Customer updated</string>
+
+
 
     <string name="products_select_category_title">Add product</string>
     <string name="products_add_category_title">Add New category</string>
@@ -795,6 +799,12 @@
     <string name="order_detail_label_delivery_slot">Delivery slot</string>
     <string name="order_detail_label_address_line1">Address line 1</string>
     <string name="order_detail_label_address_line2">Address line 2</string>
+
+    <string name="error_field_required_password">Please enter valid 6-digit password</string>
+    <string name="error_field_required_city">Please enter valid city</string>
+    <string name="error_field_required_state">Please enter valid state</string>
+    <string name="error_field_required_country">Please enter valid country</string>
+
     <string name="enter_mswipe_creds">Login</string>
     <string name="null_list_to_show">Something went wrong: List is null</string>
     <string name="city_state_not_found_from_pincode">Unable to find your location from pincode</string>
@@ -884,7 +894,7 @@
     <string name="navigation_reports_setting">Reports</string>
 
     <string name="view_your_store">View your store</string>
-    <string name="view_store_report">View store reports</string>
+    <string name="view_store_report">View reports</string>
     <string name="modify_your_store">Modify your store</string>
     <string name="share_your_store">Share your store with friends</string>
 
@@ -996,6 +1006,9 @@
     <string name="upload_product_photo">Upload product photo</string>
     <string name="order_noc">Order no:</string>
     <string name="name">Name</string>
+    <string name="password">Password</string>
+
+
     <string name="mobile_no">Mobile Number</string>
     <string name="address_line_one">Address Line 1</string>
     <string name="address_line_two">Address Line 2</string>

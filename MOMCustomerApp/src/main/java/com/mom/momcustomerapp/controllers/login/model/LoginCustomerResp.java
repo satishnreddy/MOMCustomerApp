@@ -15,6 +15,7 @@ public class LoginCustomerResp extends MOMNetworkResDataStore
 	public String cust_name;
 	public double waller_amt = 0.0;
 
+
 	public String customerPhone;
 	public String email;
 	public String address_1;

@@ -64,7 +64,7 @@ public class SalesUpdateCustCartController extends NetworkManager
 
     }
 
-    public void updateCustCartWithItemRes( final String quantity_id, final int update_cart_mode, final int qty) throws Exception
+    public void updateCustCartWithItemRes( final String quantity_id, final int update_cart_mode, final String qty) throws Exception
     {
         isPost = true;
         mContentType = ContentType.FORM_URLENCODED;

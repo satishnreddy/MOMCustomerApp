@@ -51,6 +51,7 @@ import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.data.shared.network.MOMNetworkResDataStore;
 import com.mom.momcustomerapp.networkservices.ErrorUtils;
 import com.mom.momcustomerapp.observers.network.MOMNetworkResponseListener;
+import com.mom.momcustomerapp.views.customers.AddCustomerActivity;
 import com.mom.momcustomerapp.views.shared.BaseActivity;
 import com.mom.momcustomerapp.widget.SafeClickListener;
 
@@ -171,7 +172,7 @@ public class LoginActivity extends BaseActivity
 		{
 			@Override
 			public void onClick(View v) {
-				//startActivityForResult(new Intent(LoginActivity.this, ChangeLanguageActivity.class), REQUEST_CODE_CHANGE_LANGUAGE);
+				startActivityForResult(new Intent(LoginActivity.this, AddCustomerActivity.class), REQUEST_CODE_CHANGE_LANGUAGE);
 			}
 		}));
 
