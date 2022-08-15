@@ -348,4 +348,17 @@ public interface CustomerClient
             @Field("from_date") String from_date,
             @Field("to_date") String to_date
     );
+
+
+    @FormUrlEncoded
+    @POST("cust/{type}")
+    Call<String> getSalesCustomerReport(
+            @Path("type") String type,
+            @Field("person_id") String person_id,
+            @Field("vendor_id") String vendor_id,
+            @Field("store_id") String store_id,
+            @Field("user_name") String user_name,
+            @Field("from_date") String from_date,
+            @Field("to_date") String to_date
+    );
 }

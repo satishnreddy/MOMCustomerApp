@@ -147,7 +147,7 @@
             android:gravity="center_vertical"
             android:layout_height="wrap_content"
             app:cardElevation="@dimen/card_elevation_mbasket"
-            app:cardCornerRadius="3dp">
+            app:cardCornerRadius="3dp" android:visibility="gone">
 
             <LinearLayout
                 android:layout_width="match_parent"

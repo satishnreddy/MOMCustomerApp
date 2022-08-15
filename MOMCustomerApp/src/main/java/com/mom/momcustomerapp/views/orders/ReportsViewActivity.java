@@ -94,7 +94,7 @@ public class ReportsViewActivity extends BaseActivity {
         mImgPendingCustomerRequest = findViewById(R.id.fragment_reports_pending_customer_resquest);
 
         mImgPendingOrders.setOnClickListener(v -> {
-            mStrReportType= "pendingReport";
+            mStrReportType= "getSalesPendingCustReport";
             mStrReportTtitle = "Pending orders report downloaded successfully.";
             mStrReportName = "Pending_orders_report";
             fromDate();
@@ -102,7 +102,7 @@ public class ReportsViewActivity extends BaseActivity {
 
         mImgDeclinedOrders.setOnClickListener(v -> {
 
-            mStrReportType= "returnedReport";
+            mStrReportType= "getSalesReturnedCustReport";
             mStrReportTtitle = "Decline orders report downloaded successfully.";
             mStrReportName = "Decline_orders_report";
             fromDate();
@@ -110,17 +110,9 @@ public class ReportsViewActivity extends BaseActivity {
 
         mImgCompletedOrders.setOnClickListener(v -> {
 
-            mStrReportType= "completedReport";
+            mStrReportType= "getSalesCompletedCustReport";
             mStrReportTtitle = "Complete orders report downloaded successfully.";
             mStrReportName = "Complete_orders_report";
-            fromDate();
-        });
-
-        mImgPendingCustomerRequest.setOnClickListener(v -> {
-
-            mStrReportType= "customerPendingReport";
-            mStrReportTtitle = "Pending customer request report downloaded successfully.";
-            mStrReportName = "Pending_customer_request_report";
             fromDate();
         });
 
@@ -131,7 +123,8 @@ public class ReportsViewActivity extends BaseActivity {
     /**
      * Set up the {@link Toolbar}.
      */
-    private void setupToolBar() {
+    private void setupToolBar()
+    {
         final Toolbar toolbar = findViewById(R.id.toolbar);
         if (toolbar != null) {
             setSupportActionBar(toolbar);
@@ -150,7 +143,8 @@ public class ReportsViewActivity extends BaseActivity {
 
 
     @Override
-    public boolean onSupportNavigateUp() {
+    public boolean onSupportNavigateUp()
+    {
         finish();
         return true;
     }
@@ -194,7 +188,10 @@ public class ReportsViewActivity extends BaseActivity {
 
         CustomerClient client = ServiceGenerator.createService(CustomerClient.class,
                 MOMApplication.getInstance().getToken());
-        Call<String> call = client.getReport(mStrReportType, mStrFromDate, mStrToDate);
+        Call<String> call = client.getSalesCustomerReport(mStrReportType, MOMApplication.getInstance().getPersonId(),
+                MOMApplication.getInstance().getVender(),  MOMApplication.getInstance().getStoreId(),
+                MOMApplication.getInstance().getMswipeUsername(),
+                mStrFromDate, mStrToDate);
 
         showLoadingDialog();
         call.enqueue(new Callback<String>() {
@@ -220,7 +217,8 @@ public class ReportsViewActivity extends BaseActivity {
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<String> call, Throwable t)
+            {
                 if (isFinishing()) return;
                 hideLoadingDialog();
                 showErrorDialog(ErrorUtils.getFailureError(t));
@@ -229,7 +227,8 @@ public class ReportsViewActivity extends BaseActivity {
         });
     }
 
-    public static String getCurrentDateWithFormate(String aDateFormat) {
+    public static String getCurrentDateWithFormate(String aDateFormat)
+    {
         String formatedDate = "";
 
         final Calendar c = Calendar.getInstance();
@@ -269,7 +268,8 @@ public class ReportsViewActivity extends BaseActivity {
 
         }
 
-            try{
+        try
+        {
 
             if (!fileName.exists())
                 fileName.createNewFile();
@@ -278,14 +278,17 @@ public class ReportsViewActivity extends BaseActivity {
             fw.append(data);
             fw.close();
 
-            showNotification(getResources().getString(R.string.home_mbasket_label_reports), mStrReportTtitle, (int) Math.random(), folder);
-
             DialogFragment dialogFragment = SingleBtnDialogFragment.newInstance(getResources().getString(R.string.label_report_save_success),
-                    getString(R.string.ok), () -> {
+                    getString(R.string.ok), new SingleBtnDialogFragment.DialogListener() {
+                        @Override
+                        public void onDialogPositiveClick() {
 
-
+                        }
                     });
             dialogFragment.show(getSupportFragmentManager(), BaseActivity.DIALOG_TAG);
+
+            showNotification(getResources().getString(R.string.home_mbasket_label_reports), mStrReportTtitle, (int) Math.random(), folder);
+
 
         }catch (Exception e){
             showErrorDialog(getString(R.string.label_report_save_falied));

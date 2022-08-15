@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/inflate_dialog_title"
             android:gravity="center"
-            style="@style/font_medium_18_hex258430"
+            style="@style/font_medium_30_hex258430"
             tools:text="Order has been edited."
             android:maxLines="6"/>
 

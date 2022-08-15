@@ -1447,7 +1447,7 @@
 
 
     <style name="font_medium_18_hex258430" parent="font_medium_medium">
-        <item name="android:textColor">@color/color_413D3D</item>
+        <item name="android:textColor">@color/color_258430</item>
     </style>
 
 

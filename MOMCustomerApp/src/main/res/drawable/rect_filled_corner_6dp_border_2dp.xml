@@ -5,6 +5,6 @@
     <solid android:color="@android:color/transparent" />
     <stroke
         android:width="2dp"
-        android:color="@color/color_toolbar_mbasket" />
+        android:color="@color/view_bg_mbasket" />
     <corners android:radius="6dp" />
 </shape>
