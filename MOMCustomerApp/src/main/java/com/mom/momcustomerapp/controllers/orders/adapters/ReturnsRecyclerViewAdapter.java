@@ -92,7 +92,7 @@ public class ReturnsRecyclerViewAdapter extends BaseRecyclerViewLoadingAdapter<S
         {
             if (!TextUtils.isEmpty(ordersModel.sale_id)) {
                 this.position = position;
-                tvInvoiceId.setText(ordersModel.invoice_number);
+                tvInvoiceId.setText(ordersModel.sale_id);
                 tvCustomerName.setText(ordersModel.customerName);
                 tvCustomerPhone.setText(ordersModel.customerPhone);
                 tvStatus.setText(ordersModel.delivery_status);

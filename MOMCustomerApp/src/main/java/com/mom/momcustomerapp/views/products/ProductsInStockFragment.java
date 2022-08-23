@@ -19,6 +19,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -147,7 +148,7 @@ public class ProductsInStockFragment extends BaseFragment implements OnRecylerVi
 
     private void setUpSearchView()
     {
-        mSearchEditText.setHint(getString(R.string.orders_search_hint));
+        mSearchEditText.setHint(getString(R.string.product_search_hint));
         mBtnSearchGo.setVisibility(View.VISIBLE);
 
         mSearchEditText.addTextChangedListener(new TextWatcher()
@@ -168,10 +169,27 @@ public class ProductsInStockFragment extends BaseFragment implements OnRecylerVi
             public void afterTextChanged(Editable s) {
                 if (TextUtils.isEmpty(s))
                 {
-                    mSearchEditText.setHint(getString(R.string.orders_search_hint));
+                    mSearchEditText.setHint(getString(R.string.product_search_hint));
                 }
             }
         });
+
+
+        mSearchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    //do what you want on the press of 'done'
+                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(mSearchEditText.getWindowToken(), 0);
+                    }
+
+                }
+                return false;
+            }
+        });
+
+
 
         mBtnSearchGo.setOnClickListener(new View.OnClickListener()
         {
@@ -198,7 +216,7 @@ public class ProductsInStockFragment extends BaseFragment implements OnRecylerVi
                 }else {
                     if(!billsInProgress)
                     {
-                        mSearchEditText.setHint(getString(R.string.orders_search_hint));
+                        mSearchEditText.setHint(getString(R.string.product_search_hint));
                         loadBills();
                     }else {
                         Toast.makeText(getActivity(), "loading in progress", Toast.LENGTH_SHORT);

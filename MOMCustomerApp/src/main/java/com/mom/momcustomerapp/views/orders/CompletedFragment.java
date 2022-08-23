@@ -11,6 +11,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -180,6 +181,9 @@ public class CompletedFragment extends BaseFragment
     {
         mSearchEditText.setHint(getString(R.string.orders_search_hint));
         mBtnSearchGo.setVisibility(View.VISIBLE);
+        mSearchEditText.setInputType(InputType.TYPE_CLASS_NUMBER);
+
+
 
         mSearchEditText.addTextChangedListener(new TextWatcher()
         {
@@ -201,6 +205,20 @@ public class CompletedFragment extends BaseFragment
                 {
                     mSearchEditText.setHint(getString(R.string.orders_search_hint));
                 }
+            }
+        });
+
+        mSearchEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    //do what you want on the press of 'done'
+                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    if (imm != null) {
+                        imm.hideSoftInputFromWindow(mSearchEditText.getWindowToken(), 0);
+                    }
+
+                }
+                return false;
             }
         });
 

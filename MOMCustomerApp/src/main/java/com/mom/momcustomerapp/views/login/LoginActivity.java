@@ -156,8 +156,8 @@ public class LoginActivity extends BaseActivity
 		//mEtLoginMobile.setText("9833195559");
 		//mEtPassword.setText("305347");
 
-		//mEtLoginMobile.setText("9885135489");
-		//mEtPassword.setText("988513");
+		mEtLoginMobile.setText("9885135489");
+		mEtPassword.setText("123456");
 
 		forgotPwdView.setOnClickListener(new SafeClickListener(new SafeClickListener.Callback()
 		{
@@ -171,7 +171,8 @@ public class LoginActivity extends BaseActivity
 		signUpBtn.setOnClickListener(new SafeClickListener(new SafeClickListener.Callback()
 		{
 			@Override
-			public void onClick(View v) {
+			public void onClick(View v)
+			{
 				startActivityForResult(new Intent(LoginActivity.this, AddCustomerActivity.class), REQUEST_CODE_CHANGE_LANGUAGE);
 			}
 		}));

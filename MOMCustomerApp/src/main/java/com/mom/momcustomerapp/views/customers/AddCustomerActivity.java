@@ -66,7 +66,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class AddCustomerActivity extends BaseActivity implements CameraButton.CameraButtonResultListener
+public class AddCustomerActivity extends BaseActivity implements
+		CameraButton.CameraButtonResultListener
 {
 
 	@BindView(R.id.activity_add_customer_btn_submit)

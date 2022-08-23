@@ -366,8 +366,11 @@ public class OrderDetailsActivity extends BaseActivity implements OnFragmentInte
 
 			mTvCustomerName.setText(mInvoiceModel.salesCustOrder.customerName);
 			titleheader.setText("Order - " + mInvoiceModel.salesCustOrder.sale_id);
-			final String phone_number = mInvoiceModel.salesCustOrder.customerPhone;
-			mTvCustomerPhone.setText(phone_number);
+
+			final String phone_number = mInvoiceModel.salesCustOrder.customerCarePhone;
+			mTvCustomerPhone.setText(mInvoiceModel.salesCustOrder.customerPhone);
+			//mTvCustomerPhone.setText(mInvoiceModel.salesCustOrder.customerCarePhone);
+
 
 			if (!TextUtils.isEmpty(phone_number) && phone_number.length() == 10)
 			{

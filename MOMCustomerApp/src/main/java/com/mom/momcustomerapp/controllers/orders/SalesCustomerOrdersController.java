@@ -336,7 +336,10 @@ public class SalesCustomerOrdersController extends NetworkManager
                     } else if(name.equalsIgnoreCase("customerName")){
                         oSalesCustOrders.customerName= reader.nextString();
                     } else if(name.equalsIgnoreCase("customerPhone")){
+
                         oSalesCustOrders.customerPhone= reader.nextString();
+                    } else if(name.equalsIgnoreCase("customerCarePhone")){
+                        oSalesCustOrders.customerCarePhone= reader.nextString();
                     } else if(name.equalsIgnoreCase("total_quantity")){
                         oSalesCustOrders.total_quantity= reader.nextString();
                     } else if(name.equalsIgnoreCase("payment_type")){

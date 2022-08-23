@@ -81,7 +81,7 @@ public class BillingMbasketRVAdapter extends BaseRecyclerViewLoadingAdapter<Sale
         public void onBind(SalesCustOrder ordersModel, int position)
         {
             this.position = position;
-            tvInvoiceId.setText(ordersModel.invoice_number);
+            tvInvoiceId.setText(ordersModel.sale_id);
             tvCustomerName.setText(ordersModel.customerName);
             tvCustomerPhone.setText(ordersModel.customerPhone);
             String saleTime = ordersModel.sale_time;

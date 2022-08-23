@@ -70,6 +70,10 @@ public class SalesCheckoutDetailsActivity extends BaseActivity
 
 	@BindView(R.id.checkout_radioGroup_payment)
 	RadioGroup mRadGrp_payment;
+	@BindView(R.id.checkout_radio_cash)
+	RadioButton mRadio_cash;
+
+
 	int mRadGrp_payment_checkedId = 0;
 
 	@BindView(R.id.checkout_radioGroup_delivery)
@@ -150,12 +154,23 @@ public class SalesCheckoutDetailsActivity extends BaseActivity
 
 		if(mDelivery_type == 0)
 		{
-			mRadio_pickup.setVisibility(View.GONE);
+			mRadio_home.setVisibility(View.GONE);
+			mRadio_pickup.setChecked(true);
+			mRadio_pickup.setEnabled(false);
+
 		}
 		else if(mDelivery_type == 1)
 		{
+			mRadio_pickup.setChecked(true);
+			mRadio_pickup.setEnabled(false);
+
 			mRadio_home.setVisibility(View.GONE);
 		}
+
+		mRadGrp_payment.setEnabled(false);
+		mRadio_cash.setChecked(true);
+		mRadio_cash.setEnabled(false);
+
 
 		Handler uiHandler = new Handler(Looper.getMainLooper());
 		uiHandler.post(new Runnable()
@@ -189,6 +204,10 @@ public class SalesCheckoutDetailsActivity extends BaseActivity
 			@Override
 			public void onClick(View v)
 			{
+				//hard coding since delivery slot time have been disabled for this applicaion
+				Calendar c = Calendar.getInstance();
+				mStDeliveryDate = c.get(Calendar.YEAR) + "-" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.DAY_OF_MONTH);
+				mStDeliveryDate = c.get(Calendar.YEAR) + "-" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.DAY_OF_MONTH);
 
 				if (mRadGrp_payment.getCheckedRadioButtonId() == -1)
 				{
@@ -315,12 +334,12 @@ public class SalesCheckoutDetailsActivity extends BaseActivity
 					mRadGrp_delivery_checkedId = 0;
 
 
-					getDeliveryTimeSlots(0 + "");
+					//getDeliveryTimeSlots(0 + "");
 
 				}
 				else if(mRadio_pickup.getId() == checkedId) {
 					mRadGrp_delivery_checkedId = 1;
-					getDeliveryTimeSlots(1 + "");
+					//getDeliveryTimeSlots(1 + "");
 
 				}
 
@@ -429,12 +448,18 @@ public class SalesCheckoutDetailsActivity extends BaseActivity
 		{
 			mRadio_pickup.setVisibility(View.GONE);
 			mRadio_home.setVisibility(View.VISIBLE);
+			mRadio_home.setChecked(true);
+			mRadio_home.setEnabled(false);
 
 		}
 		else if(mDelivery_type == 1)
 		{
 			mRadio_pickup.setVisibility(View.VISIBLE);
 			mRadio_home.setVisibility(View.GONE);
+			mRadio_pickup.setVisibility(View.VISIBLE);
+			mRadio_pickup.setChecked(true);
+			mRadio_pickup.setEnabled(false);
+
 		}else {
 			mRadio_home.setVisibility(View.VISIBLE);
 			mRadio_pickup.setVisibility(View.VISIBLE);

@@ -34,6 +34,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
@@ -118,6 +120,8 @@ public class Home_Tab_Activity extends BaseActivity implements
     private static final int HOME_DRAWER_ID = 14;
     private int initialFragmentToOpen = HOME_DRAWER_ID;
     private String titleToSet = "Select Product";
+    private int mCurrentNavigationItem;
+
 
 
 
@@ -148,7 +152,9 @@ public class Home_Tab_Activity extends BaseActivity implements
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.products);
+        mCurrentNavigationItem = 3;
+
 
         mActivity = this;
         mMainContainer = (FrameLayout) findViewById(R.id.main_container);
@@ -174,23 +180,26 @@ public class Home_Tab_Activity extends BaseActivity implements
         {
 
             case R.id.home:
-
+                mCurrentNavigationItem = 0;
                 mFab.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, home).commit();
                 return true;
 
             case R.id.orders:
+                mCurrentNavigationItem = 1;
                 mFab.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, orders).commit();
                 return true;
 
             case R.id.customer:
+                mCurrentNavigationItem = 2;
                 mFab.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, cart).commit();
                 return true;
 
 
             case R.id.products:
+                mCurrentNavigationItem = 3;
 
                 mFab.setVisibility(View.GONE);
 
@@ -200,11 +209,10 @@ public class Home_Tab_Activity extends BaseActivity implements
 
 
             case R.id.settings:
+                mCurrentNavigationItem = 4;
                 mFab.setVisibility(View.GONE);
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, settings).commit();
                 return true;
-
-
 
         }
         return false;
@@ -234,10 +242,28 @@ public class Home_Tab_Activity extends BaseActivity implements
 
     }
 
-
+    boolean doubleBackToExitPressedOnce = false;
     @Override
     public void onBackPressed()
     {
+        //if(mCurrentNavigationItem !=2)
+        {
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                return;
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce = false;
+                }
+            }, 2000);
+        }
     }
 
     @Override

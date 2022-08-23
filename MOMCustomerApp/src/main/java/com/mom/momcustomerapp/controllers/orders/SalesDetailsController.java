@@ -284,6 +284,9 @@ public class SalesDetailsController extends NetworkManager
                         oSalesCustOrders.customerName= reader.nextString();
                     } else if(name.equalsIgnoreCase("customerPhone")){
                         oSalesCustOrders.customerPhone= reader.nextString();
+                    } else if(name.equalsIgnoreCase("customerCarePhone")){
+                        oSalesCustOrders.customerCarePhone= reader.nextString();
+
                     } else if(name.equalsIgnoreCase("total_quantity")){
                         oSalesCustOrders.total_quantity= reader.nextString();
                     } else if(name.equalsIgnoreCase("email")){

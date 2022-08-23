@@ -26,6 +26,8 @@ public class SalesCustOrder
 	public String max_price;
 	public String customerName;
 	public String customerPhone;
+	public String customerCarePhone;
+
 	public String total_quantity;
 	public String payment_type;
 	public String email;

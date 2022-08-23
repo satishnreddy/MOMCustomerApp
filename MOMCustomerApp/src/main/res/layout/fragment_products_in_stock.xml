@@ -25,7 +25,7 @@
                 android:layout_height="50dp"
                 android:background="@color/white"
                 android:gravity="center"
-                android:text="@string/order_name_header"
+                android:text="@string/navigation_products"
                 android:textColor="@color/black"
                 android:textSize="18dp" />
             <View
