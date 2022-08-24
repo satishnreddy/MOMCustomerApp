@@ -153,6 +153,14 @@ public interface CustomerClient
             @Path("customerId") String customerId
     );
 
+    @POST("customers/saveCrashLogs")
+    @FormUrlEncoded
+    Call<String> saveCrashLogs(
+            @Field("placeOfCrash") String placeOfCrash, @Field("reasonOfCrash") String reasonOfCrash,
+            @Field("stackTrace") String stackTrace,@Field("deviceInfo") String deviceInfo,
+            @Field("personid") String personid, @Field("username") String username
+    );
+
     @FormUrlEncoded
     @POST("cust/getCustomerDetails")
     Call<CustomerModel> getCustomerDetails(

@@ -673,4 +673,67 @@ public class MOMSharedPreferences
 		return personId;
 	}
 
+
+
+	public void setplaceOfCrash(String username) {
+
+		Editor editor = getSharedPreferences().edit();
+		editor.putString("placeofcrash", username);
+		editor.commit();
+	}
+
+	public String getplaceOfCrash(){
+		return getSharedPreferences().getString("placeofcrash", "");
+
+	}
+
+	public void setreasonOfCrash(String username) {
+
+		Editor editor = getSharedPreferences().edit();
+		editor.putString("reasonOfCrash", username);
+		editor.commit();
+	}
+
+	public String getreasonOfCrash(){
+		return getSharedPreferences().getString("reasonOfCrash", "");
+
+	}
+
+	public void setstackTrace(String username) {
+
+		Editor editor = getSharedPreferences().edit();
+		editor.putString("stackTrace", username);
+		editor.commit();
+	}
+
+	public String getstackTrace(){
+		return getSharedPreferences().getString("stackTrace", "");
+
+	}
+
+	public void setdeviceInfo(String username) {
+
+		Editor editor = getSharedPreferences().edit();
+		editor.putString("deviceInfo", username);
+		editor.commit();
+	}
+
+	public String getdeviceInfo(){
+		return getSharedPreferences().getString("deviceInfo", "");
+
+	}
+
+	public void setIsCrashed(boolean iscrashed) {
+
+		Editor editor = getSharedPreferences().edit();
+		editor.putBoolean("iscrashed", iscrashed);
+		editor.commit();
+	}
+
+	public boolean getIsCrashed(){
+
+		return getSharedPreferences().getBoolean("iscrashed", false);
+
+	}
+
 }

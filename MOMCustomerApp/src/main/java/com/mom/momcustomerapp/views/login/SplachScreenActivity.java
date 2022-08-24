@@ -24,12 +24,17 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.gson.Gson;
 import com.mom.momcustomerapp.BuildConfig;
 import com.mom.momcustomerapp.R;
+import com.mom.momcustomerapp.controllers.products.api.CustomerClient;
 import com.mom.momcustomerapp.controllers.updateapp.VersionModel;
 import com.mom.momcustomerapp.controllers.updateapp.views.CheckUpdateDialogFragment;
 import com.mom.momcustomerapp.data.application.Consts;
 import com.mom.momcustomerapp.data.application.MOMApplication;
+import com.mom.momcustomerapp.data.application.app;
+import com.mom.momcustomerapp.networkservices.ServiceGenerator;
+import com.mom.momcustomerapp.utils.crashlogs.CrashAnalyzer;
 import com.mom.momcustomerapp.views.home.Home_Tab_Activity;
 import com.mom.momcustomerapp.views.shared.BaseActivity;
+import com.mswipetech.sdk.network.util.Logs;
 
 import java.io.IOException;
 import java.util.Locale;
@@ -90,6 +95,9 @@ public class SplachScreenActivity extends BaseActivity
 
         setLocale();
 
+
+
+
         Intent intent = getIntent();
         if (intent != null){
             isFromPushNotification = intent.getBooleanExtra(EXTRA_KEY_PUSH_NOTIFICATION, false);
@@ -119,6 +127,15 @@ public class SplachScreenActivity extends BaseActivity
     {
         super.onResume();
         isPermissionTaken = MOMApplication.getSharedPref().isPermissionTaken();
+        final Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //Do something after 100ms
+                submitCustomerLogs();
+            }
+        }, 100);
+
 
         if (isPermissionTaken)
         {
@@ -358,6 +375,67 @@ public class SplachScreenActivity extends BaseActivity
     }
 
 
+
+    private void submitCustomerLogs()
+    {
+
+        String placeOfCrash = MOMApplication.getSharedPref().getplaceOfCrash();
+        String reasonOfCrash = MOMApplication.getSharedPref().getreasonOfCrash();
+        String stackTrace = MOMApplication.getSharedPref().getstackTrace();
+        String deviceInfo = MOMApplication.getSharedPref().getdeviceInfo();
+        String personid = MOMApplication.getInstance().getPersonId();
+        String username = MOMApplication.getInstance().getMswipeUsername();
+
+        if(MOMApplication.getSharedPref().getIsCrashed())
+        {
+            if(app.is_DEBUGGING_ON)
+            Logs.adb("Splashscreen activity save crash logs");
+
+            CustomerClient customerClient = ServiceGenerator.createService(CustomerClient.class);
+            Call<String> call = customerClient.saveCrashLogs(placeOfCrash, reasonOfCrash, stackTrace,
+                    deviceInfo, personid, username);
+
+            call.enqueue(new Callback<String>() {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response)
+                {
+                    if(response.isSuccessful()) {
+                        if (app.is_DEBUGGING_ON)
+                            Logs.adb("Splashscreen activity save crash logs response " + response.body());
+                        resetCrashLog();
+
+                    }else {
+                        if (app.is_DEBUGGING_ON)
+                            Logs.adb("Splashscreen activity save crash logs error response " + response.message());
+                        if (app.is_DEBUGGING_ON)
+                            Logs.adb("Splashscreen activity save crash logs error response " + response.errorBody());
+
+                        resetCrashLog();
+
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t)
+                {
+
+                    resetCrashLog();
+                }
+            });
+        }
+    }
+
+    public void resetCrashLog()
+    {
+        MOMApplication.getSharedPref().setplaceOfCrash("");
+        MOMApplication.getSharedPref().setreasonOfCrash("");
+        MOMApplication.getSharedPref().setstackTrace("");
+        MOMApplication.getSharedPref().setdeviceInfo("");
+        MOMApplication.getSharedPref().setIsCrashed(false);
+
+
+
+    }
 
 
 

@@ -13,6 +13,7 @@ import io.github.inflationx.viewpump.ViewPump;
 
 
 import com.mom.momcustomerapp.R;
+import com.mom.momcustomerapp.utils.crashlogs.Sherlock;
 
 public class MOMApplication extends MultiDexApplication
 {
@@ -29,16 +30,9 @@ public class MOMApplication extends MultiDexApplication
         super.onCreate();
         mMOMApplication = this;
 
+        Sherlock.init(this);
         loadCredentials();
-        /*
-        ViewPump.init(ViewPump.builder()
-                .addInterceptor(new CalligraphyInterceptor(
-                        new CalligraphyConfig.Builder()
-                                .setDefaultFontPath("fonts/Roboto-Regular.ttf")
-                                .setFontAttrId(R.attr.fontPath)
-                                .build())).build()
-        );
-        */
+
 
 
     }
