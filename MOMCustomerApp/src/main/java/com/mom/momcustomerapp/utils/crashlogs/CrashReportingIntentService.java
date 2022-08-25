@@ -106,7 +106,7 @@ public class CrashReportingIntentService extends Service
 
 					}else {
 						if (app.is_DEBUGGING_ON)
-							Logs.adb("Splashscreen activity save crash logs error response " + response.message());
+							Logs.adb("Splashscreen activity save crash logs error response " + response.body());
 						if (app.is_DEBUGGING_ON)
 							Logs.adb("Splashscreen activity save crash logs error response " + response.errorBody());
 

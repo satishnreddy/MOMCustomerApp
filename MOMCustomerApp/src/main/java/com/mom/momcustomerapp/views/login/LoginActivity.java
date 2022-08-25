@@ -175,8 +175,7 @@ public class LoginActivity extends BaseActivity
 			@Override
 			public void onClick(View v)
 			{
-				String x1 = null;
-				x1.toUpperCase();
+
 				startActivityForResult(new Intent(LoginActivity.this, AddCustomerActivity.class), REQUEST_CODE_CHANGE_LANGUAGE);
 			}
 		}));

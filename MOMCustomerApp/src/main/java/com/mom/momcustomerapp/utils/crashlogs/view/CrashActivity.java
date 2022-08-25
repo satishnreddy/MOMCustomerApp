@@ -5,6 +5,7 @@ import static com.mom.momcustomerapp.data.application.Consts.REQUEST_CODE_CHANGE
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -17,16 +18,27 @@ import com.mom.momcustomerapp.R;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.mom.momcustomerapp.controllers.products.api.CustomerClient;
+import com.mom.momcustomerapp.data.application.MOMApplication;
+import com.mom.momcustomerapp.data.application.app;
+import com.mom.momcustomerapp.networkservices.ErrorUtils;
+import com.mom.momcustomerapp.networkservices.ServiceGenerator;
 import com.mom.momcustomerapp.utils.UIUtils;
 import com.mom.momcustomerapp.utils.crashlogs.data.CrashRecord;
 import com.mom.momcustomerapp.utils.crashlogs.data.SherlockDatabaseHelper;
 import com.mom.momcustomerapp.views.customers.AddCustomerActivity;
 import com.mom.momcustomerapp.views.login.LoginActivity;
+import com.mom.momcustomerapp.views.shared.BaseActivity;
 import com.mom.momcustomerapp.widget.SafeClickListener;
+import com.mswipetech.sdk.network.util.Logs;
 
 import java.util.List;
 
-public class CrashActivity extends AppCompatActivity
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class CrashActivity extends BaseActivity
 {
   private SherlockDatabaseHelper database;
   List<CrashRecord> crashRecord = null;
@@ -57,10 +69,50 @@ public class CrashActivity extends AppCompatActivity
         }
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_crashlogs_options, menu);
+
+
+        MenuItem email = menu.findItem(R.id.menu_email);
+        MenuItem upload = menu.findItem(R.id.menu_upload);
+
+        email.setOnMenuItemClickListener(item ->
+        {
+
+
+
+            return false;
+
+        });
+
+        upload.setOnMenuItemClickListener(item ->
+        {
+
+
+            if(crashRecord != null && crashRecord.size() > 0)
+            {
+                showLoadingDialog();
+                submitCustomerLogs();
+            }
+            else {
+                showErrorDialog("No crash logs");
+            }
+            return false;
+
+        });
+
+
+        return true;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        switch (item.getItemId()) {
+        switch (item.getItemId())
+        {
             case android.R.id.home:
                  finish();
                 break;
@@ -161,6 +213,42 @@ public class CrashActivity extends AppCompatActivity
       }
 
   }
+
+
+    private void submitCustomerLogs() {
+
+        CrashRecord rec = crashRecord.get(i);
+
+        String placeOfCrash = rec.getPlace();
+        String reasonOfCrash = rec.getReason();
+        String stackTrace = rec.getStackTrace();
+        String deviceInfo = rec.getDeviceinfo();
+        String personid = rec.getPerson_id();
+        String username = rec.getUsername();
+
+        if (app.is_DEBUGGING_ON)
+            Logs.adb("Splashscreen activity save crash logs");
+
+        CustomerClient customerClient = ServiceGenerator.createService(CustomerClient.class);
+        Call<String> call = customerClient.saveCrashLogs(placeOfCrash, reasonOfCrash, stackTrace,
+                deviceInfo, personid, username);
+
+        call.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+                hideLoadingDialog();
+                showErrorDialog(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+
+                    hideLoadingDialog();
+                 showErrorDialog(ErrorUtils.getFailureError(t));
+            }
+        });
+    }
+
 
 
 }
