@@ -4,14 +4,17 @@ import static com.mom.momcustomerapp.data.application.Consts.EXTRA_KEY_PUSH_NOTI
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -32,6 +35,7 @@ import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.data.application.app;
 import com.mom.momcustomerapp.networkservices.ServiceGenerator;
 import com.mom.momcustomerapp.utils.crashlogs.CrashAnalyzer;
+import com.mom.momcustomerapp.utils.crashlogs.CrashReportingIntentService;
 import com.mom.momcustomerapp.views.home.Home_Tab_Activity;
 import com.mom.momcustomerapp.views.shared.BaseActivity;
 import com.mswipetech.sdk.network.util.Logs;
@@ -127,14 +131,9 @@ public class SplachScreenActivity extends BaseActivity
     {
         super.onResume();
         isPermissionTaken = MOMApplication.getSharedPref().isPermissionTaken();
-        final Handler handler = new Handler(Looper.getMainLooper());
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                //Do something after 100ms
-                submitCustomerLogs();
-            }
-        }, 100);
+
+        startService(new Intent( this, CrashReportingIntentService.class ) );
+
 
 
         if (isPermissionTaken)

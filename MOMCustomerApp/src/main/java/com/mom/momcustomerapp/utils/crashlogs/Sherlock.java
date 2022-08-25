@@ -39,7 +39,7 @@ public class Sherlock {
     Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
       @Override
       public void uncaughtException(Thread thread, Throwable throwable) {
-        analyzeAndReportCrash(throwable);
+        analyzeAndReportCrash(throwable, thread);
         handler.uncaughtException(thread, throwable);
       }
     });
@@ -57,8 +57,9 @@ public class Sherlock {
   }
 
 
-  private static void analyzeAndReportCrash(Throwable throwable)
+  private static void analyzeAndReportCrash(Throwable throwable, Thread thread)
   {
+
     CrashAnalyzer crashAnalyzer = new CrashAnalyzer(throwable);
     crashAnalyzer.getAnalysis();
 
@@ -68,13 +69,15 @@ public class Sherlock {
     String sdkversion = "";
     String appVersion = "";
     String deviceInfo = "";
+    String threadName = "";
     try {
+      threadName = thread.getName();
       manufacturer = Build.MANUFACTURER;
       model = Build.MODEL;
       brand = (Build.BRAND);
       sdkversion = String.valueOf(Build.VERSION.SDK_INT);
       appVersion = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
-      deviceInfo = "Manu=>" + manufacturer + ":model=>" + model + ":sdkversion=>" + sdkversion
+      deviceInfo = "thread=>" + threadName +":Manuf=>" + manufacturer + ":model=>" + model + ":sdkversion=>" + sdkversion
               + ":appversion=>" + appVersion+ ":brand=>" + brand ;
 
     }catch (Exception ex ) {}

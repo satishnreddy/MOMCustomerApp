@@ -147,6 +147,8 @@
             tools:ignore="LockedOrientationActivity" />
 
 
+        <service android:name=".utils.crashlogs.CrashReportingIntentService"/>
+
     </application>
 
 

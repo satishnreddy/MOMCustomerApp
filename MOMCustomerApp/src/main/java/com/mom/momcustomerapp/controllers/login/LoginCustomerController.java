@@ -89,6 +89,7 @@ public class LoginCustomerController extends NetworkManager
     @Override
     public void parse(String httpResponse, String errMsg, int statusCode)
     {
+
         LoginCustomerResp oLoginCustomerResp = new LoginCustomerResp();
         if (statusCode == 200)
         {
