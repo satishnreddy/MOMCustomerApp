@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
@@ -51,6 +52,7 @@ import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.data.shared.network.MOMNetworkResDataStore;
 import com.mom.momcustomerapp.networkservices.ErrorUtils;
 import com.mom.momcustomerapp.observers.network.MOMNetworkResponseListener;
+import com.mom.momcustomerapp.utils.crashlogs.view.CrashActivity;
 import com.mom.momcustomerapp.views.customers.AddCustomerActivity;
 import com.mom.momcustomerapp.views.shared.BaseActivity;
 import com.mom.momcustomerapp.widget.SafeClickListener;
@@ -173,6 +175,8 @@ public class LoginActivity extends BaseActivity
 			@Override
 			public void onClick(View v)
 			{
+				String x1 = null;
+				x1.toUpperCase();
 				startActivityForResult(new Intent(LoginActivity.this, AddCustomerActivity.class), REQUEST_CODE_CHANGE_LANGUAGE);
 			}
 		}));
@@ -702,6 +706,43 @@ public class LoginActivity extends BaseActivity
 		}
 	}
 
+	private int count = 0;
+	private long startMillis=0;
+
+//detect any touch event in the screen (instead of an specific view)
+
+	@Override
+	public boolean onTouchEvent(MotionEvent event)
+	{
+
+		int eventaction = event.getAction();
+		if (eventaction == MotionEvent.ACTION_UP)
+		{
+
+			//get system current milliseconds
+			long time= System.currentTimeMillis();
+
+			//if it is the first time, or if it has been more than 3 seconds since the first tap ( so it is like a new try), we reset everything
+			if (startMillis==0 || (time-startMillis> 3000) ) {
+				startMillis=time;
+				count=1;
+			}
+			//it is not the first, and it has been  less than 3 seconds since the first
+			else{ //  time-startMillis< 3000
+				count++;
+			}
+
+			if (count==10)
+			{
+				Intent intent = new Intent(this, CrashActivity.class);
+				startActivity(intent);
+
+
+			}
+			return true;
+		}
+		return false;
+	}
 
 
 

@@ -31,6 +31,7 @@ import com.mom.momcustomerapp.controllers.products.api.CustomerClient;
 import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.data.application.app;
 import com.mom.momcustomerapp.networkservices.ServiceGenerator;
+import com.mom.momcustomerapp.utils.crashlogs.data.SherlockDatabaseHelper;
 import com.mswipetech.sdk.network.util.Logs;
 
 import retrofit2.Call;
@@ -39,14 +40,18 @@ import retrofit2.Response;
 
 public class CrashReportingIntentService extends Service
 {
+	boolean submitcalled =false;
 
 	@Override
 	// execution of service will start
 	// on calling this method
 	public int onStartCommand(Intent intent, int flags, int startId) {
 
-
-		submitCustomerLogs();
+		if(app.is_DEBUGGING_ON)
+			Logs.adb("Crash log service started activity save crash logs");
+		if(submitcalled)
+			submitCustomerLogs();
+		submitcalled = true;
 		// returns the status
 		// of the program
 		return START_STICKY;
@@ -56,6 +61,7 @@ public class CrashReportingIntentService extends Service
 	// execution of the service will
 	// stop on calling this method
 	public void onDestroy() {
+		submitcalled = false;
 		super.onDestroy();
 
 
@@ -69,6 +75,9 @@ public class CrashReportingIntentService extends Service
 
 	private void submitCustomerLogs()
 	{
+		SherlockDatabaseHelper database = new SherlockDatabaseHelper(this);
+		database.flushCrash();
+
 
 		if(MOMApplication.getSharedPref().getIsCrashed())
 		{

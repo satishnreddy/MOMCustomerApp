@@ -13,6 +13,7 @@ import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.data.application.app;
 import com.mom.momcustomerapp.networkservices.ErrorUtils;
 import com.mom.momcustomerapp.networkservices.ServiceGenerator;
+import com.mom.momcustomerapp.utils.crashlogs.data.SherlockDatabaseHelper;
 import com.mswipetech.sdk.network.util.Logs;
 
 import java.io.IOException;
@@ -83,16 +84,19 @@ public class Sherlock {
     }catch (Exception ex ) {}
 
 
+    if(app.is_DEBUGGING_ON)
+      Logs.adb("sherlock inserting to database");
+
+    SherlockDatabaseHelper databaseHelper = new SherlockDatabaseHelper(context);
+    databaseHelper.insertCrash(crashAnalyzer.placeOfCrash, crashAnalyzer.reasonOfCrash,
+            crashAnalyzer.stackTrace, deviceInfo,
+            MOMApplication.getInstance().getPersonId(), MOMApplication.getInstance().getMswipeUsername());
+
     MOMApplication.getSharedPref().setplaceOfCrash(crashAnalyzer.placeOfCrash);
     MOMApplication.getSharedPref().setreasonOfCrash(crashAnalyzer.reasonOfCrash);
     MOMApplication.getSharedPref().setstackTrace(crashAnalyzer.stackTrace);
     MOMApplication.getSharedPref().setdeviceInfo(deviceInfo);
     MOMApplication.getSharedPref().setIsCrashed(true);
-
-
-
-
-
 
   }
 

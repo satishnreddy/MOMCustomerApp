@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <com.google.android.material.appbar.AppBarLayout
+      android:id="@+id/appbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      app:elevation="0dp">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:layout_collapseMode="pin" />
+  </com.google.android.material.appbar.AppBarLayout>
+
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="@android:color/darker_gray"/>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:paddingBottom="@dimen/activity_vertical_margin"
+      android:paddingLeft="5dp"
+      android:paddingRight="5dp"
+      android:weightSum="2"
+      android:paddingTop="8dp">
+    <!-- Login btn-->
+    <TextView
+        android:id="@+id/activity_login_btn_previous"
+        style="@style/font_medium_14_white"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect_filled_70bb41_corner_5dp"
+        android:gravity="center"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_normal"
+        android:text="Previous"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_login_layout_login" />
+
+    <!-- Login btn-->
+    <TextView
+        android:id="@+id/activity_login_btn_next"
+        style="@style/font_medium_14_white"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect_filled_70bb41_corner_5dp"
+        android:gravity="center"
+        android:paddingStart="@dimen/margin_large"
+        android:paddingTop="@dimen/margin_normal"
+        android:paddingEnd="@dimen/margin_large"
+        android:paddingBottom="@dimen/margin_normal"
+        android:text="Next"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity_login_layout_login" />
+
+
+  </LinearLayout>
+
+  <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+      android:id="@+id/activity_main"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:paddingBottom="@dimen/activity_vertical_margin"
+      android:paddingLeft="5dp"
+      android:paddingRight="5dp"
+      android:paddingTop="8dp">
+
+      <androidx.cardview.widget.CardView
+          app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:elevation="2dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp"
+            android:weightSum="4">
+
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+
+              android:layout_height="wrap_content"
+              android:text="Date"
+              style="@style/font_medium_14_black"
+
+              android:textSize="15sp"
+              android:textStyle="bold"/>
+          <TextView
+              android:id="@+id/date"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="wrap_content"
+              android:layout_gravity="left"
+              style="@style/font_medium_20_black"
+              android:textSize="15sp"
+              android:textStyle="bold"
+              tools:text=""/>
+          </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="4dp"
+
+            android:weightSum="4">
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="wrap_content"
+              android:text="user"
+              style="@style/font_medium_14_black"
+
+              android:textSize="15sp"
+              android:textStyle="bold"/>
+          <TextView
+              android:id="@+id/username"
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="wrap_content"
+              android:gravity="left"
+              style="@style/font_medium_20_black"
+              android:textSize="15sp"
+              android:textStyle="bold"
+              tools:text=""/>
+        </LinearLayout>
+
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:text="device info"
+              style="@style/font_medium_14_black"
+
+              android:textSize="15sp"
+              android:textStyle="bold"/>
+          <TextView
+              android:id="@+id/deviceinfo"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="10dp"
+              style="@style/font_medium_20_black"
+              android:textSize="15sp"
+              android:textStyle="bold"
+              tools:text=""/>
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:text="crash location"
+              style="@style/font_medium_14_black"
+
+              android:textSize="15sp"
+              android:textStyle="bold"/>
+          <TextView
+            android:id="@+id/crash_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+              style="@style/font_medium_20_black"
+             android:textSize="15sp"
+            android:textStyle="bold"
+            tools:text=""/>
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:text="crash reason"
+              style="@style/font_medium_14_black"
+
+              android:textSize="15sp"
+              android:textStyle="bold"/>
+          <TextView
+            android:id="@+id/crash_reason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+              style="@style/font_medium_20_black"
+
+              android:textColor="@color/cardview_dark_background"
+            android:textSize="15sp"
+            tools:text="Reason of crash"/>
+        </LinearLayout>
+      </androidx.cardview.widget.CardView>
+
+      <androidx.cardview.widget.CardView
+          app:layout_behavior="@string/appbar_scrolling_view_behavior"
+          android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:elevation="2dp"
+        app:cardElevation="2dp">
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:orientation="vertical">
+
+          <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="stack_trace"
+              style="@style/font_medium_14_black"
+
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+
+          <androidx.cardview.widget.CardView
+              app:layout_behavior="@string/appbar_scrolling_view_behavior"
+              android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="3dp">
+
+            <HorizontalScrollView
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:layout_marginTop="10dp">
+
+              <TextView
+                android:id="@+id/stacktrace"
+
+                  style="@style/font_medium_20_black"
+                  android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="true"/>
+
+
+            </HorizontalScrollView>
+          </androidx.cardview.widget.CardView>
+        </LinearLayout>
+      </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>

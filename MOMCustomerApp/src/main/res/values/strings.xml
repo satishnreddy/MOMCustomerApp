@@ -200,6 +200,8 @@
     <!--Profiles-->
     <string name="title_activity_edit_store">Edit Store</string>
     <string name="title_activity_edit_profile">My Profile</string>
+    <string name="title_activity_crash_logs">Crashlogs</string>
+
     <string name="title_activity_store">Store</string>
 
 

@@ -147,6 +147,14 @@
             tools:ignore="LockedOrientationActivity" />
 
 
+        <activity
+            android:name=".utils.crashlogs.view.CrashActivity"
+            android:label="@string/title_activity_crash_logs"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+
+
         <service android:name=".utils.crashlogs.CrashReportingIntentService"/>
 
     </application>
