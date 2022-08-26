@@ -124,7 +124,6 @@ public class AddCustomerActivity extends BaseActivity implements
 
 		setupToolBar();
 		loadIntentData();
-		//loadModelIfRequired();
 
 		mEtMobile.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -183,7 +182,8 @@ public class AddCustomerActivity extends BaseActivity implements
 	private void loadIntentData()
 	{
 		Intent intent = getIntent();
-		if (intent.hasExtra(Consts.EXTRA_ACTIVITY_MODE)) {
+		if (intent.hasExtra(Consts.EXTRA_ACTIVITY_MODE))
+		{
 			activityMode = intent.getIntExtra(Consts.EXTRA_ACTIVITY_MODE, Consts.ACTIVITY_MODE_CREATE);
 			if (activityMode == Consts.ACTIVITY_MODE_EDIT)
 			{
@@ -205,7 +205,8 @@ public class AddCustomerActivity extends BaseActivity implements
 	}
 
 	@SuppressLint("RestrictedApi")
-	private void loadModelIfRequired() {
+	private void loadModelIfRequired()
+	{
 		mCamerabutton = new CameraButton(this);
 		mCamerabutton.setCameraButtonResultListener(this);
 
@@ -565,8 +566,6 @@ public class AddCustomerActivity extends BaseActivity implements
 						//If view is already destroyed , then ignore
 					}
 
-					Intent intent = new Intent();
-					setResult(Activity.RESULT_OK, intent);
 					finish();
 				}
 			}
@@ -628,58 +627,6 @@ public class AddCustomerActivity extends BaseActivity implements
 		});
 	}
 
-	/*private void uploadProfileImage(String imagePath, String customerId) {
-		showLoadingDialog();
-		CustomerClient customerClient = ServiceGenerator.createService(CustomerClient.class, MventryApp.getInstance().getToken());
-		MultipartBody.Part body;
-		File file = new File(imagePath);
-		RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg"), file);
-		body = MultipartBody.Part.createFormData("files", file.getName(), requestFile);
-
-		Call<String> call = customerClient.uploadPic(customerId, body);
-		call.enqueue(new Callback<String>() {
-			@Override
-			public void onResponse(Call<String> call, Response<String> response) {
-				hideLoadingDialog();
-				if (response.isSuccessful()) {
-					String responseString = response.body();
-					responseString = responseString.replaceAll("\\n", "");
-					try {
-						if (!TextUtils.isEmpty(responseString)) {
-							JSONObject jsonResponse = new JSONObject(responseString);
-							if (jsonResponse.has("status")) {
-								if (jsonResponse.get("status").toString().equalsIgnoreCase("success")) {
-									getCustomer();
-								}
-							}
-						} else {
-							showErrorDialog("Error", "Something went wrong. Response is empty.");
-						}
-					} catch (JSONException e) {
-						e.printStackTrace();
-						showErrorDialog("Error", "Something went wrong : Invalid Response");
-					}
-				} else {
-					if (response.code() == 401) {
-						Toast.makeText(getApplicationContext(), "Profile Image not uploaded.", Toast.LENGTH_SHORT).show();
-						Intent intent = new Intent();
-						setResult(Activity.RESULT_OK, intent);
-						finish();
-					} else {
-						showErrorDialog(ErrorUtils.getErrorString(response));
-					}
-				}
-			}
-
-			@Override
-			public void onFailure(Call<String> call, Throwable t) {
-				hideLoadingDialog();
-				showErrorDialog(ErrorUtils.getFailureError(t));
-				if (!(t instanceof IOException)) {
-				}
-			}
-		});
-	}*/
 
 	public void getCustomer()
 	{

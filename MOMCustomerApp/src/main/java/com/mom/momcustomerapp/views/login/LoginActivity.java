@@ -158,8 +158,8 @@ public class LoginActivity extends BaseActivity
 		//mEtLoginMobile.setText("9833195559");
 		//mEtPassword.setText("305347");
 
-		//mEtLoginMobile.setText("9885135489");
-		//mEtPassword.setText("123456");
+		mEtLoginMobile.setText("9885135489");
+		mEtPassword.setText("123456");
 
 		forgotPwdView.setOnClickListener(new SafeClickListener(new SafeClickListener.Callback()
 		{
@@ -176,20 +176,17 @@ public class LoginActivity extends BaseActivity
 			public void onClick(View v)
 			{
 
-				startActivityForResult(new Intent(LoginActivity.this, AddCustomerActivity.class), REQUEST_CODE_CHANGE_LANGUAGE);
+				startActivity(new Intent(v.getContext(), AddCustomerActivity.class));
 			}
 		}));
 
 		signInBtn.setOnClickListener(new SafeClickListener(new SafeClickListener.Callback() {
 			@Override
-			public void onClick(View v) {
-				/*showCategorySelection();*/
+			public void onClick(View v)
+			{
 				attemptLogin();
 			}
 		}));
-
-
-		//setTermsCondition();
 
 		PackageInfo pInfo = null;
 		try {
@@ -203,113 +200,7 @@ public class LoginActivity extends BaseActivity
 			versionNameTv.setText("Version " + versionName);
 		}
 
-		boolean fromSplash = getIntent().getBooleanExtra("fromSplash", false);
 
-		if(fromSplash){
-			/*
-			mMSWisepadController = MSWisepadController.
-					getSharedMSWisepadController(getApplicationContext(),
-							ShopxieSharedPreferences.getInstance().getMswipeGatewayEnvironmentName(),
-						//ShopxieSharedPreferences.getInstance().getMswipeNetworkSourceName(mActivity),
-							MSWisepadController.NETWORK_SOURCE.WIFI,
-							LoginActivity.this);
-
-			*/
-
-			//checkUpdates();
-
-		}
-		else{
-			startActivity(new Intent(LoginActivity.this, SplachScreenActivity.class));
-			finish();
-		}
-
-		//getLinkData();
-	}
-
-
-	private String mReferralID = "";
-
-	private void getLinkData()
-	{
-
-		//Log.d(TAG, "getLinkData");
-		/*
-		FirebaseDynamicLinks.getInstance()
-				.getDynamicLink(getIntent())
-				.addOnSuccessListener(this, new OnSuccessListener<PendingDynamicLinkData>() {
-					@Override
-					public void onSuccess(PendingDynamicLinkData pendingDynamicLinkData) {
-						// Get deep link from result (may be null if no link is found)
-
-						//Log.d(TAG, "onSuccess");
-						//Log.d(TAG, "pendingDynamicLinkData: " + pendingDynamicLinkData);
-
-						Uri deepLink = null;
-
-						if (pendingDynamicLinkData != null) {
-							deepLink = pendingDynamicLinkData.getLink();
-						}
-
-						if(deepLink != null) {
-
-							mReferralID = deepLink.getQueryParameter("referrerid");
-
-							if(mReferralID != null && mReferralID.length() > 0) {
-								ShopxieSharedPreferences.getInstance().setReferralID(mReferralID);
-							}
-
-							if (BuildConfig.APPLICATION_ID.contains("dev")) {
-
-								Log.d(TAG, "mReferralID: " + mReferralID);
-								//Toast.makeText(LoginActivity.this, "LID: " + mReferralID, Toast.LENGTH_SHORT).show();
-							}
-						}
-					}
-				})
-				.addOnFailureListener(this, new OnFailureListener() {
-					@Override
-					public void onFailure(@NonNull Exception e) {
-
-						Log.d(TAG, "onFailure");
-
-					}
-				});
-
-
-		*/
-	}
-
-	private void showCategorySelection()
-	{
-
-
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu)
-	{
-		getMenuInflater().inflate(R.menu.menu_registration, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item)
-	{
-		switch (item.getItemId()) {
-			case R.id.menu_registration_help:
-				helpClicked();
-				return true;
-			default:
-				return super.onOptionsItemSelected(item);
-		}
-	}
-
-	private void helpClicked()
-	{
-		/*Intent intentHelp = new Intent(mActivity, HelpActivity.class);
-		intentHelp.putExtra(Consts.EXTRA_HELP_INDEX, Consts.EXTRA_HELP_REGISTRATION);
-		startActivity(intentHelp);*/
 	}
 
 	@Override
@@ -332,63 +223,9 @@ public class LoginActivity extends BaseActivity
 			case R.id.activity_login_imgbtn_show_password:
 				togglePassword();
 				break;
-			/*case R.id.activity_login_tv_tnc:
-				Intent intentTnc = new Intent(mActivity, TermsConditionsActivity.class);
-				intentTnc.putExtra(Consts.EXTRA_TITLE, "tnc");
-				startActivity(intentTnc);
-				break;*/
-			/*case R.id.activity_login_tv_privacy:
-				Intent intentPrivacy = new Intent(mActivity, TermsConditionsActivity.class);
-				intentPrivacy.putExtra(Consts.EXTRA_TITLE, "privacy");
-				startActivity(intentPrivacy);
-				break;*/
-			/*case R.id.activity_login_tv_version:
-				versionClickedCount++;
-				if (versionClickedCount >= 5) {
-					if (BuildConfig.APPLICATION_ID.contains("dev") || BuildConfig.APPLICATION_ID.contains("demo")) {
-						openUrlEditorDialog();
-					}
-					versionClickedCount = 0;
-				}
-				break;*/
 		}
 	}
 
-	private void openUrlEditorDialog()
-	{
-		AlertDialog.Builder builder = new AlertDialog.Builder(mActivity);
-		builder.setTitle("Server Url");
-		builder.setMessage("Please Set Server Url");
-		final EditText etUrl = new EditText(mActivity);
-		LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-		etUrl.setLayoutParams(lp);
-		etUrl.setText(MOMApplication.getInstance().getServerUrl());
-		builder.setView(etUrl);
-		builder.setPositiveButton("Save", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				if (!TextUtils.isEmpty(etUrl.getText())) {
-					//MOMApplication.getInstance().setServerUrl(etUrl.getText().toString().trim());
-					dialog.dismiss();
-				} else {
-					etUrl.setError("Please enter url");
-					etUrl.requestFocus();
-				}
-			}
-		});
-
-		builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				dialog.dismiss();
-			}
-		});
-
-		builder.setCancelable(false);
-		if (!mActivity.isFinishing()) {
-			builder.show();
-		}
-	}
 
 	private void togglePassword()
 	{
@@ -475,27 +312,6 @@ public class LoginActivity extends BaseActivity
 		return password.length() > 5;
 	}
 
-	@Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data)
-	{
-		super.onActivityResult(requestCode, resultCode, data);
-
-		if (requestCode == REQUEST_CODE_CHANGE_LANGUAGE) {
-			if (resultCode == Activity.RESULT_OK)
-			{
-				Intent intent = getIntent();
-				finish();
-				startActivity(intent);
-			}
-		}
-	}
-
-	private void loginMswipe()
-	{
-
-	}
-
-
 	private void loginCustomer()
 	{
 		try
@@ -531,6 +347,12 @@ public class LoginActivity extends BaseActivity
 					mToken = responseData.token;
 					mVenderId = responseData.vendor_id;
 					mStoreId = responseData.store_id;
+
+					MOMApplication.getInstance().setToken(mToken);
+					MOMApplication.getInstance().setVender(mVenderId);
+					MOMApplication.getInstance().setStoreId(mStoreId);
+
+
 					MOMApplication.getSharedPref().setName(responseData.cust_name);
 					MOMApplication.getInstance().setMswipeUsername(mPhone);
 					MOMApplication.getInstance().setPersonId(responseData.person_id);
@@ -555,8 +377,6 @@ public class LoginActivity extends BaseActivity
 		}
 	}
 
-
-
 	private void checkLoginStatus()
 	{
 		//if (isLoginSuccessful && isMswipeLoginSuccessful)
@@ -564,152 +384,14 @@ public class LoginActivity extends BaseActivity
 		if (isLoginSuccessful)
 		{
 			hideLoadingDialog();
-			Intent intent = new Intent();
-			intent.putExtra(Consts.EXTRA_TOKEN, mToken);
-			intent.putExtra(Consts.EXTRA_VENDER_ID, mVenderId);
-			intent.putExtra(Consts.EXTRA_STORE_ID, mStoreId);
-
-			mActivity.setResult(Activity.RESULT_OK, intent);
 			mActivity.finish();
 		}
 
 	}
 
-	public void checkUpdates()
-	{
-		String url;
-		if (BuildConfig.APPLICATION_ID.contains("dev")) {
-			url = getString(R.string.update_dev);
-		} else if (BuildConfig.APPLICATION_ID.contains("demo")) {
-			url = getString(R.string.update_demo);
-		} else {
-			url = getString(R.string.update_prod);
-		}
-
-		OkHttpClient client = new OkHttpClient();
-		Request request = new Request.Builder()
-				.url(url)
-				.get()
-				.build();
-
-		client.newCall(request).enqueue(new okhttp3.Callback() {
-			@Override
-			public void onFailure(okhttp3.Call call, IOException e) {
-				call.cancel();
-			}
-
-			@Override
-			public void onResponse(okhttp3.Call call, okhttp3.Response response) throws IOException {
-				if (response.isSuccessful()) {
-					final String responseString = response.body().string();
-					//Log.i("Nish", "Response : " + responseString);
-					mVersionModel = new Gson().fromJson(responseString, VersionModel.class);
-					if (mVersionModel != null) {
-						showUpdeteDialog();
-					}
-				} else {
-					//Log.i("Nish", "Update failed");
-					//Log.i("Nish", "Code : " + response.code());
-					//Log.i("Nish", "Message : " + response.message());
-					if (response.body() != null) {
-						//Log.i("Nish", "Body : " + response.body().string());
-					}
-				}
-			}
-		});
-	}
-
-	public void showUpdeteDialog()
-	{
-		if (!mayRequestStorage()) {
-			return;
-		}
-		try {
-			int currentVersionCode;
-			int installedVersionCode = getPackageManager().getPackageInfo(getPackageName(), 0).versionCode;
-
-			currentVersionCode = mVersionModel.getCurrentVersion();
-			int forceInstallCode = mVersionModel.getForcedVersions();
-			boolean isForced = false;
-
-			//Log.i("Nish", "installedVersionCode : " + installedVersionCode);
-			//Log.i("Nish", "currentVersionCode : " + currentVersionCode);
-			//Log.i("Nish", "forceInstallCode : " + forceInstallCode);
-
-			if (installedVersionCode < currentVersionCode) {
-				if (installedVersionCode < forceInstallCode) {
-					isForced = true;
-				} else if (installedVersionCode != 0 && installedVersionCode < currentVersionCode) {
-					isForced = false;
-				}
-
-				final CheckUpdateDialogFragment updateDialogFragment = new CheckUpdateDialogFragment();
-				Bundle bundle = new Bundle();
-				bundle.putParcelable("versionModel", mVersionModel);
-				bundle.putBoolean("forced", isForced);
-				updateDialogFragment.setArguments(bundle);
-
-				updateDialogFragment.setFileDownloadListener(new CheckUpdateDialogFragment.FileDownloadListener() {
-					@Override
-					public void onFileDownloadClicked() {
-						Toast.makeText(mActivity, "New version download started. Please install it and open app again.", Toast.LENGTH_LONG).show();
-						finish();
-					}
-				});
-
-				FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-				Fragment prev = getSupportFragmentManager().findFragmentByTag(CheckUpdateDialogFragment.FRAGMENT_TAG);
-				if (prev != null) {
-					ft.remove(prev);
-				}
-				updateDialogFragment.show(ft, CheckUpdateDialogFragment.FRAGMENT_TAG);
-			}
-
-		} catch (PackageManager.NameNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-
-	private boolean mayRequestStorage()
-	{
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-			return true;
-		}
-		int permissionWrite = mActivity.checkSelfPermission(WRITE_EXTERNAL_STORAGE);
-		if (permissionWrite == PackageManager.PERMISSION_GRANTED) {
-			return true;
-		}
-		List<String> listPermissionsNeeded = new ArrayList<>();
-		if (permissionWrite != PackageManager.PERMISSION_GRANTED) {
-			//listPermissionsNeeded.add(WRITE_EXTERNAL_STORAGE);
-		}
-		if (!listPermissionsNeeded.isEmpty()) {
-			mActivity.requestPermissions(listPermissionsNeeded.toArray(new String[listPermissionsNeeded.size()]), CameraButton.REQUEST_ID_MULTIPLE_PERMISSIONS);
-			return false;
-		}
-		return false;
-	}
-
-	/**
-	 * Callback received when a permissions request has been completed.
-	 */
-	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-		if (requestCode == CameraButton.REQUEST_WRITE_EXTERNAL_STORAGE) {
-			if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-				showUpdeteDialog();
-			}
-		}
-
-		if (requestCode == CameraButton.REQUEST_ID_MULTIPLE_PERMISSIONS) {
-			showUpdeteDialog();
-		}
-	}
-
 	private int count = 0;
 	private long startMillis=0;
-
-//detect any touch event in the screen (instead of an specific view)
-
+	//detect any touch event in the screen (instead of an specific view)
 	@Override
 	public boolean onTouchEvent(MotionEvent event)
 	{
@@ -744,14 +426,5 @@ public class LoginActivity extends BaseActivity
 	}
 
 
-
-	@Override
-	protected void onResume() {
-		super.onResume();
-		if (BuildConfig.DEBUG){
-			//FacebookSdk.setIsDebugEnabled(true);
-			//FacebookSdk.addLoggingBehavior(LoggingBehavior.APP_EVENTS);
-		}
-	}
 }
 

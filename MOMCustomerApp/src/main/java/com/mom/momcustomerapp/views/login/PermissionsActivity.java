@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 
 import com.mom.momcustomerapp.R;
 import com.mom.momcustomerapp.customviews.CameraButton;
+import com.mom.momcustomerapp.data.application.MOMApplication;
 import com.mom.momcustomerapp.views.shared.BaseActivity;
 
 import java.util.ArrayList;
@@ -170,7 +171,9 @@ public class PermissionsActivity extends BaseActivity {
         permissionsGranted();
     }
 
-    private void permissionsGranted() {
+    private void permissionsGranted()
+    {
+        MOMApplication.getSharedPref().setPermissionTaken(true);
         finish();
     }
 
