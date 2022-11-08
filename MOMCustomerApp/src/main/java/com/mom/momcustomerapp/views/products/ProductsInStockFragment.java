@@ -117,6 +117,8 @@ public class ProductsInStockFragment extends BaseFragment implements OnRecylerVi
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+
+
         mBillingRecyclerViewAdapter = new ProductsListAdapter(mRecyclerView, mBillingModelArrayList, onProductClicked, this);
         mRecyclerView.setAdapter(mBillingRecyclerViewAdapter);
         mBillingRecyclerViewAdapter.mTotalRecordsBills = mTotalRecordsBills;

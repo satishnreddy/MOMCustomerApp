@@ -60,7 +60,7 @@ public class SplachScreenActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_splach_screen);
+        //setContentView(R.layout.activity_login_splach_screen);
         mActivity = this;
         startService(new Intent( this, CrashReportingIntentService.class ) );
     }
@@ -76,12 +76,12 @@ public class SplachScreenActivity extends BaseActivity
             if (TextUtils.isEmpty(MOMApplication.getInstance().getToken()))
             {
 
-                handler.sendEmptyMessageDelayed(3, 600);
+                handler.sendEmptyMessageDelayed(3, 1200);
 
 
             } else {
 
-                handler.sendEmptyMessageDelayed(1, 600);
+                handler.sendEmptyMessageDelayed(1, 1200);
 
 
             }
@@ -116,14 +116,11 @@ public class SplachScreenActivity extends BaseActivity
                         Toast.makeText(mActivity, "Dev App", Toast.LENGTH_SHORT).show();
                     }
                     startActivity(new Intent(mActivity, LoginActivity.class));
+                    finish();
                     break;
             }
         }
     };
-
-
-
-
 
 
 

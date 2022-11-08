@@ -210,7 +210,9 @@ public class LoginActivity extends BaseActivity
 			Toast.makeText(this, "Are you sure you want to exit the app?", Toast.LENGTH_SHORT).show();
 			isBackPressed = true;
 		} else {
-			super.onBackPressed();
+
+
+			mActivity.finish();
 		}
 	}
 

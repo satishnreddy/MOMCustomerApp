@@ -6,15 +6,29 @@
         <entry key="..\:/Users/satishn/AndroidStudioProjects/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_home_tab.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_products_in_stock.xml" value="0.1" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/MOMCustomerApp/MOMCustomerApp/src/main/res/menu/bottom_nav_tab.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/bg_rounded_black_translucent.xml" value="0.162" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/ic_check_green_24dp.xml" value="0.162" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/ic_union_1.xml" value="0.1485" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/ic_whatsapp_small.xml" value="0.162" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/loading_drawable.xml" value="0.162" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/rect_filled_70bb41_corner_5dp.xml" value="0.1485" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/rect_filled_corner_6dp_border_2dp.xml" value="0.162" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/rect_filled_corner_6dp_border_aaa_1dp.xml" value="0.1485" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/shape_circular_rectangle_search_cornered_dark_border.xml" value="0.1485" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/shape_green_rectangle_search_corner_4dp.xml" value="0.1485" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/drawable/splash_background.xml" value="0.162" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_customers_add_customer.xml" value="0.1" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_customview_item_camerabutton_chooserdialog_row.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_home_tab.xml" value="0.1484375" />
-        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_login_mbasket.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_image_cropping.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_login_mbasket.xml" value="0.1" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_login_splach_screen.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_sales_checkout_details.xml" value="0.1" />
-        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_sales_order_details.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/activity_sales_order_details.xml" value="0.22" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/crash_activity.xml" value="0.1" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_home.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_loading_dialog_simple.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_products_in_stock.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_sales_billing.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_sales_completed_bills.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_sales_partial.xml" value="0.1484375" />
@@ -22,10 +36,16 @@
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_sales_returns.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/fragment_settings.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/inflate_dialog_ok_btn.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/inflate_dialog_order_decline_completed.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/inflate_dialog_output_result.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/item_loading.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/item_product_cardview_small.xml" value="0.1" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/layout_load_more.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/layout/layout_search.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/menu/menu_crashlogs_options.xml" value="0.1484375" />
         <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/menu/menu_customer.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/menu/menu_store_edit.xml" value="0.1484375" />
+        <entry key="..\:/Users/satishn/AndroidStudioProjects/mom/MOMCustomerApp/MOMCustomerApp/src/main/res/mipmap-anydpi-v26/ic_launcher_v4.xml" value="0.162" />
       </map>
     </option>
   </component>

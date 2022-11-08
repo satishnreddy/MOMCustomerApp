@@ -57,7 +57,7 @@
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden"
             tools:ignore="LockedOrientationActivity"
-            android:exported="true">
+            android:exported="true" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -65,7 +65,8 @@
             </intent-filter>
         </activity>
 
-        <activity
+
+    <activity
             android:name=".views.login.LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateHidden"
